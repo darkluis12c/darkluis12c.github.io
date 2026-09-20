@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>Gêmeos da Calistenia — Assista a live e ganhe Robux</title>
+<meta name="description" content="Participe da live dos Gêmeos da Calistenia no TikTok, entre no grupo e concorra a Robux toda semana. Participar é gratuito.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light only;
+  --preto:#0A0A0A;
+  --vermelho:#E8112D;
+  --vermelho-escuro:#8F0A1C;
+  --branco:#FFFFFF;
+  --cinza:#EFEFEF;
+  --cinza-texto:#6B6B6B;
+  --verde:#2BD673;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html{background:var(--branco)}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--preto);background:var(--branco);-webkit-font-smoothing:antialiased}
+main{background:var(--branco)}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--verde);outline-offset:3px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 18px}
+
+/* ================= TOPO ================= */
+.topo{background:var(--preto);padding:10px 0}
+.topo .wrap{display:flex;align-items:center;gap:18px}
+.logo{height:54px;width:auto;border-radius:3px}
+.nav{display:flex;gap:8px;align-items:center;margin-left:auto;margin-right:auto;flex-wrap:wrap;justify-content:center}
+.nav a{
+  font-family:'Anton',sans-serif;font-size:14px;letter-spacing:.6px;
+  color:#EDEDED;padding:4px 2px;
+}
+.nav a:hover{color:var(--vermelho)}
+.nav span{color:#4A4A4A;font-size:12px}
+.aviso-topo{display:flex;align-items:center;gap:9px;flex:none}
+.aviso-topo .tt{
+  width:40px;height:40px;border-radius:11px;background:var(--branco);
+  display:grid;place-items:center;flex:none;
+}
+.aviso-topo p{color:var(--branco);font-size:11.5px;line-height:1.3;font-weight:600;max-width:130px}
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;overflow:hidden;
+  background:var(--branco);
+  padding:0 0 26px;
+}
+.hero::before{
+  content:"";position:absolute;top:-40px;right:-80px;
+  width:420px;height:220px;background:var(--vermelho);
+  transform:rotate(-18deg);opacity:.12;border-radius:60px;
+}
+.hero .wrap{position:relative;z-index:2;display:flex;align-items:flex-end;gap:10px}
+.hero-art{flex:0 0 44%;margin-bottom:-6px}
+.hero-art img{filter:drop-shadow(0 10px 18px rgba(0,0,0,.18))}
+.hero-txt{flex:1;padding:34px 0 10px;text-align:right}
+.coroa{font-size:30px;line-height:1;margin-bottom:2px}
+.titulo{
+  color:var(--preto);
+  font-family:'Anton',sans-serif;text-transform:uppercase;
+  font-size:clamp(34px,5.4vw,62px);line-height:.9;letter-spacing:-.5px;
+}
+.titulo .robux{color:var(--vermelho);font-size:1.42em;display:block;line-height:.88}
+.hero-sub{
+  margin:16px 0 0 auto;max-width:44ch;font-size:15px;line-height:1.5;color:#333;
+}
+.selo-roblox{
+  display:inline-grid;place-items:center;width:54px;height:54px;border-radius:14px;
+  background:var(--preto);margin-top:14px;
+}
+.selo-roblox span{width:16px;height:16px;background:var(--branco);border-radius:3px;transform:rotate(8deg)}
+
+/* ================= FAIXA ================= */
+.faixa{background:var(--vermelho);color:var(--branco);padding:14px 0;margin-bottom:6px}
+.faixa p{
+  font-family:'Anton',sans-serif;text-transform:uppercase;text-align:center;
+  font-size:clamp(16px,2.4vw,24px);line-height:1.15;letter-spacing:.6px;
+}
+
+/* ================= STATUS ================= */
+.painel{
+  background:var(--preto);border-radius:22px;color:var(--branco);
+  padding:24px 20px;text-align:center;margin-top:6px;
+}
+.painel-rotulo{font-family:'Anton',sans-serif;font-size:15px;letter-spacing:.8px;color:#9C9C9C;margin-bottom:12px}
+.pilula{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:14px 30px;border-radius:999px;
+  border:3px solid #3A3A3A;background:#161616;
+  font-family:'Anton',sans-serif;font-size:26px;letter-spacing:1px;color:#8A8A8A;
+}
+.bolinha{width:16px;height:16px;border-radius:50%;background:#6A6A6A;flex:none}
+.painel[data-ao-vivo="sim"] .pilula{border-color:var(--verde);color:var(--verde);box-shadow:0 0 22px rgba(43,214,115,.35)}
+.painel[data-ao-vivo="sim"] .bolinha{background:var(--verde);animation:pulsa 1.6s ease-in-out infinite}
+@keyframes pulsa{0%,100%{opacity:1}50%{opacity:.3}}
+@media (prefers-reduced-motion:reduce){.bolinha{animation:none!important}}
+.painel-nota{margin-top:14px;font-size:14px;font-weight:600;line-height:1.5;color:#D8D8D8}
+
+/* ================= BOTÃO TIKTOK ================= */
+.botao{
+  display:flex;align-items:center;gap:16px;
+  margin:20px 0 0;padding:18px 20px;
+  background:var(--preto);border:4px solid var(--vermelho);border-radius:26px;
+  box-shadow:0 7px 0 var(--vermelho-escuro);
+  transition:transform .12s ease,box-shadow .12s ease;
+}
+.botao:active{transform:translateY(5px);box-shadow:0 2px 0 var(--vermelho-escuro)}
+.botao .tt-grande{width:58px;height:58px;flex:none}
+.botao-txt{flex:1;text-align:center;color:var(--branco)}
+.botao-chip{
+  display:inline-block;background:var(--vermelho);color:var(--branco);
+  font-family:'Anton',sans-serif;font-size:15px;letter-spacing:.6px;
+  padding:4px 16px;border-radius:999px;text-transform:uppercase;
+}
+.botao-grande{
+  font-family:'Anton',sans-serif;font-size:clamp(30px,7vw,52px);
+  line-height:1;letter-spacing:1px;margin-top:4px;
+}
+.botao-linha{font-size:11.5px;font-weight:700;letter-spacing:.4px;margin-top:7px;color:#CFCFCF}
+.seta{
+  width:58px;height:58px;border-radius:50%;background:var(--vermelho);
+  display:grid;place-items:center;flex:none;color:var(--branco);
+  font-size:26px;font-weight:700;
+}
+
+.link-grupo{
+  display:block;text-align:center;margin-top:14px;
+  font-size:13.5px;font-weight:600;color:#444;text-decoration:underline;
+}
+.escondido{display:none}
+
+/* ================= COMO GANHAR ================= */
+.card{background:var(--cinza);border-radius:22px;padding:26px 22px;margin-top:26px}
+.card-titulo{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.card-titulo h2{font-family:'Anton',sans-serif;font-size:24px;text-transform:uppercase;letter-spacing:.5px;color:var(--preto)}
+.passos{display:flex;gap:22px}
+.passo{flex:1;position:relative;padding-left:46px}
+.passo+.passo{border-left:1px solid #D6D6D6;padding-left:46px;margin-left:0}
+.passo .num{
+  position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;
+  background:var(--vermelho);color:var(--branco);display:grid;place-items:center;
+  font-family:'Anton',sans-serif;font-size:16px;
+}
+.passo .icone{font-size:24px;line-height:1;margin-bottom:8px}
+.passo h3{font-family:'Anton',sans-serif;font-size:17px;text-transform:uppercase;margin-bottom:5px;color:var(--preto)}
+.passo p{font-size:13.5px;line-height:1.55;color:#444}
+
+/* ================= PONTUAÇÃO ================= */
+.pontua{margin-top:22px;background:var(--branco);border-radius:16px;padding:18px 20px}
+.pontua h3{font-family:'Anton',sans-serif;font-size:17px;text-transform:uppercase;margin-bottom:12px;color:var(--preto)}
+.pontua ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 26px}
+.pontua li{font-size:13.5px;line-height:1.5;padding-left:16px;position:relative;color:#333}
+.pontua li::before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;background:var(--vermelho);border-radius:2px}
+.pontua li b{font-family:'Anton',sans-serif;font-weight:400;letter-spacing:.3px}
+.pontua-nota{margin-top:14px;font-size:12.5px;line-height:1.5;color:var(--cinza-texto)}
+
+/* ================= BUSCA ================= */
+.busca{
+  background:var(--preto);border-radius:22px;padding:30px 22px;margin-top:26px;
+  color:var(--branco);text-align:center;
+}
+.busca h2{
+  font-family:'Anton',sans-serif;font-size:clamp(26px,5vw,38px);
+  text-transform:uppercase;line-height:1;letter-spacing:.5px;color:var(--branco);
+}
+.busca .ajuda{margin-top:10px;font-size:14px;line-height:1.5;color:#B8B8B8;max-width:42ch;margin-left:auto;margin-right:auto}
+.busca-form{display:flex;gap:10px;margin-top:20px;max-width:470px;margin-left:auto;margin-right:auto}
+.busca input{
+  flex:1;min-width:0;padding:16px 16px;border-radius:14px;
+  border:3px solid #2E2E2E;background:#161616;color:var(--branco);
+  font-size:16px;font-family:inherit;font-weight:600;
+}
+.busca input::placeholder{color:#767676;font-weight:400}
+.busca input:focus{outline:none;border-color:var(--vermelho)}
+.busca button{
+  flex:none;padding:0 24px;border:none;border-radius:14px;
+  background:var(--vermelho);color:var(--branco);cursor:pointer;
+  font-family:'Anton',sans-serif;font-size:19px;letter-spacing:.5px;text-transform:uppercase;
+}
+.resultado{display:none;margin:20px auto 0;max-width:470px;background:#161616;border-radius:16px;padding:20px 18px}
+.resultado.aparece{display:block}
+.resultado .posicao{font-family:'Anton',sans-serif;font-size:44px;line-height:1;color:var(--vermelho)}
+.resultado .arroba{font-weight:700;font-size:16px;margin-top:6px;word-break:break-all}
+.resultado .pts{font-family:'Anton',sans-serif;font-size:24px;letter-spacing:.5px;margin-top:8px}
+.resultado .falta{margin-top:10px;font-size:13.5px;line-height:1.5;color:#B8B8B8}
+.resultado.nada .posicao{font-size:34px;color:#8A8A8A}
+.resultado.nada .falta{margin-top:8px}
+
+/* ================= RANKING ================= */
+.ranking{margin-top:26px}
+.linha{display:flex;align-items:center;gap:14px;background:var(--cinza);border-radius:14px;padding:15px 16px;margin-bottom:9px}
+.linha:first-child{background:var(--preto);color:var(--branco)}
+.medalha{font-size:26px;line-height:1;flex:none;width:34px;text-align:center}
+.colocacao{flex:1;min-width:0}
+.colocacao .lugar{font-family:'Anton',sans-serif;font-size:14px;letter-spacing:.5px;color:var(--vermelho);text-transform:uppercase}
+.linha:first-child .colocacao .lugar{color:#FF8A99}
+.colocacao .nome{font-weight:700;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px}
+.premio{
+  flex:none;font-family:'Anton',sans-serif;font-size:17px;letter-spacing:.5px;
+  background:var(--vermelho);color:var(--branco);padding:7px 13px;border-radius:999px;
+}
+.vazio{background:var(--cinza);border-radius:14px;padding:26px 18px;text-align:center;font-size:14px;line-height:1.6;color:var(--cinza-texto)}
+.atualizado{margin-top:10px;font-size:12px;color:var(--cinza-texto)}
+
+/* ============ RANKING DESTA SEMANA (pontos ao vivo, estilo pódio) ============ */
+.ranking-atual{margin-top:26px}
+.rk-podio{display:flex;align-items:flex-end;justify-content:center;gap:8px;margin-bottom:14px}
+.rk-card{
+  position:relative;flex:0 0 auto;width:29%;min-width:0;display:flex;flex-direction:column;align-items:center;
+  border-radius:18px;border:2px solid transparent;padding:18px 6px 12px;background:var(--preto);color:var(--branco);
+}
+.rk-card.rk-1{width:36%;order:2;margin-top:-14px;padding-top:26px;border-color:#F0B90B;box-shadow:0 0 26px rgba(240,185,11,.4)}
+.rk-card.rk-2{order:1;border-color:#B9C2CC;box-shadow:0 0 14px rgba(185,194,204,.25)}
+.rk-card.rk-3{order:3;border-color:#CD7F32;box-shadow:0 0 14px rgba(205,127,50,.25)}
+.rk-crown{position:absolute;top:-18px;font-size:22px}
+.rk-avatar-ring{
+  position:relative;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+  margin-bottom:10px;background:#2E2E2E;flex:none;
+}
+.rk-card.rk-1 .rk-avatar-ring{width:70px;height:70px;background:linear-gradient(135deg,#92740a,#F0B90B,#fde68a)}
+.rk-card.rk-2 .rk-avatar-ring{background:linear-gradient(135deg,#334155,#B9C2CC,#e2e8f0)}
+.rk-card.rk-3 .rk-avatar-ring{background:linear-gradient(135deg,#4a2800,#CD7F32,#f5cba7)}
+.rk-avatar{
+  width:calc(100% - 6px);height:calc(100% - 6px);border-radius:50%;background:var(--preto);
+  display:grid;place-items:center;font-family:'Anton',sans-serif;font-size:20px;color:var(--branco);
+}
+.rk-card.rk-1 .rk-avatar{font-size:26px}
+.rk-badge{
+  position:absolute;bottom:-9px;left:50%;transform:translateX(-50%);width:24px;height:24px;border-radius:50%;
+  background:var(--vermelho);color:var(--branco);font-family:'Anton',sans-serif;font-size:13px;
+  display:grid;place-items:center;border:2px solid var(--preto);
+}
+.rk-nome{font-weight:700;font-size:13px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-bottom:6px}
+.rk-card.rk-1 .rk-nome{font-size:14.5px}
+.rk-pts{
+  font-family:'Anton',sans-serif;font-size:15px;letter-spacing:.4px;background:var(--vermelho);color:var(--branco);
+  padding:4px 12px;border-radius:999px;
+}
+.rk-card.rk-1 .rk-pts{font-size:17px;background:#F0B90B;color:#1A1400}
+
+.rk-lista{display:flex;flex-direction:column;gap:8px}
+.rk-item{display:flex;align-items:center;gap:12px;background:var(--cinza);border-radius:14px;padding:10px 14px}
+.rk-item .rk-posicao{font-family:'Anton',sans-serif;font-size:15px;color:var(--cinza-texto);width:22px;text-align:center;flex:none}
+.rk-item .rk-avatar-sm{
+  width:34px;height:34px;border-radius:50%;background:var(--preto);color:var(--branco);flex:none;
+  display:grid;place-items:center;font-family:'Anton',sans-serif;font-size:14px;
+}
+.rk-item .rk-nome{flex:1;margin:0;font-weight:700;font-size:14.5px}
+.rk-item .rk-pts{font-size:13px;padding:4px 11px}
+
+
+/* o ranking de hoje usa o mesmo visual do da semana; a cor da pilula do
+   total do dia esta la embaixo, junto das duas barras de fonte. */
+
+
+/* ============ QUEM GANHOU ONTEM ============
+   O placar do dia virava a meia-noite e o esforco da noite anterior
+   sumia da tela. Quem entra de manha -- antes da live comecar -- via
+   so um placar vazio. Esta secao guarda o resultado do ultimo dia.
+
+   Ouro, e nao vermelho: o ouro ja quer dizer "primeiro lugar" no podio
+   logo abaixo. A crianca nao precisa aprender uma cor nova. */
+.campeao{margin-top:26px}
+.cp-box{
+  position:relative;overflow:hidden;text-align:center;
+  background:var(--preto);border-radius:20px;padding:18px 16px 16px;
+  border:2px solid #F0B90B;box-shadow:0 0 26px rgba(240,185,11,.22);
+}
+/* o claro de holofote atras da coroa */
+.cp-box::before{
+  content:"";position:absolute;top:-80px;left:50%;transform:translateX(-50%);
+  width:280px;height:180px;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(240,185,11,.34),transparent);
+}
+/* A PILULA DA DATA. Ela existe para a secao nunca mentir: quando a
+   ultima live foi anteontem, aqui esta escrito "terca - 14/09", e nao
+   "ontem". */
+.cp-quando{
+  position:relative;display:inline-flex;align-items:center;gap:7px;
+  background:rgba(240,185,11,.16);border:1px solid rgba(240,185,11,.5);color:#F0B90B;
+  border-radius:999px;padding:5px 13px;margin-bottom:16px;
+  font-family:'Anton',sans-serif;font-size:13px;letter-spacing:.7px;text-transform:uppercase;
+}
+.cp-times{position:relative;display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.cp-um{display:flex;flex-direction:column;align-items:center;min-width:0;max-width:190px}
+/* ganhador sozinho = destaque de verdade: foto e nome maiores */
+.cp-um.cp-solo{max-width:240px}
+.cp-um.cp-solo .cp-ring{width:104px;height:104px}
+.cp-um.cp-solo .rk-avatar{font-size:38px}
+.cp-um.cp-solo .cp-coroa{font-size:30px;top:-25px}
+.cp-um.cp-solo .cp-nome{font-size:19px}
+.cp-um.cp-solo .cp-pts{font-size:19px;padding:5px 17px}
+.cp-um.cp-solo .cp-det{font-size:13px}
+.cp-ring{width:84px;height:84px;margin-bottom:0;background:linear-gradient(135deg,#92740a,#F0B90B,#fde68a)}
+.cp-um .rk-avatar{font-size:30px}
+.cp-coroa{
+  position:absolute;top:-21px;left:50%;transform:translateX(-50%);
+  font-size:24px;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.55));
+}
+.cp-nome{
+  color:var(--branco);font-weight:800;font-size:16px;margin-top:13px;
+  max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.cp-pts{
+  font-family:'Anton',sans-serif;font-size:16px;letter-spacing:.4px;
+  background:#F0B90B;color:#1A1400;border-radius:999px;padding:4px 14px;margin-top:8px;
+}
+.cp-det{font-size:12px;line-height:1.5;color:#9A9A9A;font-weight:700;margin-top:9px}
+.cp-det b.v{color:#9BE15D}   /* check-in: o mesmo verde das barras */
+.cp-det b.r{color:#FFA3C0}   /* curtida: o mesmo rosa */
+.cp-resto{position:relative;margin-top:15px;font-size:12.5px;line-height:1.7;color:#8E8E8E;font-weight:700}
+.cp-resto b{color:#D8D8D8}
+.cp-nota{
+  position:relative;margin-top:13px;padding-top:12px;border-top:1px solid #242424;
+  font-size:12px;line-height:1.55;color:#7E7E7E;
+}
+.cp-nota b{color:#B8B8B8}
+.cp-nota a{color:#F0B90B;font-weight:700;text-decoration:underline}
+/* a lista do resto do dia fica FORA da caixa preta: as linhas sao
+   cinza-claro e dentro do preto elas sumiriam. */
+.cp-lista{margin-top:12px}
+@media (max-width:400px){
+  .cp-times{gap:10px}
+  .cp-ring{width:70px;height:70px}
+  .cp-um.cp-solo .cp-ring{width:88px;height:88px}
+  .cp-um.cp-solo .rk-avatar{font-size:32px}
+  .cp-um.cp-solo .cp-nome{font-size:17px}
+  .cp-um .rk-avatar{font-size:24px}
+  .cp-nome{font-size:14px}
+  .cp-pts{font-size:14px}
+}
+
+
+/* ============ BARRA DE CURTIDAS (estilo Duolingo) ============
+   O objetivo e a crianca deixar o site aberto e VER a barra encher
+   enquanto segura o coracao na live. Por isso a largura tem transicao
+   longa: o pulo de uma rajada de curtidas vira um deslize, nao um
+   solavanco. */
+.barra-box{
+  margin-top:18px;background:var(--preto);border-radius:18px;padding:16px 18px 18px;
+  border:2px solid #2A2A2A;
+}
+.barra-topo{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px}
+.barra-titulo{font-family:'Anton',sans-serif;font-size:15px;letter-spacing:.4px;color:var(--branco)}
+.barra-conta{font-family:'Anton',sans-serif;font-size:15px;color:#FF5A8A}
+.barra-conta b{color:var(--branco)}
+.barra-trilho{
+  position:relative;height:26px;border-radius:999px;background:#1C1C1C;
+  border:2px solid #2E2E2E;overflow:hidden;
+}
+.barra-cheia{
+  position:absolute;inset:0 auto 0 0;width:0%;border-radius:999px;
+  background:linear-gradient(90deg,#FF2D6F,#FF5A8A,#FFA3C0);
+  transition:width 1.2s cubic-bezier(.22,1,.36,1);
+}
+/* o brilho que corre por cima, so enquanto esta enchendo */
+.barra-cheia::after{
+  content:"";position:absolute;inset:0;border-radius:999px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);
+  transform:translateX(-100%);animation:barraBrilho 2.2s linear infinite;
+}
+@keyframes barraBrilho{to{transform:translateX(100%)}}
+.barra-marcos{display:flex;justify-content:space-between;margin-top:8px}
+.barra-marco{
+  font-size:11px;color:#6E6E6E;font-weight:700;position:relative;padding-top:10px;flex:1;text-align:center;
+}
+.barra-marco::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:6px;height:6px;border-radius:50%;background:#2E2E2E;
+}
+.barra-marco.batido{color:#FFA3C0}
+.barra-marco.batido::before{background:#FF2D6F;box-shadow:0 0 8px rgba(255,45,111,.8)}
+.barra-nota{margin-top:12px;font-size:13.5px;line-height:1.5;color:#B8B8B8}
+.barra-nota b{color:var(--branco)}
+.barra-ganhou{color:#4ade80}
+
+@media (max-width:520px){
+  .barra-topo{flex-direction:column;align-items:flex-start;gap:2px}
+  .barra-marco{font-size:10px}
+}
+
+
+/* ============ BARRINHA DE VIDRO DE CADA PESSOA NO RANKING ============
+   Cada um do ranking mostra o quanto ja encheu das 10.000 curtidas do
+   dia. E vidro fosco de proposito: fica por cima do card escuro sem
+   brigar com ele, e o brilho de dentro da a sensacao de profundidade
+   que a crianca associa a barra de progresso de joguinho. */
+.rk-glass{
+  position:relative;height:9px;border-radius:999px;overflow:hidden;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.18), inset 0 -1px 2px rgba(0,0,0,.35);
+}
+.rk-glass-fill{
+  position:absolute;inset:0 auto 0 0;width:0%;border-radius:999px;
+  background:linear-gradient(90deg,#FF2D6F,#FF5A8A,#FFA3C0);
+  box-shadow:0 0 10px rgba(255,45,111,.55);
+  transition:width 1.2s cubic-bezier(.22,1,.36,1);
+}
+/* o reflexo de vidro por cima da parte cheia */
+.rk-glass-fill::after{
+  content:"";position:absolute;inset:0 0 50% 0;border-radius:999px 999px 0 0;
+  background:linear-gradient(180deg,rgba(255,255,255,.35),transparent);
+}
+
+/* no podio a barra fica embaixo do nome, larga */
+.rk-card .rk-glass{width:100%;margin:8px 0 8px}
+.rk-card.rk-1 .rk-glass{height:11px}
+
+/* na lista a barra fica do lado do nome, ocupando o meio da linha */
+.rk-item .rk-meio{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.rk-item .rk-glass{width:100%}
+.rk-item .rk-nome{flex:none;width:auto}
+
+.rk-quanto{font-size:11.5px;color:#9A9A9A;font-weight:700}
+.rk-quanto b{color:#FFA3C0}
+.rk-quanto b.v{color:#9BE15D}   /* o numero de check-ins segue a cor da barra verde */
+.rk-card .rk-quanto{margin-top:-2px}
+
+
+/* ============ AS DUAS FONTES DE PONTO (check-in e curtida) ============
+   O placar antigo mostrava um numero grande de pontos DA SEMANA com uma
+   barra de curtidas DE HOJE embaixo -- duas medidas diferentes na mesma
+   linha, e a crianca nao tinha como saber de onde tinha vindo o ponto.
+
+   Agora cada perfil mostra as duas barras, uma em cima da outra, com o
+   icone de um lado e o ponto do outro:
+
+        [OK]  ==========------   30 pts
+        [<3]  =======---------    7 pts
+
+   Verde e o check-in, rosa e a curtida. A crianca aprende de onde vem
+   o ponto so de olhar a cor. */
+.sm-passada{margin-top:16px;padding-top:14px;border-top:1px dashed rgba(255,255,255,.14)}
+.sm-passada h3{margin:0 0 10px;font-size:14px;color:var(--cinza-texto);font-weight:800}
+/* Aqui a barra nao leva numero dentro: ele seria o MESMO da pilula da
+   direita (na semana so existe uma fonte de ponto). Sem o numero ela
+   usa a linha inteira e fica mais facil de comparar. */
+.rk-semana .rk-fonte-chk .rk-glass{margin-right:2px}
+.rk-fontes{display:flex;flex-direction:column;gap:6px;width:100%;margin:8px 0 7px}
+.rk-fonte{display:flex;align-items:center;gap:7px}
+.rk-fonte-ico{
+  flex:none;width:19px;height:19px;border-radius:7px;display:grid;place-items:center;
+  font-size:10.5px;line-height:1;
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.rk-fonte .rk-glass{flex:1;min-width:0;margin:0}
+.rk-fonte-pts{
+  flex:none;font-family:'Anton',sans-serif;font-size:12px;letter-spacing:.3px;
+  min-width:30px;text-align:right;color:#8E8E8E;
+}
+/* o numero da linha rosa agora e a CONTAGEM de curtidas ("8.412"), nao
+   um ponto de um digito -- precisa de mais espaco que o da verde */
+.rk-fonte-lk .rk-fonte-pts{min-width:46px;font-size:11px}
+.rk-fonte.tem .rk-fonte-pts{color:var(--branco)}
+
+/* CHECK-IN: verde. E a mesma familia de verde do Duolingo de proposito --
+   a crianca ja leu essa cor como "voce acertou" em outro lugar. */
+.rk-fonte-chk .rk-glass-fill{
+  background:linear-gradient(90deg,#3FA400,#58CC02,#9BE15D);
+  box-shadow:0 0 10px rgba(88,204,2,.55);
+}
+.rk-fonte-chk.tem .rk-fonte-ico{background:rgba(88,204,2,.22);border-color:rgba(88,204,2,.55)}
+.rk-fonte-chk.tem .rk-fonte-pts{color:#9BE15D}
+
+/* CURTIDA: o mesmo rosa que a barra grande da pagina ja usa */
+.rk-fonte-lk .rk-glass-fill{
+  background:linear-gradient(90deg,#FF2D6F,#FF5A8A,#FFA3C0);
+  box-shadow:0 0 10px rgba(255,45,111,.55);
+}
+.rk-fonte-lk.tem .rk-fonte-ico{background:rgba(255,45,111,.22);border-color:rgba(255,45,111,.55)}
+.rk-fonte-lk.tem .rk-fonte-pts{color:#FFA3C0}
+
+/* a barra CHEIA ganha um pulsinho -- é o "voce fechou" do joguinho.
+   Pequeno de proposito: sao ate 20 barras na tela ao mesmo tempo. */
+.rk-fonte.cheia .rk-glass{animation:fonteCheia 2.4s ease-in-out infinite}
+@keyframes fonteCheia{
+  0%,100%{box-shadow:inset 0 1px 1px rgba(255,255,255,.18), inset 0 -1px 2px rgba(0,0,0,.35)}
+  50%    {box-shadow:inset 0 1px 1px rgba(255,255,255,.18), inset 0 -1px 2px rgba(0,0,0,.35), 0 0 9px rgba(255,255,255,.4)}
+}
+@media (prefers-reduced-motion:reduce){
+  .rk-fonte.cheia .rk-glass{animation:none}
+}
+
+/* ============ A FOTO DO PERFIL ============
+   A bolinha com a LETRA continua existindo por baixo. A foto entra por
+   cima dela; se o endereco nao carregar -- e ele tem prazo de validade,
+   morre em ~24h -- o `onerror` apaga a imagem e a letra reaparece
+   sozinha. Nunca fica um quadrado cinza quebrado na tela. */
+.rk-foto{
+  position:absolute;inset:3px;width:auto;height:auto;
+  border-radius:50%;object-fit:cover;display:block;
+  background:var(--preto);
+}
+.rk-avatar-sm{position:relative;overflow:hidden}
+.rk-avatar-sm .rk-foto{inset:0;border-radius:50%}
+
+/* a legenda das duas cores, logo abaixo do titulo */
+.rk-legenda{display:flex;gap:8px;flex-wrap:wrap;margin:-4px 0 14px}
+.rk-leg{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.09);
+  border-radius:999px;padding:5px 12px 5px 9px;font-size:12.5px;font-weight:700;color:#3A3A3A;
+}
+.rk-leg b{font-size:13px;line-height:1}
+.rk-leg i{font-style:normal;font-weight:700;font-size:11.5px}
+.rk-leg-chk i{color:#2F8B00}
+.rk-leg-lk  i{color:#C4134F}
+@media (max-width:400px){
+  .rk-leg{font-size:11.5px;padding:4px 10px 4px 8px}
+  .rk-leg i{font-size:10.5px}
+}
+
+/* ---- no PODIO a barra desce para a linha de baixo ----
+   O card do podio tem menos de 110px no celular. Com icone + barra +
+   numero na mesma linha sobravam uns 35px para a barra, e uma barra de
+   35px nao mostra progresso nenhum -- vira uma pilulinha. Entao ali o
+   icone e o numero ficam em cima e a barra pega a largura inteira. */
+.rk-card .rk-fonte{flex-wrap:wrap;row-gap:3px}
+.rk-card .rk-fonte-ico{order:1;width:18px;height:18px}
+.rk-card .rk-fonte-pts{order:2;flex:1;text-align:left;min-width:0;margin-left:1px}
+.rk-card .rk-fonte .rk-glass{order:3;flex:0 0 100%}
+.rk-card .rk-fontes{gap:9px}
+.rk-card.rk-1 .rk-fontes{gap:10px}
+.rk-card.rk-1 .rk-fonte .rk-glass{height:11px}
+.rk-card.rk-1 .rk-fonte-ico{width:20px;height:20px;font-size:11px}
+.rk-card.rk-1 .rk-fonte-pts{font-size:13px}
+
+/* o total do dia, na pilula grande */
+.rk-curtidas .rk-pts{background:#7B2CFF}
+.cp-lista .rk-pts{background:#7B2CFF}
+.rk-curtidas .rk-card.rk-1 .rk-pts{background:#F0B90B;color:#1A1400}
+
+/* ---- o mesmo vidro, virado para fundo CLARO ----
+   As linhas da lista sao cinza claro, e o vidro do podio (branco sobre
+   preto) simplesmente desaparecia nelas: trilho invisivel e numero em
+   verde-claro ilegivel. Aqui o vidro e escuro sobre claro. */
+.rk-item .rk-glass{
+  background:rgba(0,0,0,.07);
+  border-color:rgba(0,0,0,.10);
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.13), inset 0 -1px 1px rgba(255,255,255,.55);
+}
+.rk-item .rk-fonte-ico{
+  background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.10);
+}
+.rk-item .rk-fonte-pts{color:#9A9A9A}
+.rk-item .rk-fonte-chk.tem .rk-fonte-pts{color:#2F8B00}
+.rk-item .rk-fonte-lk.tem  .rk-fonte-pts{color:#C4134F}
+.rk-item .rk-fonte-chk.tem .rk-fonte-ico{background:rgba(88,204,2,.18);border-color:rgba(63,164,0,.45)}
+.rk-item .rk-fonte-lk.tem  .rk-fonte-ico{background:rgba(255,45,111,.14);border-color:rgba(196,19,79,.40)}
+/* no claro o brilho de fora nao aparece; o pulso vai por dentro */
+.rk-item .rk-fonte.cheia .rk-glass{animation:fonteCheiaClaro 2.4s ease-in-out infinite}
+@keyframes fonteCheiaClaro{
+  0%,100%{border-color:rgba(0,0,0,.10)}
+  50%    {border-color:rgba(0,0,0,.28)}
+}
+
+/* o resumo em palavras: no podio ele e curto, senao empurra o card */
+.rk-card .rk-quanto{font-size:10.5px;line-height:1.35;text-align:center}
+
+/* celular estreito: o icone sai e fica so a barra com o numero, senao
+   nao sobra largura nenhuma para a barra crescer */
+@media (max-width:400px){
+  .rk-item .rk-fonte-ico{display:none}
+  .rk-item .rk-fonte-pts{min-width:26px;font-size:11px}
+  .rk-card .rk-quanto{font-size:9.5px}
+  .rk-card{padding-left:5px;padding-right:5px}
+  .rk-podio{gap:5px}
+}
+
+.de-onde{
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px;
+}
+.de-onde span{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-radius:999px;padding:6px 14px;font-size:13px;color:#CFCFCF;
+}
+.de-onde b{font-family:'Anton',sans-serif;font-weight:400;color:var(--branco);font-size:15px;margin-right:3px}
+
+/* ================= REGRAS ================= */
+.regras{margin-top:26px}
+.regras ul{list-style:none;columns:2;column-gap:34px}
+.regras li{font-size:13.5px;line-height:1.6;margin-bottom:11px;padding-left:18px;position:relative;break-inside:avoid;color:#2B2B2B}
+.regras li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;background:var(--vermelho);border-radius:2px}
+
+/* ================= RODAPÉ ================= */
+footer{background:var(--preto);color:#7E7E7E;margin-top:32px;padding:20px 0 30px;text-align:center;font-size:12px;line-height:1.7}
+.lema{font-family:'Anton',sans-serif;color:var(--branco);font-size:17px;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:10px}
+
+/* ===== trava o tema claro mesmo com o celular no modo escuro ===== */
+@media (prefers-color-scheme:dark){
+  html,body,main{background:var(--branco);color:var(--preto)}
+  .hero{background:var(--branco)}
+  .card{background:var(--cinza)}
+  .pontua{background:var(--branco)}
+  .card-titulo h2,.passo h3,.pontua h3,.titulo{color:var(--preto)}
+  .passo p{color:#444}
+  .regras li{color:#2B2B2B}
+  .hero-sub{color:#333}
+  .linha{background:var(--cinza);color:var(--preto)}
+  .linha:first-child{background:var(--preto);color:var(--branco)}
+  .vazio{background:var(--cinza);color:var(--cinza-texto)}
+}
+
+/* ================= MOBILE ================= */
+@media (max-width:760px){
+  .topo .wrap{flex-wrap:wrap;gap:10px;justify-content:space-between}
+  .logo{height:44px}
+  .nav{order:3;width:100%;margin:0;justify-content:center;gap:6px}
+  .nav a{font-size:12.5px}
+  .aviso-topo p{font-size:10.5px;max-width:110px}
+  .aviso-topo .tt{width:34px;height:34px}
+  .hero .wrap{flex-direction:column;align-items:stretch;gap:0}
+  .hero-art{flex:none;margin:0 auto;max-width:330px}
+  .hero-txt{text-align:center;padding:18px 0 4px}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .titulo{font-size:clamp(32px,11vw,48px)}
+  .botao{flex-direction:column;gap:10px;padding:18px 16px}
+  .botao .tt-grande{width:46px;height:46px}
+  .passos{flex-direction:column;gap:0}
+  .passo{padding-left:44px;padding-bottom:16px}
+  .passo+.passo{border-left:none;border-top:1px solid #D6D6D6;padding-top:16px}
+  .passo .num{top:16px}
+  .passo:first-child .num{top:0}
+  .pontua ul{grid-template-columns:1fr}
+  .busca-form{flex-direction:column}
+  .busca button{padding:15px}
+  .regras ul{columns:1}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= TOPO ================= -->
+<header class="topo">
+  <div class="wrap">
+    <img class="logo" src="data:image/jpeg;base64,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" alt="Gêmeos da Calistenia">
+    <nav class="nav">
+      <a href="#live">LIVE</a><span>•</span>
+      <a href="#como">COMO GANHAR</a><span>•</span>
+      <a href="#curtidas-hoje">RANKING</a><span>•</span>
+      <a href="#regras">REGRAS</a>
+    </nav>
+    <div class="aviso-topo">
+      <span class="tt" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24"><path fill="#0A0A0A" d="M16.6 5.8a4.7 4.7 0 0 1-1.1-3h-2.9v11.6a2.7 2.7 0 1 1-2-2.6V8.7a5.7 5.7 0 1 0 4.9 5.6V9.1a7.5 7.5 0 0 0 4.3 1.4V7.6a4.6 4.6 0 0 1-3.2-1.8Z"/></svg>
+      </span>
+      <p>Siga o grupo e não perca a live!</p>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero" id="live">
+  <div class="wrap">
+    <div class="hero-art">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAFkAjADASIAAhEBAxEB/8QAHQAAAAcBAQEAAAAAAAAAAAAAAAIDBAUGBwEICf/EAE8QAAIBAwIDBQQGBwUGBQMDBQECAwAEEQUhBhIxBxNBUWEicYGRFCMyQqHRCBVSYpKxwUNyguHwFiQzU5PxNERUY6IXc7IlVcI1g4SUs//EABsBAAEFAQEAAAAAAAAAAAAAAAABAgMEBQYH/8QANhEAAgIBAwIDBgQGAwADAAAAAAECAxEEEiEFMRNBUQYiMmFxkRSBobEVI8HR4fAzQlIWJPH/2gAMAwEAAhEDEQA/APLtChQxmpCMFL2V5LY3MdxC3LJGcg/0PpTjS9B1XW2ddM067vSn2+4iL8vvx0qYHZlxmIJJzw1qSxxqXYtHg4HXbqaRpNYY+uyVclODw1ymTFvxzp05KziSA52YrkH5dKVm4y0mCMskzTNjZUU7/Os7ljeNuV1ZD5MCD+NEG1Z76dU3nk7eHt/1NV7Wot+uOf3x+hLa7r9zrT4b6qBTlYlO3vPmaiULRsGU4IINdzmhkVdjXGK2xXByGq1t+ptd90m5PzFbq+ub6QSXMzSMM4yem+dqKr0mfQUNxTopRWEQWTlZJzm8t+bH9pe3Fk5ktpmhZhykr4jypuyIMZIHvNd0+2u9RvYLK0ha4uLiRYookGWd2OAB7ya9tcA9jPD/AAPwxZ2l/pWm6lq3L3l3dzwiUmU9VXP3V6DzxnxqnrddXpY75LlkkFZYlXu4XZeSyeJoLOa6blt4ZZj5RoW/kKlbTgviS+/8NoWpSevcED8a9tz6dBASLa2trceUMKJ/IUxlsGk2Yk+81yeo9sHF4rrX5s0Kul55lI8lW3ZFxhOoeXTktQTj6+ZV/CpfT+xDWrpSZ76ygAONgz5+VeitQ0gbAKMgZG3iaWt9HSGJU5egrJv9stVj3cL8v75L9fSKfPLMCh7CVQ/7zq8zf/ZhA/nUzY9iuhLjvhfXB/el5f5VtX6rQ/dFLRaWin7IrNt9qtZNc2P8uP2LC6ZRHtEyu17IeG4scuixOf8A3GZ6ndP7ONItmBi0iyjPmIR/WtDis0H3RTlLdR4Vl3dc1M/im3+bJFpqo9kvsVW04TgiGEgiT+7GB/SpBOGo1xlasMca+VdYhASQcDyrOlrLJPuPWFwkQ0egWy7sFCjck1jfav2z2uh3EuicNwxS3ERKyz9VRvLPiavfbRxqOCuDrm5gcC+u/wDdrYjqGYbt8Bk+/FeRYpEnYmRyXJySfE12vsp0WOsT1WpWYp4S9X6/RGb1DWOr3K+7/Qe6vxBxBrLrPf3t06ufZ3IQe7FM2s72Mc0gkwRnm5iQR509FwFhaFGZD1PKdmx4j1p7purmzQwyIksTbhT5+a+Xur0qFUILbBJIwXOUnls5pumy3kfNZ6g8cq9Y2bBz7/XzqUXVeNeHbdLuz1W7MBbkyHJ5GH3WHgar93cJFciezflVycY+43kR5VM2XE0lxYzQSNy98oSYHzH2XHqDTbNPVYsTin9UOjbOPZlm0X9I/jTS5I0vXS8ReocbmtY4S/SX4c1QLDq9uLCctnPQZrz5Pa2epQxzOqxPITHJj+zlHj7j1plLormOSCXlSa3YBmPQqehrE1fsv0/UcqG1+q4/TsWK9dZH4uT3To3FOgcSxK1hqMEhx9nmAJp+9q8J9pdj0PhXgWG61Xhm5km02+mh7og4DbHJx099bJ2d/pOX9h3dlxGolhGwl6qff5Vx/U/Y62tOdL3L5d/t5/kX6dXCfCeH8+33/uemE9k5FPILllxuageHuKdH4utFutJuUckZMQbJHuqUUkHFcevE01mOxPZHPDJqN47mMxyKrKwwyncGojUNBNtma1BeLqU6lPzFOLeUqetScNxnFd90Pr8oJRmzLvo9ColRRCKnNc01Vja8gXpu6KOvw86oa9oXCUsndDiPTA+SOVpsEHxBz0Nd/ptVC+O6LM+UHEn6A3pKO4huI1lgmjmjbcPGwYH4ijg1ZGilc61wHNGUUgHOWurnmCqCSegHjTu006a8PsLhB1c9P86nrXSre0hOUy5GC5+1j+lU9Vrq6Fh8v0/uSQrciDsrQ3MhRVMjKcMqnZT+83Qe7rU41tZWyRiRI2dDzDAz7XnTDWZp7fTJbbSJYLOcIRC7xc6IfMr4/wA6829pPFPbVpLSd/drJZb/AF2kRgDHqN2FcxZ1OWrk6Y2RUvR8L8vX7/ki8qXFblF4PS93q0FqheaaG3QeMrhR+NVLWO0/hPTuYXXEOngj7qSc5/CvFmo8WavqMjG+vLmaTx7+RmI+BqLfUJXbeaVR4lfD4Un/AMWdy/8AsXN/RJfvkb+J2/Cj1/dduXBYYhNSnlx4x2zGoPV+1fgTXY2stRjku7SRCGW4syRn08RtncV5t06zmvD9TfrKRvylsN8jRtQtNQhAzpucffVmPNSw9i9BB7lKWfXK/sP/AIjbjGETvHGkaFo95+s+DNYNxZs3t2bhlntj6H7y/iKm+BO37iDh4C2uZW1OzHW3uXPOo80fqPjWZSX0kcnJcLcwH91zkfA0/wBN4XTVZBJZ6tA0hOeSRSrj4eNb8unVWUqnUfzEvOWM/dY+/crO1qW6HH0LD2i6/Y6nxvLxLoSSxWupRpLKkiY5ZuXEiMOh3APrnNONF7R9d4Png1DRb+SOHnxNZyMWhY+RU+B36VB6lw9c2MMsZ1G0nRRmQROQc79VNRi289/ad1bzI6jZlkOCh88+VSQ0dSpWnkt0Usc88COyWdy7ntbs6490/tC0JdStB3M8ZCXNsTkwv/VT4GrZy+leP+xHim94C40httSSWGCf6i4TGQ0bfZceeDg5HhmvWGhcUaFxDHzabqkFwwOCmcMD7q8r6/0D8FqG6l7j5Xy+Rq6e52Qz5okO7zXGjIp6sQIzkYpKXC5wc1gT0qUcskU8vA0IIoBuWg7+FItJVGUdr4J0sjoTAjlbcHwp7aXJuVaN25pkGc/tr5+/8qhu8pWCZ4ZEmTqjDPuP+ePma3OhdYt0OoU4vjzXqv8Ae3+SK/TKcWibU5pQDNKPGskazxfZYAkf1ogFe41XRtgpw7M51pp4YBR8UUbUYb1IICu0KFIB2uihXQKBT5ipG0jqqhmZjgKBkk+QFbh2Z/ox6zxD3Wp8WGbR9ObDLaAYupx6j+zB8zv5Ctt7LOwTh7s2SO+mCatruBzX0yezCfKFT9n+8fa91WXj3tE4a7N9P+ma/e8ksgJhs4sNcXB/dXy/eOAPOgQ7o3B+k8M6UunaTZQWFlCuSsfsj1Z2PU+prEO1Ht60vRJ5dN4R7nUr5CVe/O9vEf3P2yPPp76zntP7eOJO0Z5LJXOlaIThbC3c/WD/AN1+rn02HoetZmd6AHGq6ne63fS3+o3MlzdTHmeR+pPw2HwpmF9aPtXcUYAJy13FdxQoAAUV3u81wGl4lLEBVLMdgB1J8qVCG7/oldnn624mu+L7yHmtNIHdWvMNmuXG5H9xD83Xyr1JfbA4FQ/ZXwWvAPZ/pGhlQLiOHvrsj707+0/vwTy+5RU1egcpOQB5k1wvtBqPFeF2Rp6OOGQc6Ak7UktuCOY4A6ZNLXE0athAXPmdhTK9nZyqkj2PaPx6V57bNRy3ydBXFvCG80TST7coVck7/Ku90o6sKbROWZ3z9o/ypbJqhN8lzDFVVB45o45MUgKODUbGtDhSg86VjMZOGLCmoNHU43phHKOR+ywoPZdsnwOKaSsTIUVSQu7H0pMvv1pAXCpBJMzexln6+A/7VJHl5wNjW0eav0meIv1nxZa6JE/Mmmw88gB/tZMH8FC/OshiKsMN7JHjjcfmK9jHsz4Y4mR77XdCsru8uCZJJm51kOemWVh0GB08Kr+q/o18EXas1qNVsHPTubkOo+DL/WvS+k+1Gg0mnhppJrasN4ys+b757/IxdV0+6djmsPJ5ZZzG2M9Nxg/yorXGNicqd/8AOtw1n9GC6jDHSuI4nHgl7blD/EvMKo+s9hfHOjqzjSRqES/fsZVl/wDiPa/Cum03X+n6j/jtX58fvgoT0d0PiiyhmYljv9rr+dLpMUbm8GG9PV4WvEtjPdSQ2h5ygimJD5HXI8PjRJdFvUjLCEyoPvRHmH4VsZ8yqGW+IjkTOzqGI/eG38qXuNVM1sGZssYu7J88HaoVmeNuVgVIyMEYoocsoTmwPE0oE5ZST6rLJAqBhLyxgk45cHOamNR4IJZEsLuK+uAuJIrYErH/AIuhNVqyuxAFCKGx4v0+VT1pqslw6xXeoy2tudiIUOceijr8TQAjwrxprXZ/rPeWNw4WN8PDzYDe7yNew+yrtU0vtK0tSJFj1CP2ZEbYk+RH9a8h8Qw8NRoP1b9JlcD2pLkheb3KuT86ZcE8WXnB/EUOpWjtEgYLKgP2kz/TrXO9b6HVrYOyC99fr8n/AEfkXtLqXFqE37v7f76H0GKchwdiKPHMV2qG4S4ij4m0O3vCymUgKxB6nGQfiKlGHIa8ssTqlmJoTg03GXck4JRIhVuhrEu0zsF0rWOLU1+Em3t7o5voI1A55PCQeXN0b1APjWvQz8pG9LXyJdWjK/QjB+P+eD8K6vovWPDlGUvLv9PP7dyjbS+yKHw/w9p3DlgllplstvAv3QScnzOalaKhVdnKqRscnFKey4yjBv7pzXp/0Mt/M4oyceJqf0rQg4E10NvBPzproliJH7+ToOlT7zhRtsBWFrOqKM3XB8Lu/n/gsV0trLFgI4h7IAA6AdB7qYXl3sQDRLi88AaZOxfJJrlNd1HK2wL9NHmxpdSF81U9fsHuQSu5q2yIW2A3NUntC7QdE7PbFptQdJbsj6u3B8fX8q5OVN11yVay2a9UoxXJn/FXZraatayzX1pbxqoJ+kOQhX15q88cS6PBot80VtfxXcYJwyn2h76s3F3apxJ2gXkg70wWq5wgOFQfyql3FhOqmSRsg/fP3q9M6F07V6WGdRPv/wBfT/fkZGu1NNvEI8+onFcshDBiCNwQelTVrxDdMvI8qkgbMcq3zFVogodjSsVwVII2NdEZhOajeXV/CVZ1kj8nOcfE71CRXM1jNlDjB6ZqTGrTXCBJJSwHQOAQPwpCZO8BPcxOPNdjQKPZdabVIMXMnOQMB2+2nvPiKjrC8exuhKMkdGUHqKaEIr+yWjYefSuMWjbf/vQCLnZcUfQ/qZFWbkKzQSH7SYOdveCQRUdY8Yahw3xHJqGk3MkQEnMU5vZcHqDVeeVsIQfs9PcfCuGCTuxM2wJ2z1NR2VQsi4TWUx0Jyg90Xhnuvs14+HGPCtrq8b/W45Jl9fX1B2q5JcR3I8Fb8K8zfoq64O81fQ5X9hlWdFz8Dj8K9DRhkAJbJGxPrXi3WdN+B1k6I/DnhfJ8nRVJXVqfZsfywstNpAQd6dW92GHJJ86NPAGXKVk2VRkt0GEZOLxIjxSkT+1yE4DDlPxpNwVaiuNqqwk4vJYwmizaFed5b90/VPD0/wC+RTuaHu2yPsnpVe0eYx3gOdnGfn1/EfjVoXEsfKfhXrPsr1NyqVU/Lj+xg66nbNtDUCjBaOFx1GKGMV3GTOC8tGWMtRlG+9LDGOlACfcjHXegFx4UrQpBTzR2r/pR2Wk99pHAhiv7wZV9VdeaCI/+0P7Q/vH2f71eYdX1nUdf1CbUdVvbi9vJzzSTzuWdvifDyA2FM64adgbkFAmhQoEBQpRLeR4jMV5YhtznpnyHmaKxGMAbfjSJj5Vyik5LGTm9CudK1Hs+7Btd4s7u/wBY7zRtKbDBpE+vmH7iHoP3m+ANAwzzR9D1PiHUI9P0mymvbuQ+zFEuT7z5D1O1eluxf9G+DTtYtNX4pmW8urRhcLaQn6mJwcrzH75zg4GBt41e+FOEtD4L08WOiWEdtGQO8k+1JMfN26n+XkK0TRYRbaeJM4af2j7vD86p6/UKilzZLVHc8D67uRErBNz51AahcFup3qRunBOKg71iXOK8r6tqJTbbZv6OpIRjHO+TTK9kHK8i9WJx/IU7L9zA7nqBt76j7pgWRM7D+QrnbnwomvVHMshY1CqB5ClQKQaZIz7TAVxLxHXmTmkGcZRSaquLfJPgdgYoZwd6bmWXIAhfB6k4GPxrjPKUz9UjeTP+VIotjWh2GAo/OAKZd5y8xNzCPLIO3voq3kJDK15Bzg7co2/nR4bYxodTMRGSpAPQEjO9MdXYJapbL1mdYgB5dT+ANK5keaEC6hKEnICbt7t6b3lzbSavDCZ4VeGJpeRnAJLHAx8Aamqhhp+nIYJW0yq4O1KTyrFEzscKoJJ8gKqev8fafwvyi/DqH2RlGQ58gfP0qv2/brwjeajDp0t3PbyTHk55oGVEYnGGJ6e/pVmvpGtsj4sam4+qRXndXGWHJJklwh2q6BxvqEtjprXKTopdVnj5e9QHdl/I71McXalFo+h3eoMQvcxswPrjb8a7ofBnD+hXs9/pul21rcz7PJGMZHUgeQ91U3tv1UQ6HBp6NvdzAH+6o5j/AEq9p9NptX1GurSRag2u/f5jXZOqmUrHyl5foZ72a8Pw8Ta5czajGtxDbRczLJ7QeWQk7/DNafL2I8I39vn9XSWsx/tLWZoyP5j8Kyfgaw42TUbO50ZAmn303fSSHBQKDynn8egOB616ds1xEufKtz2r6hqNNq1LT3YT8ot8Y45/PJU0MISoxOHPq13z6GFcQfo8TKWbStWS6UD/AIOoxgn3B1/Ksn1jgX9V35sb+2msJ+fkEkbd5Fnz93xr19xFrNloWnT6hfzCG2hGXcgnGTgbDrvWA9qWrw6xqOmwacyyJcIbnmUfb5vZT+taPsv13qGrsVeoW6HPvYx2We6K+v0dEIOcOH6GI3UUthO8DqUkUkbgj4iku8fIBzzHxr2xNwFoutaJaadrGnWl+sECRAzx5ZcKB7LjDD4Gs24o/Re0y4LTcOalNp8hyRBdAzQ+4OPbX4hqv6P200VstlycH691+nP6fmVrel2x5jyYRpEFmSe+MjE9eXYAe8031c2S3GLReVfIvzE+/wAKmeLOz3ijgp2Gq6XMLZWx9KhPeQN/jXYe44PpVZlnebAKoqjoFArq6b67ob6pJp+a5M+UJReJLB65/R61Ge44ChkkkbaLu/4WIBrZoJPpVosp+10b31jvYTY/Quziy5yF7xA2T6kn+taxpc/JmMnZhXi3ULIvqFsf+rk/3OjnBuqMvNJfsKhuViKcpMHjZCeoIpjO/JJSRuOVhg+NUKtQ6m0RurcjKOLuxSbiTim81N+Jr22sbthMtvGCxQke0Bk4Azn50fQ+wiz0vUILqHijXkWFg7xpIE73fZcg7AnA8a098yBD6Y/E03vLr6GEAOGwZD/IfiT8q9ds6iqOjQ1b+LZHH1aS/wAmVXTKzUuperJ1buO2jEYYHl6keJ8aQm1Mt0OBVaGpF/Gji7yOteW2dVta2m/HQpE0LvnbrTmItKeVRkmoW2lyc0XV9cFjaPFE2JHGCfIeVFWrbWZCS07ztiM+0Ljyy4G4duNQDh5uVgh9223x2FeJuKNf1fjTVptTvpGkdmPKC2FjHkM1rn6SmvSSrp+noSI2bcA+CqP6tmsOijVhmVgPTqTXo/svo4qj8VNe9Lt8l/kyOoz2y8GPbz+bHumi3ilzf3CrFHuIITnnPqRsB+NLanxDHdTM6xBzjC8w2UeSjwFQ8/TlQYWm9dWZY4muDNvsM+AFIZpxDauyhmKxq3QucZqasOD7/UQDa2N7dZ6GOPlX5mmznGCzN4XzHRi5PCWSvo5B64pfvW2OSD5itAsOybXivePYWtsOv1snOw+Ao0XDcFtq8Ol61Es8AljkYx+wShOCAfCqkeo6ebca5qTSzhckz01kcOSwjOJnLnf50pb20939VDDLM3gI0LH8K9g6X2Q8H6aivBw9ppbGzTqZz/8AMkVbLDSrewiEdvGkCD7sKCNfkoFcfqPbyiP/ABVN/Vpftk0o9Gl/2kjxrpvZnxjqhH0fhfV5F68xtmUY95wKnf8A6IdoF6V//Qlt08O/uokx8ObNev4o0xgjP97f+dKCNPBVGPIVk2+3eqf/AB1xX1y/6olXSq/Ns869l3ZfxdwDxTb6zfpYpZ8phn7q5DMFbYHA64OK9DvLLFIwCR7qGBxkk+OfwppqkaXNpc24ILhDt5EjajWV6t/p9ndA/bVSf8Q/Ouc6j1O7qE/HuSUu3H3X9S/VRGqKjHsSMVwZIwSkYbxIWl4rx09kgEUygO7D40s2xrMc5Y3JhKCzgcyNFLucqfnRe4DDCuhPvxTcNXGcg9aN6fLQ1Qa7MWiLW0y8ylSjbE9MHH9QPnVstZgwB6A71Tw7yq0YY4YFasGi3P0qzjkY+2Njn/Xvro+gapwsxEpa6vMdzJeVctzDxrgWjqeZMGugYr2DSXeLUpGBJYYUAUau9KG1WRAUMUM0KAPl7XetK2ljdX8nJawPKfNRsPeelWnSeCEQiTUpec/8qM7fE/lUdl8K/iNbpnQdZ1GWKIcer4X3/tllXtNOu9Rl7q1heVvEgbD3noKmZtLsOHI1fUmW8vWGUtkOEHqx8qnNb4htNDgNhpscQnGxCgcsXv8AM+nzqnWenajxBqaW1pBc399cN7Mcal3c+eP69BUUHO3l8R/VmprqND0d+DBq29d2/gj9F5v68L0zwJ3d9Pfy95Mw22VVGFQeQHgKsHBXZ5xDx7dmHRrItChxLdynkgi97eJ9Bk+la72f/o0pAseocaSiR9mXTLd9h6SOOv8AdX5mtwsbO20+0js7K2itbaEcscMKBEQeQAq1GOFhHLW2Ssm5zeWyi9n3Ydw5wR3d5dKur6uu/wBJnT6uI/8Atodh7zk+6tCdckk71zOKHMKUYCG2a4uI4U6yMFFW2UlWMagCNFCj1qL4cgV7iW5YbQpt/eP+WalJwFTGdzuTXJ+0lrk41p9uS9o492R91OV5t/Col37x8KGY+QGTVI1Dtn0DTtSutN143GlXVvI0cisvOoIJx7Q3wRgjbxqocT/pH6PYxtBoimcn74U4+PnXGX9L1t1ijGtv9vv2Nqq6qMc7kavrd0lnahp544F51Ug+0Rk9Segqm3nF2iWUsjXOqFwvshQ+M/Lzrz3xP2wa7rxbnlkVCdlJ5QPhVHudU1G8YtLcSkHyOBWtpPY2ya3aiWPoNn1eFfFayemNT7Z+H9NZmhVWbzPX5neqjqn6Rsg5ltIgPLAzWMafpN3qspSBC2N3duij1NGvNNSCTuYMzMuxk8M+npW7p/ZLQV/Gtz+ZRs6vfL4eC+33b3xBck920ig/v4/kKi5O17iSf/zBHvcmoGw4bEuGnkLH/lxAk/E9Kl00qG3jKxW0SuRjnZM8vuz1Pqa1YdG0UFiNSKr117/7sSuu03iSQY+mY+f50xh4+4jjdnS/diTkgjNP4dCsV25TPKfD7R/IUq+hRA/WlYV/YTdqnjoNNFYVa+xG9Vc+8n9wtr2q8WQyx8lyrsrZVShOT86Gt8YcT6xqC6nLcvZzLGIwIJCoAHxpOcW2n+xBByu3gPakb3muQaVNfv8A77Olnbjcxj2pD8Og+JpI9P00Zb41pP6CvVXNYcmNJeNuI7wm3ub575GGCkyhgR/rxphdySSnnkyR5Zzj0qfvFtLRTb6dBDjGC7y5ZvecfgNqg5LC7wzZjUHqObarMKoQWIJL6EMrJS5k8mx8D/pELpekW+m8QWU9w9ugiW8t2BZ1AwOZT448Qd6ie0ftK0fi+/spLC4kWGGGQMJUKlXYj3+ArJ5dNuUXnKHl8xsKaAvG2xIPoayaOgaOjVfi6o4lz9OfkWp6+2dfhSeUejOAO03QNO0uy0+5SeL6NGIzKmJFYjqdtx8q17SONNA1aICx1azmc/2YkCv/AAnBrw2l3Km+xPn0PzFOodbuYmBEsm3TPtD8ayOpexml1c3ZGbjJ8+q/38yzX1WyKUZJNL8j2dxhpVpxRpFxpN4ZFimweaM4ZWByCPjWJ6Fw/BP2m22k20kk9tYzCMPIckrCuTn/ABA1RtD7VeItJZRbanOqjYIX51/hfI+VaX2JtbvrF3rN3dwQOEMUKXD4aVmOXbbp8fM1Tq6ZqOiaO/dZui09qX/p8Zx9vMsfiK9ZbWoxw88/RG9WrPyHnGDmnHPgU1iuFMYfblP3gcr8xtSWq2rappdzaQ3clq08bRieL7UeR1FeYpJzw+EbMvkLzWsV0rBlB5+u3UevnWdcYfo/cK8So81jANG1BskT2i4iY/vxdPivKa0XT7drOzgt3nkuGiRUMsmOZ8DGTjbNLz3At4JJmOAilj8BVrSa7UaOxvTTa+nn+X9GQ2VRsWJorHBdsuicJ2mmzkO0IW3LxglWZTy8w9Ns1cLcOmJEIZR4ioGyi7qxsoiPa5e8b0OM/wAzTyyvJ1vBHhQuNmDZz7xTb5eJY5v1b/UknX7vBM3j5w46EUz7zLCnTkSxsFwCN8VGyP3fOfIE1FY8yz6kVMeMEjZDvIEY+Of51DcVSmO7dB92GIfzNTOmZNvED7qgeMMrqsij71uG/hbFeldQy+i6eHyX7GfokvxtjIWO6I3z0p3Ddc2N6gu8PNints5BBrhbKUdGid+m9ym3WmF4hvI35mIBG5rkUclw2eijqxOAK7eS2sUTxB3duU55Ty1BGLTWBMJGH/pIab3X6tuUyUEjIM+qj8qxK0gmuJRFbRSTTPsEjUsx9wFeoO0zSrLiOHSYb2NmtvpK8yK5GfZwBnrUjovCenaNCEsrO3tI/wBmBApPvPU/Gu+6b7QR0WgrrlHMufp3MHU9Nd+ock8LgwfQ+x/ibV1V7mGPToj43Le3/AN/nirVD2HWOnxGW+lur1h4D6pPw3/Gtgur6w0OymvbuRILeBeeSRhnlFN9K4i0riywe60u4NxCjGNiUKlWxnGD76pX+0XULU7IrEM+S4+/+SeHTdPD3Xy/n/Y8+8LaVbnXxDPCjGJGVA4zy4bFehuFtHh7lGZB022rC+J9PvLPi64g02QQXL3OI2JwAJB0/Gt54BiuLHhywg1CYy3ccfLLIxyWbfxq37VWOVNd8ZfElx+RB0uOJShjs2TNzZRwxlgoxjNeeOMOKbLX+IQ1lE0Rh54ckj2xnZtum+dq9J3bq0JORgdT4CsY7UdL0Sy0vn0+LToLxruOUiApzyHJByAc9CayvZPUQhqsTi3J8J+Sz3yWOpwlKrh4SNW0LWLzVODbW+0+OKe9ezVo0lflR5MYwT4DINTmni7eyhN+IVuiv1ohJKBvTNZh2UcVWsHCqWt1c28JtppIx3kmCVzkbD31cLjtF4ZsE5rjWbZcdQuf64rF6joLa9TZRCvOJPDSefkTVTU64zb7oX4F4UuuEbC6tbrW7vVmmuXnV7jrGD90bn3n1q0c486yzU+3rg6xLcl7cTn/ANsD8qrl3+k7okOVttOuZyPvP/3p8ui9T1djtdTbfyx/Yi8WipY3L7m3XJ9gnIzURw+Gt7C4t2P/AIeZ1H93PMPwIrE5/wBKSRgRb6FGPIuaHDvbet+91eazdJac8uRbRNyKVCgDOOtWF7L9QhXJzhhcfN/oEdZRJ7VI9DxsA+x6g0q0gboQcbVjFp22cIhgGWAkHY96f61Y9P7YOFbpiI2jj5zljGwyT643qhb0XVVx5rl9iTfCT91o0RWFGIBqA0/izQ784t9UVSRssnnU1FL3sfNG8U//ANp9z86zJUzhxJYFaxyKxZDeoqV0KQI91b9ArcwHod/6/hUP36rLyklXH3SMGnmmzCPVk3x3seCPVTj+TD5VodMnssWfX/BX1Ed0GWuCT1zTg0wtzg+6ny7rXqvQtS5LYznbo4eTtChXK6YrnaFChQB4Xit4oYxHDGkaDoqjAqq8S8UGEtZ6dIA42knB2X0U+frUtb22u8cX50ThWzlujnlnuF9mNB45foo/Gtx7NewTh3g4RX2sd1rWsDDBpE/3eA/uKftH94/Cs7TaVv3pnpntP7WxinounvGOHJftH+/2MR7OuwniPjZo7++D6TpLHJuZ1+smH/todzn9o7e+vTnB3A3D/Alj9F0OwjgYqBLcv7U03qznf4DYVY3XJpML1zWklg8ybyEO/uohFLMtJNtSiBGGKjNU1vTdEET6lfW9mkz8iNM/KGbGcZ91Sec1G6zw3pvFtt+qNTs0u7edgvI3VT+0p6gjzFDeEISsHHXCugaPHLe8QadGZx32Fm5yV8MBc+VZ7xd+kpolkrw6Ja3GoS7gSSL3UQ+e5/CsN7WOzmfs+1+e20q9fUNOGTG7HDoB1Vh0OPMdazSa7kl3IO3jzE1gfgNPrpfiHJyT9OF/cvb50e7jBdOPuMrrjTVX1LUnjSfl5FWBQoVR0Hr8aqtu1tdSLDJbyGVjhTEcc59R50yQyStyqpPooqZtY4bKAcrFL9geYy+yFB/Z9ceNa9VUaoKEFhIryk5PdLuBbWxtwW7scw/bbJFKRWVvORLdTd3EfBN2P5VGSwTh892GPmXzRZUuQvtZHoDUg0s9xq9hDZi0hu44rcf2cKkZPmfEn3mq/cXlgwYATyMTs/NjHwqM2DHmGfcaL40AScWu3lugiS4kaIdEY7ClP1ysxzIrk+r5/nURQxQBZLbVYt1kuJoE8BGmc+85p3+u4Ei7uJ5ZQPEgKT8aqXtDzrgyfGgCen1SVgVjVYQf2ep+NRkl3KufbbBPnSKysu2eYetcLKw8jQA4hmmmICh3P7oJxVptI7OztVa4mS4uiM8kQLhPTyzVVg1Ke2XkQhV/c2zSv60mccv0iVAfDOBQA+1SW4upgpDJzbJHnLt+VJJofIuHy0niB0Hp60SzbupO+D8z+DE9KdSaq7KY09pj1I8qAGMtjHEDzPuPAbmmckXiowPWpJst/wAQqMfdG9NpMySBIULsegG5NADHuzTm2u7yycSW80sTDxRiKlLfQ5UUPMBznrk4VfeantM4btLrBmu4wviyjI9w8zTWk1hiptcoHDXbJxRw+64umnjHUMcH/Otj4R/SF0rVCkOqwi3lPV19kn+lY3qnC9rAG7sjmztnrjzPr6VT75UjnkEZ9lW5R8Kw9f7OaHVpuUMP1XBdp6hdX3eV8z3Vpeu6drMXeWF3FPtnlzhx8Kb67dn6EYVzzTOsQHvO/wCGa8U6NxZq+hzLJZ3kqgfcLHFbHwb2yaxrMMJ1a3t5orWQMrI31rYB6+m/WuH13sddpZeLVJSivyZsafqNdr2tYZviOGmwNgqAfOl4FX6XkeAqn2fE11PZvex2Lzxn6wxQMGk5QOgHj0q16PdC9hjuu7eLvFDckgwy58D61yt+mnUsy+hpOSaJQyGNwwPSmOokBWdejjb033FOLh/Woy9ueWIp1DMB8c1DGOeBtUeUyf048qQL5lf51D8Zj/f7NxtzpLEflkf1qVs1fvIhytsV8KYccxYFkQyqVuBknwDZX+or1Xq1OzQ01+kV+yMPp886icvmUqKBpZMKCTT6MxW32vbYfdHT4mm93cpau0EAIAOCT1Y0gkhYZJrgrI4OmTyOpdQkmOScDwUbAUQS8zkEZLKd80zLb48aEk3d8r75B8KZ4foDeCL4sjkbhw3CsOe2ZJh/hYZ/DNMB2maNb6hJpV5c/RbqJgh74YQkjIw3rmnGvaraHRbq3upDbgLIFaRSA2QcYI9axrji8tdcs7W6axH0kov+8xzAgrj7LDx/mK6TpXToaqKruTxl4a8s4x9exl6vUupuUO5sUsFrrMWoRX2px31jfYC2/eLiJQOgIPnvmpXQNO07Q7AWmnQpBbqScKc5PiSfE15VQzp7EUuMdFY0ZbvU0BUz3HIfBJiB/Otu32WnOOxXe76Y49O2e5nLqyTy4c/U03tJuorbig3EM6F+QPhGBKshGNhTTUO27W1UxWTQ2iDpyICw+JzWbSoztzc0gY9eZsn503a1lZsKOYnyreq6VQqq67oqexYWV/Qz56uzfKUHjJZtS7RNa1Y4vdSup1zkKzkgfA1FSa1cSHKkg+ZNRZiKNg+HWrPoHDsUsP07UZBDbgZRWOC/qfStCFcK1iCSXyK0pOTzJ5IJ76+ERTv5VjJJ5VbArlraXN268iu5Y4UHfJqbuY7XVdSS0sY2+jKcs4G748vIVcLODSuGdNfUrph3wBVMfd/dQeJ9ackkGWymajoP6tjEUjAzKnPNjonkKi49GuXiad1KRgZyepz0FXXRbNNbm+k3xVUJ794ydj+wvuA3PvocSXNssGYsEDJjXz/eNKIZ/wAnJOYztvinUenvMwRSOZumfGi/QZJ4mnUHmLFvfUhpl5G0RjmXPmR1Rh4ikTT7CtNdxodEuEEiyYV1XmA/aHjSyaDPJYtdQNzGPdseVSdzdu0sTOQVXmBPwp1o16tqpkQhoJRh0P4/68qUaQdpq2raayiC+uY9gQA5wRVq0XtZ4m0ZgTIZwu5weVsfCq1r4S3SyePpiRM+gc4/A0tpEkVxKgkULIDlW8GqpfodPesWwT/Inq1NtfwSaNv4R/SKhvilvqRGTtyzgb+4/wDatb0fjPRdSa2ube7Mcscg+qkOdm2OD5flXjbUuGTbajPDEvNGVWeMecbeXuO3wqR0rXNc4WuYhC0lzAMssbZ3A6gHwIHhXL672Rpfv6Xh+hpUdTz7ty/NH0CtZC/215GO4GcgjzBqQjO2K809mHb9BeLHaXTtLAPtRsfrYfUeYr0LpGq2+p20VzbTLLFIMo69G/I1X6ddPTXqq1YlnzIdVp8LfF5i/NEnmu1yu13xlgoUPSgNqAM40rRNO0CxTT9KsbextI/swwJyj3nzPqafA4oxrgFOGgJ2oh2NPIbF5lLZ5R4Z8aL+rJZM8rBcftbVG7oLz7D/AA5eg0O9IyjbanMsEtu3LIpHr4GkXGaemnyhjTXDKBxr2nW3AV9FDq2k35tZx9VeQYaNj4qR1BHlUG/6R3DVlZXVxp0V5PqJUpbpLGEVMjdyx8fDFaDxBw5p/Euny6bqltHcWsoy6ybBcfez4EedeW+1zSeENLvgnDlobVIQI8rIWEpHiQfOs/V6itzWmlnMvT0+fpks0VSadi8vUg+L+LLzie7kuL685wxJ7uM7VUZSW8lUdFFPLa0kukOFZW6qCNmFN2jPOUG5zjbxqzVVCqKhWsJEc5ym90nli+kzPbvNIiIwWMklhnB8PxxSFxdS3B55XLufE1L31qmmaettjEpGZT4lvL4Db51D2caSXkKyKShcZUePp/SpBo/gse4tEklOHcd5g/cXw+J6/KmtzcF/ZXIX+dK3l3Pczu8iMMnPLjAFNHyTuVX40AJEZNGjhL74wPOlUWAYLMzH3bUuJox0J+VACS2+2w28673QUHAyaM1yuduY/CknnLHADZ99ABXXfA3JoFAoxRkHLv1NKxwSXJKxIXI648KRvHcVJvhDVmoqqWNP5NOFunPcSAE9EXqabcoVcdKFJPsLKLj3E2QeFFAIo5ffauNzUo0Ms3L4Y91HF3Iowr4HupDlPU7Vz0FAD2O/cbMy491SlpxObGMpa20XO3V3UZqvYpzbxYwT40APru5v9WbmnlZlz0Gyj4VZdJumso44u8VQq+3I3RB5VW7aYxPzAAkdARkD4Us9x3jhpCXHXGdvfQBO6txFHFZyd0mWbPKz9ffjz/kKp9rbyajcrDGpYsfChfT98+ObIFO9E1e+sX5LJo4m8ZAg5gPfQBYdf4WttF0KBp0EFy7ZUMcPIP7vUD1NU22u57OUS28rxOOjKcVZuU6lI0t5cPLIys3M5LM+AfE+FV1rMpFztSNJrDFTx2NQ7O+1aayvIYb9wrZAEnRX9/ka9H6Nr9lqFmLu1kUN/aQ53Pqvr6V4i+iusauFOCM1eOz3jebRdTto7liZEYGKR2J+BrjOvezVd6d9HDXkbWh6i1iu37nrySYOmRuDUZIhub62gB3ZwaS0bW7fW9PS9t2GG2kTxVqW0KQXfEaAbrGx/AZ/nXnuj0kp6iNLXLaX3eDdlNQrlP0ReI0CEAdBgVV+0M406eQfbUZXzyCG/pVqUcxFQvFdoLm3lVhkEb/GvWPaKH8uODl+lS995M0usyTc4Oz4Ye470cYUEeVECt9Dt8/aQGI+9Tj+lITz8veM0ixxR/blbovp6n0rz26vPCOqjLHcULkycq5ZvIUle6tYaZCZL2VMj7udh7/Osl4848NnfH9Uaxewhc+wCpGehI8d6zbUuI9S1eTmubyeUfvN1rc0PszZfFTnLCf1yZuo6rGtuKWWanxl2uQBJbTTohIzZXIGw+HSscnumdzyr3S5J5VJqQUJbW/tD6wjJ9PSm1lYG/uMZwmd2G/y9a7TQ9Op0cdtSMDUaqy95mNhK/XmOa61wH+2m/mNqlL6ySEcsScqjbP5nzqHkTkbFXysKwRfSJAkanPiSdh76m4u7hh+jWiczsPbkxufyqBWcoMLt7qN9Jbx5j/ipQJaUWWnLlytxP5fdX86ZT395qcnK8jFfLwApnzhjls/Cu94eiZUHwBoAsdpqdrpNt3aLmRuoz7Tn1PgPSmN7qE1/cCe9cvyD2Ih0HoB4ColJCm6j2vM0tExyWbcnzoAeDUrhQzNKw5s82DXTeSTxYYks5/DwFIyWbvamds4JAWnei2L3mpxRhcohDt7h/nTHJJNj4wbaj6lqsdFVbNF5dwoz76rOt6Y+mXn0iMEIx9oVp1naBLcc43xVe4nitVgbv5EjBGBzHrWdVc1M17tPF1lRjf6TbSIm7MMKPXGf5U00u8KNIpPsFSaW0y7hsLlu/R3GCqlfu58flSWnWMl3erBEuXlblHp5k+gFaOeXnsZO3KWO4rqqXFxY27iM91DzZPqxz+VMrG5Ns++6/y9a02bQYf1d9EC5Xl5SfP1rM9UsZNMunt5Adj7J8x51FTdvyia/TOtJls/XJ/VVtqKKJZtMl7uRT/aW8ngfc2R/iFTOnXlrrGs2dvakNFeRiW2Y9VuISSFPkWTKnzyKofD92sU88FwSbWaCRJR6YyCPUEAj1prYX1xp15DdWkxWS3lWaM+TKcg1YKpYLnhu80/UribTpjFJBdyRoRtgA5Xf3EVuXYX2rTWN0dP1FnjUP3d1bv/AGbftr5VTbswXN7c3Cxci3jRXCjwHexqwA/xLimvGN5aaFxXaalCh+stUFz3Y3YsOZG9+Ns/u1l9V0K1FTa+Jcpl3R3bJbJfC+57lhmWeFJFYMGGQR0NHBrNOw/jWbjLhfnNo9vFalY4mllVpJBg7kD7I8BmtLHTpVvQ2ytojKXfz+q4ZXvr2WOKO0KFCrZCUoKW2G5NHCrEd/ab8BTjXRcW2m3E1lB3koXOFHtY8cfCs9HEsyNzCQ/OsTWdRl8MODd6f0tWJzk84NCiny2c0Z7sE8i+03j5CqpYa/8ATF5QcN448qk1vO5HLsKzYW5NCekcXyS8jpLGUfcfy9aiiQHI64OK4t73jHB2G5pvOpkjdQzpzgjmQ4Zc+IPnWz02UmpGN1KuMNue5QO2Tj2Ph7R59MtH/wB6lT64p1UfsD1PjXlCe41HX9VSGCCWe4kcrDCil3LE9MeJrVu2Ds41bRZZtWl1ee/sSC/PMfbU5GzDzORuKkOzrRbXgzgz/aWWMDWNZR+4dvtW1qCV9nyaQgkn9kDzNRVwen3XXczb+3ol8hkI+O1VXxFf7kzu74H4g022aG8ubOCdt3Tn5pF/dYjYe6oTTRBpN3O94R9Jh2hUDI5v2s+nhVt4j1m47qadFOACRtkms7Pf3cjEB5GJycDOavaeyclmRHqqoQajDuP728F45d2z5Iu5qOeU84ZfZ5TkY8KeadA6vMXVlKgAgjx/0KbTx8oBI3OTVkpickrSMWYkknJyc0VMswUDc7V3lLYAG5NPtKtDJcMxGQn86bJ4WR0Y7ngFvprz3YgXJ2BY+VTVzo1jZW3fTkqo+bHyqycLcNtKpnkT2pTnfy8KsU3D6gYKA+8VQs1PvYNSrR+7nBjs5ErHuojGngoG/wAabmMxn7OD+9tWzLokYOO7UfCiz8P20g+thjbHTmUHFOWtS8hkunyfOTGWZ/MD3GjQTPA4dZCjDxWtD1TgSxvGLwMbaQ/sDY/4apmrcN6ho0h+kQlos7SqMqfyqzC+E+CpZp7K+RnJcm4k5ncsx8Wp3Bw/f3g541Qp+1zDFRxCrvjenNjqlxYPzW8jJnqvUH3inyTx7pFFxz75Jx8IXA3mnjT0AzTK8gtbMmJHMko2J8BUmeI3v0jgmDQhm5XeLG4+PSpuHg+0tm5+5aU+chzUDslB/wAwtKqM1/KKOlnPcn6qNn9cbVx7YwSlHILL1x4GrtqTxadau7KAEGwA6nwFU0ksxZjlmOT76kqsc+fIhuqVeFnkSSHmYCnQUCgihAT94/hRHfH51MQHWbH2fDxpOaRuUlmNOLW3kuX5IkLt5Dw99NLxeWQqGDBTjI6GkzzgXDxkQyWNOIG7oFd99z7qUsNOkuTzlSIx4/tVy+j7q6dB6fypNyzgXa9u4f6fdFrjncgAg+4DFM7y4DuEQ5VdveabCRlzg+GKIG5XVj4HOKcNNCt9Ej/Vdq7BSrIpLD1/yz8qqnElmLSe2MZAzCpPL4GpeXXWs9IijLglEKRIPEkfaPoAce81FXKfStMSckl0flyfHP8AnQKaj2M8cXQnW3uZUMZHdTcxxkeDV6F4LteXUJpCwfkRjzgbMWP5V4y4XuW0niExNkBtseo3r2b2aXBv+Ho79jlpQsZ/wj/OuQt6Wo9XqsguG8v8k/6m0tU5aKSb57F3jxUbrpBVs/eWn6NimeqhSiSHGFDE/AVtddhmhNeTM/pzxbgy92ijlv45X7sQutwzkfYjcdffkEYrGe0jjqXULoaVpCty5KpGp/E+Z8SanO2Ljn9WyLp9u+JO6ClV2ydzlvPGdqx/TzJ3V3qk0j5VTGjA4LSN+QzWF0XpSsf4mxceRqdQ1rgvCh38yP1KzeKctLMZDj23PQt449KRt4+YGQYCr0z4miXTlpCCSxG3MTk0GPJCileoyDXY9lgwc8hZ5Hdvacn405t9Qe3XlhYRjGCfE0x6muqPE0CDue9Mi452Y+vQUzJzuTvXTtQReZt+lKArHH7OWXOaTcAZwCKdIpkzjYAZJ8hSD4J26UmRcCZA5djk0PA9KkdO0WfUWBVSkfi5H8qV121h09YbWJcE5diep8Pzpu9Z2j/De3c+xGRqPiadWNlJf3aW8ecHdj5DxNNY0diFVSWY4AA3PpV80bS7fh6wNxfOscsgzIzeHkopttmxcdx9FXiS57EfrVstrpqqByqrKKnOHbOy0LTxfanNHbtNh8N9rHgAOpqu63xBHeMiW1sAsbc6vKNyfPl/OoSe+mnmaSeVpZD95zk1CqZThtfBO74ws3R5Lfr/AGjSyBrfSbfuU6d/KMufcvh8apklzNeTd9PI8jk7u5yaUtrWe/nENtDJPM+wRBkmrvoPZqWUS6tL7X/p4jnH95v6CnfyqF/uRiV2pfr+xRc+2SAST0AGc1IWlvreluL63trqEKN5DHtj19K0/SuCrKxvpJkjY85AVAuFQfzNW620ONgOZAV8vOq9muiuyyi3T0yT5k8Mr+nabey2MTXgh79ly3c55T5EZqv8YcGyX9ozpHiZQSjevl8a12205TjIqWGgW95bANGCR6VmrVOEtyNeWjU47WeSLrQb2xszNPG8Tt1jPUL61GITmvRHHnBPJbvKkW2D4VgU1uba7lgYYKMRWxptR4qbOf1ml8CSRp4W61DgRNUtVUC2sIVkct7WY5CNh8qrfFl9Jq40m4gjkleXTlhkWNSSHjkYeHw+dWTs8mGocGavpZO4SZAPRl5h+INWXgLheLQFW5ubjm5yHB6bEdKdqNQqo5Ymk0kr5YTwiH7B+0y97NuKUtdRjnTTr5hHcQyIVI32cA+Ir3EkiSxrJGwZGAZWHQg7g1iA1LhriqxOk63ZQX1uwx9YPrIz+0j/AGlYeYNa5w5Etrw/p9qlw1wkECwrK32nVRgE+uAM+tVtDfGc5JcZ5wS6/STpSb5XqSdCuAV0bVqGaRYqi8a8Ctf8+o6OgW66yW42E3qvk386udleRX0IkiI9V8qcBfOuccY2RNuq6zTzzHhmC2N5cWk+4aORGwVYYII8CKt63r3cSTkgbAEDwqy8XcF2+uqby1Cw6go+10WYeTevrVT0fT7n6WLGWJo5Q3KyMPs1SnW63g3qtVC+O7s13JqyH1YPnTnAIp7c6M1rH3kB541G6+K/mKovabxc3BfCd3qEcZa4cdzB+yrsD7RPgAMn5V0ukjGujMef7nI622V17b7eX0MQ7d+KpuL+LrPhHSpOaOOZYNukkrMAB8M1P9olxFb3iaVabWtjGlpEB+xGoUfyrM+yVX1XtP0y8uT3pgeW+kY75McbOD8wKuGvzm61SR233JNVNW3ujF/UvdPjiEpr6EFPAGG4zmmQsY42JSNVz1wMZqYkQGmtxiGGSQ9EUt8hUUZeRYlFdylpjNyxPtNK5PwqKvmHe8o6KAKWhlcWshPV36+87/ypkqtczhVyWdsCthcIwHyx7pFqbqc7ZCjNW/g/hqW4uXhljYcrZYkdfL8KZcN6Y8Op3MDoQVdVG3UHpW46NoqQQphADgeFZmr1G3KRsaHSbkm/IR0vRkt4gqqNhS82n58Kn4bUKMYrklsD4VkeJlm74SSM74tk1HR9Ma9020iuXiYGSNwSeTplQPHOPhmqPNqXaBfASxaa8MZGQiwAf/kc1uUtgGztTKTTQD9mrVWoUVzFMpXaWU5ZUmkYVd8TcQ6TJGNY0uHLZ5TLCY2Pngg0+tuPdNuozHdwzWpYYOfroz7+h/nUT2k6z+teKrqNGzBZn6NGB09n7R+LZ/CobQNGk4i1yy0mFxG93KIw5GQo8T8q1oURnFNrDMOepnXNxi8r5k3f8Padq4a40uaNT1PdHmT4r9pflVdvtGvtNPNPA3d+Eqe0h+Iqx8U8BalwnxXaaRaXffS3aq9tKn1bYJI38sEGpvg66nutYl0rV4Xg1G3BJ+6J1GxDr0brkHxpZOVS75QQjC99sN/Youj6dcazeLZ2kZlncHlUbYx4nyFbTc2Sw2wBxlUAJ9wqRs9FtLaYzwWVtFMRymRIgrEeWQKrvGFlxHqZew062jhtWGHnaYBpPQDqBVG2/wAaSXZGjTpvw8G+7ZmPFGqjUb8wwHMETEAj77edRsZCdev8qukHZbqLj6+7t4v7ilz/AEqVs+yyyhwbiS5uT5E8i/Ib/jV1aiqCwmZz0l9ktzRng+sIVQWY9FAyTUrYcJ3d2we6ItY+vK3/ABCPd4fGtIh4es9KiP0e1igAGSyrvj1PWsp1S8fUtRmuyxUO2FGei+A+VLC53NqHAWaeNCTs5b8iwaqLTQtMeK3Coz+wN8sx8zUPpfD5uOWe8Iji6rGTgt7/ACFQ8qktkkgZ8TvRG3+8x95qSNTisJ8kUrlJ5a4XkX3uLaKPZo1AGwyMCqbrTj9YSlCCNsEHPhTRMnb+dckKjYbmiurY85Cy7fHGMCltaS3CSSKCEiUszf0pvuakbbV3j0+e0dQ3MnKh8s7EUxiTJzUib5yRSSwsCqxyTFeY5wAo9BUqZBEljZEbyyrIw/dzgf1PyprAYol55ThB1x1PoKV0tvp2tRzzEBVbvX8lVRn+QxSjSWaxf/aaO4WMSc9xKAh2BAwP9e6vY/ZHYyWnAliJYmj5y7rzdWUnZvjivN/Znw3/ALccT6dboyoiiRpiTuo5yWx64r2DDHDbwR28CCOKJQiIOiqBgCqsK9+pdn/lY/N/4J5z207PV5CMPKsk7Ve2y04K+m6RdaBri3hVkt5nhUW84I2dX5tx8M1rsssNvE880iRQxgs8jsFVQPEk7AV5q/SA7adE161j4e4Zka7MMhM+oL/wiMYKRg/az4t022z1qbV1K2vY1khonsnuzgwXiHiC74k1B7q4XDyNnA3JpXVbpYILfTIcCO2X61v2pTu3yO1IBWhZbk5e4Yc65G0YPQ+/x9KZSI8hZyQ2Djbwp0IKMVGKwkLKTbbYkzczE+ZrrEsdz0GK4wwfdQToacNAQAK6tFJ3ruT1oAXe37uHvZNifsrSunabJeMD9iLxc+Pupkx2xmjB5BgB29wNJh47jlKOexKakY1ZbKyQlVPtEbl2qQ0XhuMzqb+RDKRlYM7/AB/Kq8vOoOGZc9cGj2sskN3DKjlXVwQ2em9Ryg9uEySNkd2ZI0yKzSJcKoAAwAKoupltX1mRbZGmJbu41QZLY8q0G/02/voDb2WI2kHKZn2VB4keJNTHCnBdlocX1SGW4YYeZx7R9B5CqELlUnJ8s1bNPK5qC4RAcK8DDTwtzeKr3Z6AbrF7vM+tSPGXDMl1oRnt4y81o3fBAPtL94fLf4Vf7bSgADy06NjyrjFU3qpb97LsdFBVutHl/kkvLnuLSKSdmPsIi8zH5VLWvCDRRm51a6isoVOGAYFs+RPQH03PpWxa9ptjpOmX1ybJRCqGSRIE5Gl9Dy7nJrKOKuHdTtbXTtT1mXuvpkpj+jIvs2keAQAPA4J29POtSrU+LwuDHu0io5lz+wrDxlpnD8Bt9HsDKD9qRzyB/Un7TfgPSltK4p4r4p1KPTtOvLaxklUsiqojBAGdiQSdqj+PNP4astSgj4ZuRPbdyO9w5cB8nfJHUjBwOlJR8TQWraLdW0MiXemyIztth1HUD3ipXp44bSy/mQR1M8pN4Xy4L9b8GdocTiWLiWIydeVpGYH5ritE4JteI5NMZ+JVtluechFiTDcoOMtjbfqMeFT9jbRzRxzRe1HIodT5qRkfgalobYAdK5+3Uuaw0vsdPTpFB7ot/caw2mMbVOaVAOQqRSCQjapKwUK1VM5ZcfERrrWiR6hZyRsgOVNePO0vRZNC4quIipVWORXuRIw4xjavOH6TPC/cy2+owx5JflOB1zWpoJ7LEvJmN1FeJU/VGf8AY9eFdeubQ7iaDnAPiVO/4E1rGm2jSOvP7XLsB4AViPZvcfReMdLYHAkk7k+5gR/Ot/02QRT924wT0PnVnqecRx8yDo2Myz8hxc6eRD3sPsyx+0pFbD2W6q2o6KY3OSmGHuNZ3HAHj6ZBq2dksn0W7ubQ7Acyj+YrN0djV8X8/wBzX6lUpaWX3+xp4oZ3oZrnjXVHFGS6Jr0thKPaOK0DT9Qh1KEPGRzeK1kQJzUvo+tS2EqkMRiuQrtdb+R2Wp0kbllcSNOam0lpGZhcCNe9A5ebG5HlRNL1WHVYQVIEuN18/dTwirvE1lGG1KuTi+GIdBkGsK/Sm4e1u/4MiudItjNp9vcd/qCRglo1APK+P2Mk58tj0reHXxH/AHoBAQQQCCMEEZBHkamotlXLK7EdkFOPJ4Y7CbcvxZqEhH/C0m5YH38q/wD8qsepQkXkhNbBqXYla8K8V6lxPwzCsdhfWE0Nxp6f2EhKtzRj9g8p9nw8NthlutwlJi4Gx60ups3WZXoXdDHFLT9SDkGKY39rHe27wyEgEdQcYqQkAakY7dprmKMD7TgU1PHJNJZ4KrxvokeiPaRwpyRSW6MB6jIPx8fjUTwfpjX+sLtlY9/iTWw8a8DPxNoKmE8l7aK0kO2efbdD78D41CdkPBt3Hz3t9bPCJCCgcYJHuqytUvAbzyUp6KS1KWOHyXbSuGLNzFPJboZEAw2N9quNtbhFxiu21mIwABTxYsCsSyxtnQ1VqK4E1i26UO5yacKtd5ahyTYGjQZ8KjtXkTTNMvL98ctrBJMc/uqT/SpwrVc7SrSebs64ha1GZEsyzD9wMvN/8c1NV70lEgue2EpeiPJM7vJIZXJLyEsSfEk122uZ7W4jnt5ZIZo2DJJGxVlPmCOlSl3pMk8MbwAFlXdfMU3t9LliBmuF5FXoD1NdUprBxsqpZNB7K4NQ4r4rn1nVrqe9ksYMCWdixDN7KjJ9OY1qFzwzYXGpW+pSWym7t1ZY5ckEA9QfP49M0w7JOHDovCMM00fJcai30pwRuEIxGP4d/wDFVz+j58KwdXqHK14fyOk0OmUaVuXfkiBbBR0pCW25/u1OG05vCupYb9Kqby9sIK20vnfJWn0mmoq45RU1FZhFzikp4cZ2pPEyL4eCo6nYI0boy5DAqfcayrVezq1gc/R7m8A/uK4H8q2fUISc4Gaw3tIs9XtWiutUv1WW5dhDZ25PJFGPEnxO48K0dFKTeIywZPUIwUcyjkZvwOzHlW8kJ9YR/RqUi7PVBzcamYR+9bkfidqq2n293fXsFrbd4888ixxqCcsxOAKt+uaDxhwJq9ppdxeSLPdgNAIJy6SZbl8fXbcVqShYu0jHjOl94Dluy9e6DR6iz5GQRGMH45qJ1Ds/ntlJju0dh91lxn41PW3GOscPzrZ8SacyRMcd8kYUj129lv51cxp0GqRR3EbCSKRQysvRgaqO62D958F6OnpsWIrDMWj0CdZzFcK0QCM3OF5htSU1o9rFzsuF228TmtouOGrcpl4+YLvg9M+o8aznj0Q2bw2yIFLOXbA8tv61NVqN8sFe/SKuLbKfK7ykZ6DoB0FO7Z/o9pcAD22A5z5DOy/E7/CkUkHRBj18aeXVv3MEVuB7b+248cnoPl/OrhQN3/RQ0i4Gu6tc3EDAw2iOrMPs96VI+agmvTYUiovhLhnT+G9Kt47W0ihuHtbaO4lVcNKY4lRSfcBU0Vwc06uG3PzGzlux8iidpmkcE3+nxy8aSJFbpkJz3MkfN4kBUPtH0wTXj7j2/wCF7zXJE4T0mSw0yI8qPNK7yz/vMGJCjyUb+de7da0HSeI7JrHWNPt762Y57uZMgHzHkfdVB1/sg7N9G4f1S8ThLTl7i1ll525mKkKSCCTtvSzWQg8HjW8kkkt7YhSEKFVGMZCnANN7Zge+jxuVyPeD+Wak7aNry/dJnwqRqUVjgKAQMD4E0zvrZtM1N15cmNyMHxFMHEY2cnPnUppelNMVkmX2DuF86j5RzOdgvoPCrdw7ZSSWK8wOVYgZ8qiultiT0Q3SKxNB3l5JHGhZi5AVR61L2/Bd7MgaWWKEn7pyxFWrSdCSzaWTuk7ySRm58b4J2FPdVvrbRLL6Rcbk7Rxjq5/L1qtLUybUYFqGjik5WFOj4IVmKtqS8wOCqwknNC44PitDl9ThiUeMych+WalYrPifiFBIGWwtZNwAeXIPoNz8ao913izOshYlWKknzBqWDnJ/ERWKuCzsJkaVpquBJrdsV8eRCTVo4f4J0TVlZ++uZgDsVlTBHqBuPjUHwdonDuraZrEmsal9DubaLnt8uFB2OSB945AGPWrd2daPp9/pdpqUAltr63kaKZ4n2lxvhgdiCCKbqd0IZ3MfpNtk9u1F4tLFYwAF2AwKmLO2HMMCkIV3GBUpaR4IrDlI6OESRhtfYG1KG1yOlPLOLnjFORB6VWci0okC9jk7iqj2ocNDUuC75o4+aW0Auk239n7X/wAS3yrSXtx5U3ltkdGjkQOjAqynowOxHxFSVXbJKXoQ3UeJBx9TxjLmPGRsdwfOj2Fs13I642C7nyq38Y8HzcGavLpmowkWjs0llcv9ieHOxDftDoR1BpPQ9AvdT+p0TSru9dv+RESufVz7I+ddP4q25OQ8B7sHo7s1l/WHAWhXT7ubNEJ9Uyn/APGrMqYqC4B0m80HhHStKvLdIJLW3COok52LlizbjbGTVjC1yl+PEljtk7PT58OO7vhHEWnlrswpuq04h2NRLuSS7E1bb4qg9ufDzarwbcyonNJbYlG3kd/wq/2O/LT3VdKj1TTJ7WRQyyxlCPeK0KU+JLyMa6SUtr8z58abKdG16GTxtrlW+AYGvRbOJYlmTY/aHuNSvDv6NGh2kk2u6m9xeXbRzd3ZyAdzG+4V+mSQMEA7ZqLtYWn5IVHtHAI8qua65TUcEfTKXByz9C2aGxuLVS3XFWfgpDbcS7DZ8H5giofSrI20CrjoKtXCtsH1WGToc5+ArLoebVj1X7mvq8KiWfRl9zXRXSPKgNq7A4UwfNDNFrtcYd4SWlatLYyqwYjBrQtI1yLU4wrMFm/BqyynthqElpICGOKdCxweUQX6aNy57+pq+Dmh0qH0TiCK/jWOZgJOgbz99S7NV+M4yWUYVlUq5bZI41ZF2r8DwxxPrthEFTmxdRKNlJ6SDyGdj781rTP4ConiHuJNF1CGYBle1mDKfLkNJ3H1ScHk8vzaUMkgUvoGmCTV4gwyEBaqpp/abYTxqt2slrJjfmHMhPvq88FTfrK4e9jIaBhhHXo3mRS2QnBPci/VZXY1seS+QWi8g2pZLVEOQBmlbdDyilglUGzRigiJjwpRgBRuTFEffao2SIGwowFFRcADrSgWkHHCKaajpttqtpLZ3kXe28qlHTJHMCMEbU+5a7y58KFJrlCOKawzLdS7D9NcH9UapdWOOkU6ieMem/tD51C6d2KahFrttJrk1leaTE3O8dsxVpiOisG6Lnrv0ra+69KI8WRVqOutiu5Tn0+mXkRojLN0AHkBgCl0gpwIMGlFjqs5FvaNxB6UokApyse1HWOkyOSEDHhcYppPHnwqRkWmzpmhMRogrq2BycV537XdR+m8YTwKcxWKLAPLm6t+Jx8K9ONCGYAjbNeRtfMmq3uoX4BZprmSX1ILGtjpqzJyMPq7exRX+4GGk6vcaJqdrqVmUFxayrLHzrzLzA5GR41oGga1rHab2iWup6qIsafBziOFOWONV+yAPMs2azm1spJX5mQhF3JIxn0rfOxThf6Dw3Lq88eJtTfKZG4hUkD5nmPwFaOruVdbZk6Gh2WpeXcmr/h621mxlsr2ISRSLjcbqfMeRFd4f4Wt+HdLj0+CaedI8kNMcnfwHkPSrKbcDwojpyg7Vg+K8bc8HT+DHduxyRE9krI23QV544/uxdcS3Kr9iD6se8dfxr0Zq10lhpd5eSbJDEzsfQCvLM0smo3kkze1JNIWPvJrT6bFtuRj9WmopQHvDGiXOu6tbWlsI+eSRUUynCBifvHwA6n0r2Xpn6P3Bh4d0rTdSszd3NlJ9Jlvoz3clzKd25iP7MnGF8ABXm7gvSPoFslyVw8n2fRfP417N4WunveGtMuZPtyWyFvU4xWjXcp2OC8jLt07hVGx+ZKMB4Ck2FKUUirJUEgtFuLCC9gkt7mJZYZFKvGwyGU9QfSlgN6MTgbUCHg7tr0dNI7U9b0yzjICTKIkQbnKggAD31H8ZcN65pWo2lvrdolneXEAZ0DhmEgXo+PssfZJXwzXpHi3s9t+HuOdZ7TtWaG6uGkjXSrUDKwycgHevnqwxlR0zv4CsW40a51znvCDJcRy9+pJyWOd9/Miqdl6hNQL1WmlOtzMoyQcHrWl8G8tzp0T9TjB942qk67YiG77+ON0huAZEDDBG+CD8at/Zm5mtZ7f70T5x6H/ALGm6rmGUP0TxZtZebazUjOKLfcL6Vqcsc91aB5o8crhiCADnHuqRtY8DBFPFjyKx97T4ZvKuMlhojntcfZG9Ynxjp0mmcR31ry4Qy96u3UNuP516CS3DHpVC7VuH1jax1tYwYzm0nOOmclD/wDkPgKs6O3bPHqVNfRurz6GQAcvWtO7H7lluNQ09jsyR3Cj48p/mKosmkIZuYS/V5zjG9XzskhEvE93LEOaKOz7slRkZLrtn3Cr2pkpVMztHCUbo/U1e3h3FStumKShhAp0g5a52UsnURiTOknmBU1JFB5VCaTNy3OM9asXJkZqCXcsLsNGizSTw5G1PynpRDGKbkcRcuj2d06PcWsE7pnlMsYbl92elPYoe7XlUBV8lGB+FLcoFdpXJsRRXc4q4o4FcFGFNFZ3FKRnek80ZOtKNZNae/SrHae2oqrWDb1Z7A5UVo6V5MPXRwx3JApi6Csag0AWeu36BdkncL6DOR/OtsIylYzx7xRYcIcS3S6leWtmkypMpnk5eYEYyB1O4NTayD2rahnS7FvkpPBMKgUYPhVn4OtXaSS8K4jUciHzPj8qyHhHtS0XjHjKx0LTjNeRSyATXHKY0AzjC53Pvr0RHbR28axxIqIowqqMACk6dpG7d0+NvkS9U18VX4dfOfMPmu1yhXRHMmD4oUK6BXGneArtDFAZpBR3Y3b28owSBV60S9+kKVaQ5xkZrPE+0KntP1EWiNIzYAGB60sHiSZDfWrINFsvb8RghDv51mXa9xzHwzwNq1x3uLi5iaztxndpJAV29w5m+FTN3q8tznDCNOpZjjbzPpXmftk4tbjS6gaydjpdrJJFb/8AuEAc0p/veHoB51o6WiVtib7IytTOGnqa82Zdlm2G5G1eveE+GF0TQNOtSmHit4w+33uUE/iTXmXs80B+IuOtD0lV51ub2Pn/ALgPM3/xBr2jf2oiOAMVe6g/dSKnS17zZFRx4GKVSOjBcNilVWsBnSxG8gwKRIyaXn60lio2SI6BRwKKBRxSDjvLXcV2u0gpzFDkzRsb0YCkAT5PShyYNKmuHagAoFKouR06UQFaWikTBB8aUR8IQdcmkXSnEhwxFEIoQgxlV1IZDgg5FYzrfYhqAuZ7jRNQtpY5HaQW10CjLkk4DjYjfxrb3TNJNGAdhVinUTqfule/TQuWJnniw7J+I7vVYbTV7GTTtP5sz3SsJPYHUJjqx6D51ulvb29vbRQWsQit4kWOJAMciKMAfACn7JnoKIY6ku1UrcZ8iKjRxpbcecjQx0lJDkYp8VFJqBJMqjzqFFl9jPu2y9Gi8BNADyzajMsC+fKPab8AB8axXgbRk1G+kuZh9Tb42/aY/wCWau/6RmufT+KbLQ4Wymm24LqP+bJvj38oX50XhzQ/1NpMULD65h3kv94+HwG1btb8GherOctX4jVPPaJM2EDXl9BawJ7TsEVQPgK9aaZYrpumWtkvS3hSP5DevPvY3w+dV4vhuJEzDZgztnpkfZ/EivRqjaptBDvP8iHqdnww/MJy1zlpXloEVomSJYroXNGxXRtQIUTtjsHueCbh0BPcSpIfduP615nDAswIr2PrWmprOj3mnuARcQtGPeRt+OK8g6jZNY6jNBIpVlYqQfAg4NZOtjixP1Nzp0s1OPo/3KlxdardWcnKp7y3HeqcdV6MP5GmnZbfLDxILZzhblCo/vDcf1q03ESupVgCpBBHmKzmJn4c4ijmUnFtcBl9VB6fKn1PxK3Aj1EfDujaehO45G6UuiZoz4kijlTdXUMD5gjNGiGayJcG7EMq46UlqNm2pWU1jJHC8E6FJBIvNke78c07Vd6cRx1HuxyiRwUlhlI0zsn4dtWU3ENxfMP/AFEp5f4RV2sdNtrGFYbW3hgjHRI0CgfKnKQjypdI8Uk7pz+J5FrohD4FgLHHijFcUuse1FZN6iyT4BZgpMG9attqRJEKq6cqAMSB7zT2HWkgTBbpTJLnIvdYJ+RMDNInrUZb6zPPzSzGG3thvzOdyPOlJdYsIxzNe2wG25kHj0+dI4vyQkZJcNj0iuYpg+vabCrtLewIqZ5yXHs+/wAuoqPvO0Hhaxbln1q1UlQw5W5gQTjYjyPXypY1TfZMWV0I/FJFgAropG1uoL6BJ7aaOeFxlZI2DKw99LGo8Y4Y7OewK6p3ouaMKUCQsWwwq1ac3sCqhavhhVp0p8pV3SPkyOoR4JtN1ryp+mnpHcalwxrKRg99BPaO+P2GV1H/AM2r1TCcisU/S80P9ZdmlpeomX0/U4mJx0SRWQ/iVrfoZzliMK/Rsgkl7RLDkBOGTJ/xZ/kDXuktzV5h/RU4Fmhv73iK4iKwW69zCxH2pCMHHuXP8Qr00G2pNJDM52+r4/Jf/ot7wow9A5otDNCrpXMIrorldHWuMO8O0YDauClY05j6UAdhiyc1y5lVWALYUUtPItvFjIBPzPpVS4y4lg4S0ttRuOWS8kylnbt95/2iP2R1PwHjU1VUpNJd2RW3RhFuXZDXjTtRHCF/bWNjZ2l9dfbuY7kc0axkbIQPEg59BjzrIOONU0bVrNf1JoraVzztNNAr88SZUDCeIXIJwemaiJ7ye+upbq6laWeZzJJIx3Zj1NGR985wfSumooVUFFHH6nUO+xzZdP0XNIF/2rrcOAw06wuLjPqQIx//ANK9P6ugLnFY7+i6I5eIOIp3jiEyafEodUCkqZTnOOvQVsGq3MIkI5xmqOveFg0ulrPJEcm5pUJhaL38ROeYUSa8jjQnOdqwpHRxTY3nPtmkhSMd0ZxzMACfClVNRMmSFFo4oi0oopAO0YDehiuhgppBTpeJZUhaRBK4JVCw5mA64HjRmHKcV58/SLsrvTuKdK1y2uLiMXFv3aukhHdOh35SOmQwO3rWh2nDnazpGl2l9ousaNxppk8KTRCVu7mdCMjlY4z8zWlHp0rKlZW85MqfVIVXOq1YwX7NcIzWdDtdOi3AtuMeFdc4flzhpGhMkWfQ4yR7hVv0XjXhjiFAdM12wuGP9n3oV/4TvVSelur+OJcr1lFnwSTJTkooVs55sUu45Rnw8xSRcE1AWFyHzmimuA10nNApw0Rlo+aBpUIxArRCBSzUi1OEwIyYA2pbSLUS3JlkIWNAWZj4KNyflSEpxSXEV+NH4PvHB5Zr3FpH5+1ux/hB+dT0xzIgultjwYxrVhYaxxFca7Laq1zLcPOrnrufZz54AGKcROZXEYGc04a0737GRVs4A4Bn1/VEQqywKeaWTH2V/M+FXtzniPdmftjWnLsvM1Psb4cGlcNvfSJyzXzZG2/drsPmc1fQMUW1t47W3jt4VCRRKERR4AdKVxW9TX4cFE5nUW+LY5+pwCgRXa7UpCJEUQ0oRRSKAOA4rzX228PvpHFU11EmILv69SOmT9ofPNek8VU+0rg8cV8OyLFHz3dtmSIDqw8V/wBeIqrq6t8Mrui5oblXZh9nweVwRIuaitT4f0+9Z55oOaUgZIYjOP8AWKn73TpLKZl5SMHxFMJe8bbFZMJtPMWbdkE1iSNVitLaDR7IWhdoBbx92XOTy8oxk+JpqhAbFF4KuDqPCUcbby2btA3u6r+B/CjshV6r2rkt1PhDqIZp3GtNYaexVWkWoiqCl0WklpZGCgsxAAGST4UwkDZxXHljjRndlVVGSWOABVR4i7UNA0VZEinF5OqBlWI5Vs+GaxnintM1jiJniaYwW+WKxxbAqdsHz2q3RobLOeyKGp6jVUsZyzVuJu1Xh/T5nt7eI6jNGQOZThM53wfSuaV2h2OraFqt7bWrJeafEZRC+6sPAg+VYXZWt9qUrx29tNM4HOyxqSQD4/jW49lfZ7e6Il7da5HEiXMQiWEtnmXqSfIVc1Gmppr57lDS6vUX2YiuPoZRrPGWs6zcs93ey4YDZWIQHfcDy3qMm1G6uMRzO7hsICW3B8AfStxl7KeB7a4ma4vrhlduZIUcEx7k4GPDw3pO+13gThcGDT9Fs2m+yFdO+kfrgcu9TR1cGsVxyRvplzbdssGQRafxNeLKy22oPJC3I5KnPlg+eNqew8B8TS291dpaH/dxzyojAyITnqo3B6mtNj1njri90ttMtF0O1kOBd3Q+sA/cTw2rQ+DOELHhGwkt7dpbi4uG7y6u5zmS4fzY+XkPCortfKpc4z6dyeHSFJ93j1fH2KF+j7danBJqOm3KlbTlEqh8jD5wSvmPP1xWxtuaSgt4LUN3EKR87Fm5RjJ8/wAKVWsjU3K2bmlg1tLQ6a1BvODgo4rhrmagLA4gbBFWbR3JWqtGcHOasGiXS+0CdsVY08sSKGug3DJZ4GxUfxjwpY8b8OXOhai0i2ty8TuY/tYSRXwPfy4+NOYLqPYZp9FKjqcHwreoknwcxdBrkb2Gm2Wk2cdlp9rFa20QwkUS4VaXrtCtJJJYRUfJ2hmuUBSgYVXQKAoyjmOBXFnehoxzUuGES83yoiqAPTxpGeQ75P8AlSxXmNk/ILe6pa6daz397KIre3QySOfAenqegHiTXnTjHia64u1qXUbjKJ9iCHO0MY6L7/EnxJqa7R+Om4jvP1dYyH9WWz55h/5iQff/ALo8PnVN6iui0Ol8OO+fd/oct1LWeLLZD4V+oQCjocGhihjFaJlmldhPEY0Ljf6M78iaravZAk7d5kPH82XH+KtK1PWZluHDMc5rzdFO8MiyRuyOhDKynBUjcEHzrWtO40j4wsxK5VNWjT/eoRt3pHWVB4g9SPA58MVm66hzxJGt0zUqDcGW1Nbf9s0odVLjdqp66hjqaUXU8H7VY8qDfhqS4Q6gF8af2+pI5wTVGj1UZHtU/gv8kMrVBKonjci9xOHAwacDFVex1bAAJqZg1FXHUVC4tE6mmSWaKaSjmDDrSmc0wcin9qPBzcbcKXFhCB9OhP0i0J/5gH2f8QJHvI8qoHYfL2o6Vo8l5wstlrumQXLw3ugT3HJLbv5gNgoW3wVyCQcjIrbSMmqhrXB2r6br54w4FvY9O10ry3VvKM2+oL+zIvTJ8/jkHetXputVX8uzsY3VtA7v5tfdd0aDovaDZapKuk8Q6Hq3Dt7Jt9E1W1JgkPkkoBjb44PpReIew/s74lLS3XDdrbztv31ixt2z54X2fwqv8P8A6RulRSjSeONPveEtUGziVGe1kPmrDcD3gj941o+m65puvQC40fUbPUYT0e0mWUf/ABJxXQpqSyjl2nF4Zkt5+j5f6UebhLtB13TgPswXn18Y9Oo//GmH+zPbZoLEcvD3EkI6ESCGQ/Pl/lWxavp2rXyL+q9ak0qVc5JtI50f3q+D8iKz7jPU+2PgzS7vVYrjg/WtPtY2ld5Ld7WUKoyfZLhSceAYk1FZpqrPiiiarV3V/BJoq172h8ScOW0k3FHZ3rllFCvNJcWuJolHmW6AfGk+Gu2jh/inXLXR7G11JZ7kNh5YgFUgZwcE9fPpWZ6p2gdo3bncxaNDyRWoBEsFgGhtwCftTEsc+4n3DNbD2f8AZ1pvZ/pfcWx7+9mANzdkYaQ/sjyUeA+JrH1tGmpXC976m70/U6u+XL931wWvO1cNDpXDWOjdAelIucUoWpCU7U5CBYU7+4SMb5NI9oPCPEmsvpkGlaPc3NnDE0jSRlcGRjjG58Ao+dS3DVm11qCnG2a1GMBUVQNlGBWv07TK1NsxOp6t0uKiYjwx2O61PMkmriLT4QclSweQ+4DYfE1sWk6PY6HZLZ2MIjjG5J3Zz5k+Jp4RQrZp00KnmPcwb9ZZdxJ8egAK6BQoVYKoMVyu0KACGikUcjeuEUAJ4rqtigRQxQBnfHvZXb8SSSX2mGO2vW3eNto5T5/un8KyLU+zriHTJSk+i3no0cZdT7iM16gFd7wr0JHuqnZooTeVwXquoWQW2XKPNPALLpuv3+gXjLb3Vxb98ttIeWXKb55eo9kk/CpDUY+6uGA6ZrvbroWpcO9pvDvaTZ2zy6fEY7XUnjGTGMleZvQo+M+gqQ1+xMUxbqM9fOs7V6fwscmvodV42crBGQvTpH3pih5TinURrMkjWix7G9U/tc1C9sOEJDZtIneyrHKyD+zIOcnwB2q3JXL2wttTtJLS7iWaCQYZG6GiuahNSa7BdB2VygnjJ5p4c4b1LiueeGxUHuYy7ljgDyHvqf07R+ArJEbU9WuLqdSe8hSGRAdvsnbwPlW2cPcM6fw734sIVjEz8523A8s+VTn0S3nH1sETMfvFBn51et6lulhZwZtHSFGKcsN/Pn+qMjs+0C3tB3PC/Dt2fZEYkgtCCVHQFjj8aX77jniBgrQpYo3/AD5DIw/wJ/U1p0ukRsPZY48qqOvcb6TwtLJBMbiWeJ+R4oo9xtnOWwD8KZC2M3iEcv7mqoV1Q3XWYXySX92NLLs5mn31bUdQuwRvGsi20fyXLH4mrTovCelaZ7On2dpCx6tGuW+LHesw1PtmuLhWWwsRH1w07822+/KMDPjVh7PG4q4kvWn1ea5isWRZoyIwsb79Fx4EGpbY2xg5TeEMr6jpd6hp45frj+r5NVs9JisyZPtzMN2NPFXFciHKgXwAxSnSsWUnJ5ZclJt8g60YHFJPKFppNqKR9WFIho/ZwvU0hJeJGOtQd3rirnDioibWXkbCnrUkamxkpxRam1Rc4BqRtdW7mMe1uao9vdHqTk06+nMB1q1DTPuVJ3xfBeotfI+9Vo4Zu5b4vKc92oxnzNZjw3YX3EF+tvbKeUbySH7MY8z+VbLp9hDptpHbQjCoOp6sfEmtLRaaTnufZGR1HUVqGxLljmh7q5XRtW0YIKFAUKAMJIPhSinuwM7E11FA9o11oo3PMygn1rikjvXwFE5kPLGObHj4fOl+I+zXVuKOEZEsNZi026n3McsZ5ZY/2S43TPng7U90PS2vJu+lX/d4z08HPl7qtTSNjGSamqu8OW7BS1Ud8dif1PF/EvDWpcJ6jJp2s2ps7lN8ORyuvgyt0ZfUVDmVVxl1A8ydq9r6law3gV5IIHmjB7qSWJZDGT4jI2qiXPFsdtqEul6rLarcRjeOS3RkOc4OCOh8DXQaXWxuWPM5zVaKVPPdHmyJe8GRg+7euSRkeBr0wtnwbqykatwro7OxP11vAFI67nlxkeo+VEn7K+CcPLBw9BKXXaNriTlA/aXB61d3FLaeZaUgaSCVJopHjkQ8yuhwynzBrVuJOy7R4Wd7Jb61GT7PeCRR7sjOKp19wvb2ifV3FwWHUugx+G9G5BhhYuL5njC30Qkf/nRjlY+8dD8MU4j1eWS1+mxpK1qHMfe8hChgASM+eCPnVcnsypIV1f8AA1pFpNo8HZ7pGnW13BPcBJLi7VTuksjElSPMAKPhVS+uCWUi/prrJS2tlaj4iRjs4PxqXsNeU49uqXqlpAZmMQ5D+7TKKW6tj7EnMPI1TlTFoux1Eovk1231cEDlapa01grjLVkVlxJNCR3qNjzG9T1pxVbyYHeAHyJxVWenZdr1S9TWbXW129qpa21RJANxWUW2s8+Cr/jUzY6zIpGSaqT0+C9XqUzTo5lcdaXVwKptjrq4GWqWh1mNhgsKrutosKakG4lveHpBHp/EAszHKpaMXsY7pvMBmHKG9Mg1T7jsZ4TvJvp2kG90qQ7ibTbohR7s5Hyq6TvZ6lD3F1BDcRZzySoGXPng0hZcNaHZ3S3drYxwSg5HdsVXPnyg4/CpIXSgvck0yGzTxsfvxTX6lat+zPXofZtu03iyKP8AZNwzH581LN2N6TfSpNxFrWvcROm4W/vGKD4Df8avAdR0NG7zPjT3rr2sOTI107Tp5UEM9L0iw0O1Wz0yzt7O2U5EUCBVz57dT6mnnNnrQLAiiFvWqrbbyy6kksINRW6VznFEeQedKAUmkyeY4ok06oCcijWI+k3KKPE06KGy7F24N07kUzEdBVrAxTPR7UWtjGniRk09rrNFV4dSRxWvu8W5s7XKFCrZSB1oUKHSgAUKHWhmgDlcNdoUAFxXGFHNcIoATrhFGIotACM0CTIyOqujDBVhkEeRFULjrSFhJdFAVhkYrQwN6heL7IXWls+MlOvuqrrIb6/oXNBZstXzMNf2ZCppxCTSWqqLe5YetIQXqqPbwMeNc5JHWRkTER2pdajo7xD96nUVyp8RULTJkx4nWncZFMVnTHUUYXkaOqtIoLZwCdzjrimNMepEjsaYatwzpXEUaxanZx3CL05huPPB+FKLfR5+0KVTUoU+1Io8yT0pFlPK7hLa1iXYqVt2LaDa3UFyFWQJMzyRODyMh6KBnYr1Bq92Vlb6baxWlrGI4Ihyog8BVX1Hi+KbRbia1uUinKOqDO6MM4/kcVWbrtaijsBEZFW4aEqsrHYycuV+ZBHvq06rrly8lON2nofurBq4ZQOtM9Q1a3someWVVVRkknoKw7Ve2y4n0vEUptrnHMGXfDBjt/Q+h9KqOqcWatxleHlkeNDjnJOEjOCG+Bydqlr6bN8z4RDZ1aCeK1lm12XaFBrZuJLXH0aMhVcn2i2+QR4EY/Go/UOJWYkB6z611W30y0jtLX7EYxsN2PiT6mkJtSvrpsRRMB5scVItLHdx2GPWy28vkuw1cSEl3z8aOuqBmwpqr6Xo91dsDPdEA+CD+taHwzwhZtIjSRmU+bnNWI1RiV5XzkOeH9K1PWmxYWdxdkHBMSkge89B8TWjaF2T3UpWXWrlbdOpghIZz6Fug+GauPBdnFYaW0MKqi7HCjFToIzV+miMluZmX6qcZOKG2maVZaRara2NukEK/dXqT5k+J9TTuugbUU7VbSxwig228sGKFAGu0oHKFCh1oAw9j8h0p5o+ny6reLAmQg3d/wBlaa28Mt5cJBApeRzhRWgaXpkOk2iwR4ZzvI/i7flXHRidpfdsXzAtrHbRrDEoVEGAKRdMU+kTmGfGm0gyKSSKkJDKRarnEXBmhcTNGdWshI6Aqk8bFJYwfJh4eh2qzSLSDoGFMUpReY9yziMo7ZcoyjXuCNf4LjkuNHuJdW0kbyREf7xCPMY+0PUb++pjhTieLVbCLT4lLBmLh+bBi67J59OnrWiQuCnI32l6eorM+OeHP1DqC8QaWpit5HAvIo9gjHpKPLfY/OtjSa9tqFhk6rQJJyh5ExqMvdl4NRjVQDymQjYZ6Z8gfPzqravwxZ6k5+iXEbFOnI4bffb3VcE7rW9JjvTGRyqUlKnIHrjwwcH400Tg621KJpllhS4Q4bCYPodvA+dbBjZMl13gG4V3kjUADxAOPnVH1DTZrSVg8ZRl++rYNehxwndiR4+/+p6rIJSRnfYrVQ4n4Klu1kaaFVdScDGM+o86GgTMWLz5PMS3v611Jg/jVjvOGZIZGQjlkBIXJ6nyNQdxp5bnKoySIcMMdD5EVDOrPYsV3Y4kdQBulOFsVlxlQaYQNLEwWRGHr4VYdOQScpqnN7S/WtwLOwlgHNFI6/HapGHVLy1OGVZB6bGpKO1AiG1N5bTrtVdyUu5bUHHsHj4pVdpFeP3jNSNrxEspHJOp9M1X5bHm8KQbT8HOPlSeHFiqyaNBtNekUjLVMwcQjG7VlEb3Vv8A8OaQDyzkUsNa1CLxRx6jFRS06fYnjqmu5rScQofv04j15D96siTiScH6yFh6qc07h4oj6Mzp/eBqN6UkWsRq51xCNmFJtrqD74rOI+Io3+zOp/xUc6uGH2/xpn4Yf+KL83ECZ+1Rf12G+9Wcyazy5IkXH94U40zULnUphBaRy3UjHASBTIfwzTvww38X6l1m1dT41aOA7K51vUV7tSIYvalkxso8veabcJ9kWr6hyXWuk6bbde52M7j3dF+Na7pOl2mj2iWdjAsEKdFHifMnxPrV7TdOcmpT4Rn6vqkYxca+X+w8VOUADYDYChRq4a3DnAVyhQoEBQoUKABQoUKUAVyuihQAK5XaBoAIwoh2pUiiEYoAJSdwiTwvFIMo4KkelKmikZoazwwTa5RhXHnDt7ol+WlRntZD9XOB7Leh8j6VTp3aPfpXqR7OG6iaG4ijmhcYZJF5lPvFUniLsX0PVVZ9PuJ9MkP3VHeRfI7j4Vk3dPaeazbp6mmsWd/Uwj9amM/apeHXQPvVbNT/AEeuJhIfoOr6VcL4d5zxn+tVzX+xvi/hjTJdTvX0xreIgERXBZjk42GKglpJJZaLMddBvEWdGvYH2qj9T1n6XbvF3zxNg8kqH2ozjqDVTlvriIlSBketNZbu4k+8B7hUUaUnkllqG1gf3XFnEmlxMqtHfooOJB9v0yPPr86gL/tF1P6RMzI6I4QqCCNwcke7OaXZZX+1Ix921ENrzbsOb371ahsXeKKdniS7SZGx8R6lc2rwBZO6didlORvkYPl+ZpmumalecyyoEQ5I5z091WOO3I6DFOY4Ke7sfCiNafd8TKsvCucd7O7HOTy7A1Pafo8USBOXCjwqTW3Ub0V5Vgzk1HK2Uu5LCiMOUjoiihX2VAoguY0bcimkt60zd3ECzHwFK2ugXV4wZ8lerHOFX3nxNPqplIZdfGBOafrlpbEczEnyUZNXbS+Oo9PgV4tOnmcnCh3C/HzxUFw7wHIzc/IVDdHcYPj0XwrRNI4OtbCMc0aBt/akPXr41ajp4ruUpaub7cCuk9r/ABBArpDodr02DFySPOrDZdqPEdyFzw9CCxwDkgH5mo24mstPcoVDy8uFSMfh6CixXzsuRGxkXfA6VNFbVhFeT3PMi72/HmopkXWioMD7ST4H45p3bcai8UmPTLliOvI4I+eKon02csr3EY7rmHMTsmM+HpSPFfHtjo1t3V9chFU/VLD7Htb4HKPtUbmgUcmoLxNZx4+kI0JK8xBcEgfCnNtxDpl3HzxXShcke0CN6wf/AGv4v1yMnQ+EdRnhkX/ivEsKk7+0Oc5/70S1tO1kSszcKu0LNzEG/iDg+Ypvjw9UK6mu6PRIcOMqQQfEV3pWa8KXfGltK307h26t0bfHeI4HocHp+daLbSyTwB5LeSB+hR/CpFNMjawUfhbRBp9u11MP95kGMH7i+XvNTROaiotciAYkg82/WlYtYhkJG1cnvj2R1FlNjk5ND89aQmGDkfGi/T4SOuK4bmFujCkbQ2MJLyEHXypJlFLkgEgbjqKSc1GyxFsay5U8y9R0pnfJFqNpLBKoaKVSjqfIjcU/feo+/jeGJ54BlwMlPBx5e+mc+RZjh9yn8A3H0a61HRrsMzW5KFvAqNt/gQan42ZJlt0bnUkwSnG7Z3Qj3VRrPVreXjeSeAGRbiHJTPKecbb+oxVpu9VuIbpVkwGK80ZVcEODnr411unm51xkzkdVWq7ZRXYeXgMEgDRvykAe0p293mKZoeaaSLkyclu7zzL7xn+VPZtctp53MqSXCFtpIpMYyPAHqKP3trbS94iBkb2gWX2oz4+8VMVysa1w5+sIZ2MSKSDzYjwoI8j/AFrHeJ9Lmtp3lCOssezOvR18/hW/ak1vO0wSUMgGebmIA61ROJrBLqFJSysGBQgLgknqc0AZnpMKTyd3NghjjJ86m24ce3bngyh8vCmE9q9mzK8Ko0bFJAo3I8GzV64cnTUtOVZiDNF7JP7Q8D/ryrN10HFeIvzNfptik/Cl+RWkupYPZuICAPvJuPlTiOSGfdHVvSrTcaRC4OFFQl5w2hYugKt5rsaz1ZFms6pIZNAp8KI1qD4UqNPvYD9rvVHg3X50ugIHtKVPrTske31I17IHwpCSxHlU33Ybek3i9KVTBwRBNY5PSiNY+lTbRooycCm0k9tGfalQfGnb2McEiJj0wPKByjr5VPcacNaha9nlpeaNpzz3H01muJYVzIkSx7bdSvMd/cKa2+pWKTA94W/uqTWhW3E0d1b2FvYd6sdvGSxIKEuTvj4AVLGbXOCGdaktqZlPBXbNa6b3dpxDwxw/qSphVu5bTEi48HI6j1xkV6U4A7UeFdYjW3sbeDR7jk5/oyxquV/aVlGHX94fECsZ7QezHT+LraTUNPiisNZA5g6Lyx3J8nA2B/eHxrOuz7VrjQdc/wBmdfE9pE8uI5MYlsLjwkjPhnoR0Yda0abYzWY9zI1FE63iXKPecE8V1EJIpUkU+KtmhnBxWJcN8W3FtJNpOsqsOoWmOeWHIjmQ/YlUfsN/8WyD4VeIdYvXhCpduyNuCrjOPQ1YcnjgrKKzyXlRkbUQOjMQHQkdQGqrjVb97doBckFvvMnt48hiodtZNrcGBJ45plyTEDyyAf3TufhVO7VW19oZRdo0ldnDmk/L/WaCQR4Gudapun8YxOeXvip8iasFrrMc4Byre7rTKup1zeJcC3dMtrJKhmkTdRrgknB6EDrXVuoG+/j3irv4ivONxS8CzvgVrlAMrjKsp+NG5W8qepxfZjHFrujlAUbkbyochHh+NLuXqG1nKFcJA6so+Nc72MdZE+dNdsF5iquT8gxGRRCKDXVuo/4y0kL23Jx3q/Gk8evtuQ7wbO+1inKTXOTBqO1DifT9OdYVZrm5fdYYtyfX0HrUZe8RSlQbm5jtFY/8OA5b4t+VP3IZtZZhgDPSmd3rFlZgmadRjcgHOKpl9xpp8SMv0iSbl8m9kfGs04x49hTRZ9XlPNbcpa2tV277Gwd/QnovluaRyFUTQ+MO3Th3ha1MsY+kPvy87cof+6Bu3v6VmJ7aeIe0e8bTxo8dpoMscpkm7s+0yoWQBj+8B0qscJaTwzeKnEnFktxrWqXI71bYri3twei4+9jb0qz6xxfY3Max2lm8IjBWPlAUICMYAGwqjbqlzFGlRonxNmdX0IEzbeNNTEPKpC/tpJZC0ckgB88U0SGVH5XPMD0zVLJobRJYR5Ufuh6U5EVAWjydBgUmRdo1PJH1IFE+lR9Fy3uFSC6UpO4z76dx6bGo2UUb0HhyImI3E+yR8o8zXJtIaTeVmdj0UbCp5VjteoBY9B507tbAyQ/TJShgEmGzn2j5L+96VYoqc3nyKupvjWtq5Y10ThmFQzkokQA5mI6H19fIVdbDR+7PIljIwU+wdvZ67nzao/TYJrnP1HcIM8kY6KN+p8T5nwq0abp8aOzRueblH/BZjk+I9ffWiklwjIbbeWP7BBaFOYRoXH2ZX3I8/Su6pqlzHy2yd3IRuQd+UeRpOR5YbmV5XiBJAKmPLbdMUn9DmuOeVSApO7sds/n6UogilkjyAvztJK3N1x/i/KrRZabbwaeb+Z2MUee7BPXGclvj4VFaBbTcolmHPMWJYEZwBnHupnxxeXeoXNtw3o7GO7vCeeTPsRjcs5H7oyT64HjTZSUVlj4RcmoorfEOv6tx7rMmhcOR+zF7NxcnaG3U56nxJzsoq9cKdnGm6KyXd1z6lqIUA3d17TD+6Oij3VI8M8M6fwtpkWnWEZEae0zvu8rnq7HxYmp+N1ArndTrJXSwuIm9Tpo0x9WLooAx199HDhOgHyokbd4cL4dT4Cle9s4d5GMreQ2FQrPqK18sji3llf8A4YY+oFOI7sxswlLEjoM1H/r/ALscsaqi+QFJyXwuZElB6nlap42pLh8kL08n8UcIyaXV2Ufapn/tLJFMArEj72/SoO5vTISAdvOmUk++xqKNKNWVzLiOMJFH26Vg4zYN7TVQzP60Tvi/jgUroixFqGava8bwL9tuYkdAelOTxnasM9B76yAXJToacRXpP2mJHlTXpxVcm+UabFxcrMcjKknB9KdjiW0mjIZgMistn1MouQcVB6txNMkZhgciWQEA/sjzpFpm+wstRGPdCtnqcTceSy25zE928a48Qf8AOtJntJrzu40mjPMfZ55Pazv09fSsN0DLa3bwqzLzXCqGX7Q93rW02VuWdYYGEXdsCO9HPIxyRk+VdHpo4gkctq5brGw1rAr2MZZG50QYMf3SPD5708M03dqVxsuBzr4jPyqI076XDaQRtLEUdWzGp+swCw3HiM0+u7mZI3IX2njVGXB5SwO5I91WCqNZpSy4Mixv3hU942AR7/Koy6cTRyoPoxYZZCxOH670s8c08vtEFScZRwwA3zsKbzwvE7o0kqg55HdA6sPLbodqQUqmvSJBqELuq91PEEJ6hWHT5jakdNv5NMuVKuDHnZR15fLFL69GLi0xysVBKkMmCoPT8RUJYrLdBInYJIpyWx9sDow/r5UkoqS2vsOhNwkpR7o021u1uY1dTkEZpcoG8KqvD18LaVrWSUMA2AfL0zVsR1I2rnNRQ6pY8jrdJqVfDcu4i9spHSmc9gjbgb1K7Gk3TNQKTRO4plemtGjO1ItGcVPSQ83hTSSyz02qVTInWQUtr3nUZpA6OGOe7HyqyR2aruRmle4A8Kd4mBvhJ9yuw6OR0XFPobKWEgqSCKlRFijFQBTXYxVUkIQ6xqNpsHyPJt6o3ajdpqy2NzLbQreQyhBMgwxU+B8wDuPKrrdOsaEnFZ3xFN+sNUhi6rETIwHp/nireky7EUddtjWy8arxrp1/wZacRwT9zrOgzRQyxSD2p4pCFkT1U/aHkRVu0njzTliHeWs0SOAweNsgg7g8p6V5y4ivpLa0nhH9ryqw9zZ/pWkcOs97wzZXHKXZYwhwM9B4/D+VbZzuTdNK4is71vqL+JwVz3ch5WHWlda02x4itAlwnPyNzQzQviSBx0ZHG6kfI1klhG6Fw0oUSKBGc4IYHoPhU9Fql7Yd46yFD3edh94efnRgXJO3HeySJaajEV1EA93cwAKL5R95R07z9pNj4ijabxRY2EvIdUnBU4ZJrYjB8tqZDXpdVsPo93FHJzH2x0KMOki43DDqCKgNYupNVtmknhX6dbc6STICC5T9r0K7g+BGPGs/VaKE/fiuTU0XUJwxVN5ia7pfHWjykQzXsRVvHcYPnvUk/EWjxyFBdjI8DXnKC+cMMMas+m6hBeQLa6gjSR/ddG5ZI/VT/Q7VmNySwjTVFcnlm22+v6dKcLdrn1p2byOTeO5jb/HWD3+k6vpcbXmn3DajYruWQYliH76f1GRTKLi+9QDEzfOk8Sa7h+EqfKbPQYkkPQk+411mc9easHt+O9RhYETv86m7TtW1GEANJzD13pFa/NCS0f8A5kjWG5vOky/LuTWfwdrhkIE0MZ9cU+m7Q7C6gwq8kh2AG+TSStQsdJPs8Fh1HXYbRcc2W6Y86rOpcTTw+wqhriRu7ihJ25up5vRRufgKcaq0XDulSX87JLqki4iRtxCzbAAfteZ8MVnlpfd7G14ZmYe0kb9SVB3I9WbJ92Kv6LTuX8yz8kUddqIw/lVfmy1m/XT4pmDtJPIMyXD/AGpW/oPJegFV3VNauLiNi8qBh1UHyqK1PU5nKy80gAyO7O5z5n1qt317cXEyxDKFiFCjwOf6VqmQOtc1KW6b6FBIP+E00y56xjov+JuvoDUDx5P33D5iVgyqiAkdDjBz/Oi6ZOlxc38wBEUmY0P7i+yD8+Y0WUC/tFt5VUhU7uTPXIGMf1oBHeFn7zToVz0UCpswjyqt6AW0qQ2U5+z9lv2h51aFmRgMEVi2pqbOhokpQTEHhBHSm09oGGeh86fOwpBnBbGetRpkrSGsVnyjLHNOEjAo7OvnSTzqnj1pyTlwhrcYrLFwAKSluFiIGGOfEDpTOW8cvyqMfDqaf2hS4kWMqGkUYKA4VT+8fD3DertOjfeZn39QXw1/ccWOnd6TdSnngG3Iy7ufJfX+VS0FncyTCRbbEUYICKMrHnPj4k+dOLeznjhLBeZz7OSuAq+SjwFWHTYVSIo0UojnAUlTsuM429cVoJJLBkuTbywadpxa3djGgbxDDbHUj8OtTSR8sRlgZUCg8rQt4eKg+Ao1tC1ujqzAog5lbm3A8jStxN3Z5EjjaSRt8jIUH08zSiBViW2QuiAvMMqp6geLEn5UxvWjhtZJTHLyxZblA6E7Dby9aFxfm9d3SF2K5CKMAHHh7qhtXeecWsSvIsj3DSyjJxyIv2SPLJoAl4NQ+jxs4mWPuVwytJysTufc29NuBJBqN3qPEEu73Eht4CfCNT7R/wATf/iKrPE2rnT+H7mcSK3MhIAbJDHbHTbFSXBV0bTQbOEbcsYz7zufxNZfVZtVqK8zY6NSp2OUvI01LgEdaOs4JxmqvHqjY60vBqTM+M1z+WdC6Uyw3V8FURRn2R1Pmaam6JG5pk03NvRe9xSOTY6NKisDl7g+dK210ynAPU5qOaSjRSFWFGWOcE1gxd7gu5Cn2R4+dJvJtSbSAbDAHlRC+a10jIbDc5J3o/ebUjgmlY4TnJoYiAAWNKoRGN66SqLURqeqLbISWxikScuB7aissW1TUUiQ75PQDzqJhtXZXnl3d/wHlTe0aS+uO+lBx90HwqamASA+G1SY28EXx8kZwxad7xLZ5blX6SpZvIeNa+7Q27xPbGUBCOV38eu2PEeprLuD0E+tRbOQO8Y8nXGMbVf7u7ItJm+jOxjhYqz55iOgHStipYgjBveZsUs5bdoYZFGJxDhpF67knB/OpOaWS75keQKFjDKXB5QviT51FwwnuokhDkBACrAJgAbjenkRuYYJFkQLE55UAYOE9QRmnkQVLULbymBI5I9/ahyrcvpnqPzqHv4lgkYkKFb7+SB7j61K99dEtAMEjptg8vy2AqC1SSWdHOUKxEBMdGI+G/WlAi76M3UVymSylO9wGJwQR86j4LKPuyeZQ4PMhG5U+7HQ+NTKfXPIUiSJvo8gYdOY+PX1/nTa2h7yIsoVNth4j8KQBrFzMzqY/rI/tL15fzHrUvpuryxnupkYY+9vjHxqPubV3kR41aOWJeUPjZv3T5iuJOXLxyd6sqjcHHMvrnxHrUdtUbI7ZEtF06ZboMuMN2kgyGBpYMGqqWzzW8y4lDRMM8xG2f6VM29+pj58+znGaxb9FOt5XKOi03Ua7ViXDJPkojoM4pJL1G8aHfK0pGfCqeGX9yYbk3rvIKBkAHWiNcKB1owwyjrqBTWdwgzmuzXigHcVB6jqqgEBt+g9akhBsinYkhvruprDA55vCqrDaSxq9xOgEkvtFWO6r4DH41YYdLlmk+lXyEAHMcR8D5t6+QplrHcmFi+AVbGV8/Tbxra0lGxZZzuu1PiPbHsUHiaPvOdvZCqcY8Sf8q1jswhSfhlSVf7IUsvQdcVkfE8xVGBUDfw6VsHY+Hm4RUgkBuYFcbON+tXDPLH9AQZCLlF2bmGRnf8A1mnCWEssLCQuoRso0J+2PA48CPKnem20kkNwV7thz/V5OdvEGn7W0iqC3dxkHORkAGgUiIrfuywa3jZxuQ2VY9d/KmyGI6rOrRsveLHIUB69UbOBuNhVgKxSRsxt4ZjjBVGGc+OM1XNWiih1CDuhKheKRf2SuGBwCPeaAKmUFteT2/8AypGT5GpazkK43qM1WNk16fOfrQsgz45Az+INTGn2TuASK5+9bJNHVaZ74KRPaXrU9k6vGzAruCDjFJa9a6brwaeCBLDUDvzptFOfJh0U/vDbzHjRY7URrvRJcEYFV1YWZVopj3LQyvFIpSRCVZTsQR1FHS5z40pxZbFJ4r1f7T6uT1YDY/EbfCoiK49asJJrKKzk08MmFmxvmpXhmZZtdgd90tQZsebDZfxOfhVbW4yOtTfCo+tvZR1CKB78n8qa4N8IcrEuX2Jri/WJ7wsY5Q0gwsYfpzMeUeHqTUf7djbLEIH5EAUBRsABjPSo27iN3qEURYOO8aU5OAQgwN/eaeTyc4FvNK2P2TJsfSt2EVCKivI5qybsm5PzG19ciQlAHcqAMKdl28/OmNzmOznuR1hhdwzbkHGBj4mnUwAnkRRC4XoAN161G8RO1rpyQ8wP0uaNM+meY+7oKeRjWytkgsggDH2QMDp08aa3DvbymQcuGHthRv6H4VJbBBlRgeZ60zucIWDBN98Y/pQA1Cd6jFlLYyR6nzzS0Vw8JCCVjgZww3HypGKCZchHAQb4bw+NAs4we5L7knlYHHrvTJ1xn3Q+Fs4fCx4NSdnCZBz1O+B76MbvkJbm5j02GB8zUZ30oZwIJt9+gHLSqCSRwSgHhhpMk/AVGtNX6Er1lr8xx9JnmD4wuOh8/dR45EJRZ2CltuXHMx6+FdW3Zo2Dyd2fuqgwAfXxNO7fTw7hI0RDjOc7s3v/AKVNGEY9kQTnKbzJ5Fbaz+kTNGD3YHUA5fHqfD4VZdN0qO1RVEfs5xhB9nzpppFsok7wqME+0oH+VW2GOPkVUSIMN2P2sHwG1OIziW/Mixd4x5cE7YAJ6e/FS8TQkojOsbqM4VsOx/aA600t4Gd251J5VJyibkb7UrYWQZp7sQSd9cPklgCVQDCrkdAMH4mlAlO5iMJBaZSxK7KDkDfJzTe4ZVh5kf2mBVXcbAHO4A8TSvIys7P3XJGAQzOMId9qj75YYoxHFLKwwSAuAN8+PjSgJmc2EBMioVZuRcDePGd+m9RF9OEvbjE0fIqAF2GRk77etOrmQ92pkNweRxzd4B7IGen41XHn+k3lwphChpgEBP2h8PnSCEX2gTvNp9naAgrLKoGE5cr1qzaD7NlGB4AVUuJnN3rFnGQoRCzAKuANqtOkNywKPSsbqTzLB0XSI4hu9SZEpHjS9vOVkG9Mgc0ohxvWRg28llhfmjBoMaa2UvNFS5aosEp3OaMDiiCu5xSjcmHkknalI4S252FKRQgdaVZggrXbMVROqiqKTmuFjHWm894EB3qF1DVeoBojFsSU0h3fauIwd6gzz6lcB2zyA7D+tNOZ72XO/Jn51O2FsEA2qbCgiFNzY7sbQIBtRtVfu7dvdTuLCLUVrc4aIqD12qKKcpJE02oQbHnAKMZbicSGJljCo4OCCTn+n41cr+WZ1RZZDiR442GOhzzHw9KrfCVq1tpSuI0+uctlh1GMeW3SpgSzSXNqjAMiB5tx0JOBnbwArcSwc43l5LB3cdzCO9KN7ZYMWBCnwOD/ACozhrV+aB7ZXP2u69nI36gbfGmhlZAwEMYPLsV3360JXkeJZERUGM4CkE+Yz6Uo0aXlx3d0krSSlJFx3qsc8xz4+I60xvYj3W0qMObCK64I5jg4I606vWEkIBVCDJlW8T57eVNNSuVjhBcLHyYl2GzAHw9TSCjeylNxcMpR5I2EiFyOmNhjbyBrlixKcqvLysdi+x/D5ULAXFuigIsaco5xKu7A5LHbpvRrC1wuOZmDEkb+fwoEHqWDYlClWO5UE83L50i2lvK470DIOzp7JU+Y/wBYqVht+UjPISo2O4J9DXJYCxb2I1dlON+UeOwz40CkW8ctu74w8aZDPGuf4l8fePlSM8wfmMYOCP8AiDdfHYEf1peKYwO6BWyVKpkfL49a5HaRSyrPE00Mqryuyezlt/Z8j8aAGyG5ij5x7QBxzA/1FO/pLLmRTIDy5IZcj4EURrO6VnDxxSq5LArmInGevgaJcSJGMNBcRsftAxc648d1qKdFc/iRNXqLK/hkOobi4uoQ6FASM4YkUylnu+ZlLwrynBJfb54oqssrNClyiofaHVSTv4EU7V7J4+7aS3Lr7DsOmR8OtRfg6vQm/iF/qIm2f2vpF4pQAZMC56+powhsrJGkiHNMAfbb2mz5Z8PhXZu7hXKK0q45T3ceRn39N6UtIHMciLGsLsNi/tuo38OgqWFMIfCiGzUWWcSY1uJnlj5we7BXAR+r9dgPH31A6nZS83NIoTIJAG4Q+IPr61aU00rC5DB2YkGSUFievj4e6m17YmW2cc8fMgx7Se0B+VSkJjXFEWDsWIz4/wBK2jsh5YuErZTKq8ynmUnHKcnBrIOMvqpGGVzncCti7P4prDhfTzlMtCMqUzlTnOfPFAhdYFaOQOiryZKlldd1P88UrM16skbR8pAyhQHqvqPP1qLQSRuyhLJ0xzZQldjk4PlTgXLo0Z7lkKnZgMg9elAo+mleNfrEDDowYYOPPPh8agtYeG5uIO6ZshZVVuXBXHL86mp+Ire2bu7th3bjl55o/YDHOxPlVc1cot3D3KIN5CqRbgggdKAIHWY5kvrV5JO8k9oF/wBoZq22BUWitygHFVvVuVr60ILEEMfaGD18aslrgWi4rn9f/wAjOp6b/wASfyOyNmm70qxpFt6qIvMhuI4RPpVwMZKDvB7x/lmqVE9aJcw97FIh6MpU/EYrMwxjPKeoOKt08rBRv4lkfd5gVMaJe9zZ3Zzgs6gfAE1Xe9qS0pvqXG3tOepx4AVb08czWSlqp4reCxWEXf6g57uMrHCkY5gclm9o42p3NYq0yJJGyJksX5cAEeHnURosztHcurSkvM2HDYZlAx1qXleExqFb2hk8oYtgeRrSZjJEdLJCs2IlZmLbBUAJ64NNdQtoprhBcxowgyQhI9hz49N8VJJJGga4UgS7qoXqGNMTF3ETvIy9SQw64+PU0CjGbkCFVSJWz4HOKaTAODzKxJ64X8adzSBhgHrsGO2B+dNwQ3eIrOyjoxPv8fKlGjUyEgKIwqr446+ppJwSOdiA4bp5/Clrl1YKpyFG5wM5PmaICEkJ5CxK+WKAOpa8wZ8nm6Y8c/lRolS3d8KxPr0zSvMpQc0iKOuEPQe+gojk2EJPkd9xQApEe/lUJKVJU8w8APOp/SbSMYzI7Z6NyjPw/OouwsVeUtKpRBsEQbY9fOrdY/UCN44IXx9pWG+N/lSiD+KzKxqxeSZQ3tK2FI9wI3NPIopjMXAiiGCCgTAI36miPcc0ZkeFJIwvTHsrv7ulO4JJkiIE6Mo3wBlR6Y6gUog8S+txn64r4KgXI6Hp+dOUvI448K8HIPrCGQ9fMYquX93qslvcRx2ell2RkV2ZlK5zv8KdWy3P0CNLlLeG55QHZZCVJAxkHHj5UAOJL1uUrGsQVyVYOvieuNqjzOrSM0/MyIcpy/ePgppO7hkEqkJEcJyqhkPKhHU48d6Y3TGKKWL2SFB9vz6n4fzoAcs4eVRPIFEjgF2OQpz038KgLm9NtIZY8YaaQ+z1I6ZBxS0GoSO8jSqnsAYB2XHluPHrUFfzdyoaKMS8k782NwM7jFACd+4bV4nXOBETgjGN/wAasOj3YZQAarl3Mbi7jmDsymPCllxjfpSvDl39e8ZP2WIrG1qzNnQdPltrii9xvmllamcD5UUtzYrLwbCZMabNvy1JEVXrGcpON6sSnmQGopLDJYy4C5xQzmuN1ooNIKzHXlCUyub0KDvTS61AAHeoi6vSwO+1bMYepgzs9Ba/1HqAahiz3cnjyfzozK9w2N+X+dSFpZhQNqm4iiDmTFrG1AxtU1DHyimlvHyYp8pAFQTeS1WsI5NJyIard9O91ex28eSzHAFTF/NhTg034V05rvVZbtk5xCPZycb+dWdLDMslTW2YhgvcFvaRWMKW032YhHhT12wcijaWgmeUq0TrIfZR2wVVRgY9+M/GoS6aSO4fopk+rDZHxPwH86dxXIROYmLlA68w28h6mtMxiWuTHayGJYixABHI2QD1IJ9KSedrZ3KSSjn35c5B67jypukwuI17uOHKnfLEEnwrvLJcMw7vDjfAPT1HpSChJ7hVwPpAJ+3hxsCeuD61G63eW0sEavhAZFXmDZUDOT19BUjctJHGpdHHgQVzjHjUI6xXGoo1zy9xbo1wyqNmJ9ldvmfhQBK6PqMup3scAtJJoJSV5mXHXPtdPwqWjs4oZA0UMqImUYsoxkZ8vCo/S9Uj5+8S8klQHJt5o/bHUZAHWpiynWUMEyyqTH3nLy8xGen50CCkss0chw/MSMrG0ZXI32BoSOJnIMSuNkA3BQ+udjXGAWST6S7kMebnOW518vSk4TzK4kGGIKkxn7S+RHmKBRhcexcB/sJk7gbt6+7bpSw7sIcFWLZUcw2Hv9afglomXMsZB2kIHT3eVNJ7JVJWUkCVcc6nO+c/6FAHViluY+7EkQI3Uj2fDAO9M43mt4jzJzsCc83id967KvLJzRvzIBjp186f28feI5kQgMDykHx8/SgQb20ZujHMuCyShh5AjqOlFtuWHmxC8jyFnblUePUnNOJoTalW+lhCFwzhc84OftAVwpEyo1vIjsDgkqRy+Q99AofuDcW8rCPAU4wcbemPGhbW3PcmSNBzkZYHzFO7GEc7K6ISATkE79dj609gs40X2VBdiSDuANtt/P0oAZpD9GCxuzgNscD2WG+5/wBeFQ+uW8YkkCyvkZHsjK+6p2/WUyKOXlbr7Azk7+fj6VGatAe4JUOSNmDR8u/lnx99AGIcaWyvqawIQzO4GAOmTW32ca6PY2sEhlCKmRmMsq467jpWWSad+t+PdOt2RUXvg7jwCr7Rz8q12DUoWvYRFM7xukgdiuFB2Kjf3GlEFra6S4jkeJkkXqxXGxHTb4ULnUSmWTCjAyGGOYHqaUvbGwvuT6RZxSnmwWU7538jv7qhr/SFtSVhudStV5iwQS8yL13wf5Ugo+dnmlchkKgfYPTG+2/XNNdSz9ItjygExOyk4wdwB8PCjW0ckFwlz36zxNEFCgAdOoI8/HNNdZkRbtHjQAmBmIXpkvuQPcKAGd/IJb21kDZYxAsM9Gyc/wAqstk2bUVS7qeEaki27c0axpvjGTjerdpsnPbD3Vga5e+2dP01/wApL5Cz0maUaikVTRoMSYDBrLNVTuNUu4+gWVsfPNalIcZrNOK17rXbj98K/wAx/lVrT9ylquyZH97ilY7/ALiAklGUOcqeo261HvJgU1lnxDIMEltunStKiPv5MnVS/lmgcPxl7OFe8PIy87DOAScnNS8XsyYASMA5DMMZG+/+VVzR70rEsaKFVVAGOp261Kz3EhVZSHkJyOoOR548KuGeCe9abmZmkB5iVKjAIppcXGWJ3JPUNvjwz6US6cvGV7spzHOcj/QFNpWcEsrAyA5LEbD3eZoECswYyRBFIbP/AGFFCjdXUHl3AZuo9wpAu0jn6sY3Jbof9etIyOFkPK3NgdcdD7/GlEHYGclGIbP3OgPliiu5lJIhdmHXmGMGm0ErLzZRDy/vYyKPzC4UlyxX91iAPzpQAGyzq4C536eNSlnEch1Kjyd/Z333AqNhi7x2JwGAwCGwcZ6e+pqzEUCkPzN15TIc/D/OkAm4IYIYVEkwWU+1yxjmI9c07e7KDkUySlQFy2wB36Y8ajjdRRhGk5RnpjBzj+lKxygRoXUEjPtA+G9KITMM6OmSJC7KQAzZ95xUnFcKqK0MgDnIA2XGBvnPvqtQ3HO5Xu1JOwVSQQfAZpSS8UuAts8gDZOEyCN8jm+FKIybeb2WYTc4Ri4ZiMZHTfx3ok+pQEoFmAZTkjGysR0z40zDd8O8Xm7spzbAcux6MPA5qL1CbnKCK3Csd5MkZT095oAlri/AflJVMY5cMDg7/LzqPuitw4VmblKlgoOMmkLWMBZA0ClDv1BIxnrij3TrNESIhGE3JB6GgCHuO75z3cko9JGJU9fA03IiZ5ldyhblfmU5GcZ/zp0qBZQ8551ckjmOfw8qbXREdwrgoBICnsYwCDkUAN9TvO7jSZpRIiZXmAxnxzUFoOrganL7WxenmuN39lcIhyeQkEDAJG+1Unhy7abU3wfI1Svqy3I0dLe0oxN9024E0SkHwqR5c1BcN5+ioT5VYkGRWFPhnRweVkRGUcMPCrFYS95CKgzFnrUjp0pBCL+NQz7E9fzJF6TNLMMUkRTB7R5yeFXOeZifU0T6Jk7jNRuiav8ATYFLn28Yb31PRMrDNb804vBzMGpLIlFaAeFPIoeXwrseKXXFRNliMUdVQBRZZeQdaM7YWojULvkB33ojHLFnNRQW9uS7CNN2Y4Aqx6bHDp2nxxg4klGcHqx8/dVZ0q3Zp2uZVLKg336elSyXRvnAjUozZDk/2SeXvNalNWyJi6i7xJfIkrdnuGM4K8gBSPm3BHifiaNISR3gReXOG5ADj/OhaQm3LRsY1TGxjyGHoQaPPGrxPl5W5SSF5MDmqUrhQ08PM/IY1b2DzdDTxbxuZTL3bOBheVivwpkAXjy0e4H2o29/gaaXFyjoEAzg9TsSf6UAS0moxFpG72RJWBzltqhLeQzF7pZuSR3JUjfKqMDby6mmN7KCrOsjtzJyhGOcMdtqc6dGoRcOEwOUHGdgN6AJjT9RlSULK8RCsDlE3Bz1/wBedScV99FBSNmHtHABzgZJO9Q1hAgnBBDKGzn3ZO/9aWt1jRWMUqlnJb+4T/WgUnZLoyKZDPJzcvMPb+16+gpzBJ1ZnV3RcsykHB38fKmlncRlW7zMmVKnmUHfwz6elLrHCsImA7srlfY2GR1H+dADy0lMmY0mVi4OR0yR1+FEw0zAG35OU49lsiQb74psJYRiVoy56As2eU+nkKd21xJbuZjCORTzYD7Z36etAgyuR9Gk7xoSBnBBOQw38aXiiRApSVonLZzjmBBzgj8qIZo5xNF3OVAzksebG/8AWkpCXiZ4YkQoOZsHrjbBoAkOSFuaQzFkzzZaPBPUDalZYIo1IidA3IQCFwSfP3daYW8jSuDCnMvUZOST4n3eFTEd+9mndEHpzDKg92N9jQKEsI3DLGv2ihUYIyR5j370+LvHD3Swy3IGUBbZl67E+JpvPclrkSmKAryg5GzIfDp4UZ5pVQFossTgHw8dxQArKVkjSMxujICcuMFhvg1GXX0hUdowgJyCOfHntvU+17yqpuZkUH2QGGct5ADpUPreoKllIJIrZolyOZTuOvUHxoAoPC9u2o9oN7dc6p9Dt2HPyggMxwP61fLh8uEZoH9j78ZxjfHTpVO7OFee01bUUjJa5uyitsOVUH5k1dLKEztLlGdyuVYMCdsggjxoAaT2ETSyskMURkX7ULspHU5GemaETtZwyfRVuO/YYKXBEked/a9TTyQiErG8oRCxHt7ZPgCKa6hcwhkHMokJORj7PpQASRoUVea+jnuFBBLQ90zE5JGOgxVeurxRdlHYMSiKAGwdyTtUreXcEqGIIM5zzkYLdRg+oPjUBcwQyXdxLIxx3vICBkjlUD4eNAERe3qR6nKQpABChfHoKvPD0pktgTtkVmMUj3uoSXDHm53JHu8K0fh0lYVB8qwtZhts6XQ5SS+RMtSbGuyNg0kxzVFGixOY7Gs746HJqcMmPtxY+IP+daFJ0qkcewc1vbzgbpIVPuI/yq1p/iKeqXuFPY5ppc8yo3TGd806A2pG4UGKTK5OM7DetOl4kY+oWYMnrO6wgBkYgrkb+lSqXaqDzY3A5vIGqzYyCa3hfnbl5cco8xtipPnGCCvslcbnFXCgP2nMhbCoof2cDwJ99INOXHKWOFOw8D6+tJGc8wXEe24GSc0ZGLlRzszbkk9PhQAo8hVGwc5HhvTeWTJRogFOMYA391Ky8iyMeXDAdVGWO/SkDh1Zcy432ICkUCCW7O2Tg4I33JqQtmhWNlb7fLzAkZBHnjwppbxRg+yqkjqwOfdTuJ170HkIcnHN02/IUAPbSMO5DKzjoGZcb+lPGaLIZiSq5zhckDpn+lRlvdsAwSPmjyQGJ9rG9ORIDCSXJQnqPwHzoAfxiAHlVRuSTkYwMZpeOfEOB3Sg7gnOVBzUVEI5EWRndQpPs48fH40pzycjKQ2FyVA8j/WlEJRruTu25nBVBzDAxv0x76410scjTGeRIzvydQvkAPPNRHfOGb2QUXbJb5miPcmQcmFCknIByx9fhSiEut0r3Ts0kxD7MObHj5eXpXRySyS88JYEkqGPh6/nUH9Kn5Rhx68o3YjbenS3NxzgKxXA9rlO+fyFAEoZhAQFSKHkAI7vIz5E+dI3l+bjq78x25eoHnTFbkyXTZleR32wV2brsT4UvbxmeYqsfO4GOux93nQAnGQgzzrKqZA33GfA03u4QwIRsuDzAAbEj896lmtpFDxi2QYBODt8NqjWF2zusgjHKCRj+fuoAYy/WRsEKnbOSeoI+QFU7QbEWvFEsIHsN7S+7NWC5uu5d4yMK+SB6+I/rUDY3oj4mgYNkMSoP+vdUdyzBk2nlixZNw0OAJbp47VNrsKr2hXfPCvuqeRwRXMTzk7CvGBUnalrJ+SYU35hmuq/I4IqNkqLE+GUMKRIoW0okhG9B2AqJEjPGsF01jP3ijCHqB4GrPp+srIo9qqlI6nOfH8aPA5if6tuX08K6+2pSOGqvcODRYLxWAOacC6A8ap2kXWoXtytra20l1M3RIhk/wCVWeVLHR1//Wr8G4HWysiJHX0Z/siqv4abfCLq1kEuWKXWpRxRkswFMILabUZgyxStnphCcDzpvccY9ycaXpdnaAdJJV76T5tsPlTCXizXJ/8AiardgfsxtyD5KBVunTKHL7lK/Vuzhdi5ppt5DEsUFncfax7SHHqx/Kl49Pu7ckpHOd8kmM5J86z1tb1I9dSvj/8A5D/nSTavqDddQvf/APYf86n2lbcapJAzEH6NLzkdd9uu3vpHFyVPNZ3D425cEHx/Csrk1G9b/wA7d/8AXf8AOkTfXmcm8us+ffv+dG0Nxq6WV5JMxNrNgjb2T7PoD/Wiz6beu2BaXD4O7AEE9dv86y0aneqMfTbr/rP+dBtTvP8A1l1/1n/OjaJuNBn0rUGnUpZXYjViSWTx9PSpK0tryAcixThT1BXrWUnU77P/AI27/wCu/wCdFbUbwje8uv8ArP8AnRtF3GuS298l2wS1cKqhuYj2WY9fw2pZLSYoXWF4j0IUYbl8h51jX0+8/wDWXWP/ALz/AJ0b9YXfU3d0T/8Aeb86NobjckgnWLGWk/ZGMEeh+FPbbvgqkluYjkZT0AGeo8jXn46hdn/zdz/1m/OufTLk9bm4P/8Adb86Nobj0FLCvKVESkZwXEhyRv8Adocpiufqx3kbKQdxhTvuN9q8+G7nO3fzf9RvzopmkP8AbS/9Rvzo2oNzPQ1zylHK2zCQrhSJs4OevyrkRcpzSxAljhlZhkDfcGvPBll/50v/AFG/OupPIP7ST+M/nRtDcekAoh58oj94Mg84wrb77HxpW11C4KyiUI7DPI7EB/H57V5sM7n+0k/jP50Uyyf82T+M/nRtQbmenY7yBJGV8ES75LDCnfrvRZdRRGaEhOQHMZjnx7+vzrzL3rkf8ST+M/nXDI/7b/xGjag3Hpy7lVgM6ikwXZeWVBsc5H+dQOvm4ktJFtpTdSYOF71T5+NYGszAfbf+I1xpn/bf+I0bUG5m+cEWS6fwza2OoQd3NmR3DMp5SXJ3Gd8jFTss1rFyxg2Mq4P1gPdsmM4Gx/EV5nWZsfab+I0V5Gb7zfxGjahNx6Sub9JbZ0efLb8uZAxBGcEE9Kjb5oliWGCUTqhzztKDI2Qc59xrz6C3i7fxGjq5X7zfM0bUG5m8S/SrjOUVtlGecADHU9aiLqLUFtrorC2S0pVQwJYk7Hr5VkBmbHVvmaRkYt4n50OCFU2ahpmmXsTLz2rqPUj86vOkzJbxjvZI097CvOqZB8aV5siqc9BXPu2X6up2V9kj0q+oWrHa5h/jFGFzbEf+Ih/jFeZiN/8AOlA9RLpdfqyZ9Zt/8r9f7no6a8txkd/F/GKg9Zs49agNpHdWsbOwKvLKFQEeZ8Kwp/aNcVR40+PTq4vOWMn1WySw0jUJ+D9QgYgNZzD9qG5RwfxqPl4b1MSECAYI6iRfzqgkqPAUkwUn7K/KrC08YvKZVlqpSWGkaRp/DmpRRlXtlXDEr9avQ/GpB9H1AL7MUY36d8mf51lSlQPsr8qBK/sr8ql2Ir72alJpF7g8yQFic579Pzov6tv1bZLcDf2jcJ+dZZyqT9lflRgq4+yvyo2IXezTm027ySxts78oFwh/rR10u6bxt2zsR9ITp86y0xofuL8qARF+4nyFLtQb2a9BppjYlxbBSuPZuEGD865NbPuFaBdydrhDn8ayI8v7CfwiuYU/cX+EUbUJvZri284BKT2qMdiBcJ0+dL91Mu/0i0k26GdAM+ON9qx4Rp+wn8IruF/YX+EUbUG9myGJwHZLm2LMPvTpsfnRXgiZcc9pzkHmP0tPZ64xv1rHcL+wv8IroC/sJ/CKTag3M1s2jHlczWIcbErcx+0N+oz19aUPMwZGuLArynHNcRg59+ax8on7Cfwihyp+wn8IpdqDczXTGO7QfStOLoTgC7QAj1360okUfKB31hzA55lu0BHXB69ax0ov7CfwijAKPuJ/CKNqDczY5iDzsL7TwSAMfSU9rB38eppzZXdmjYlvrBdtmW6UFDv03/1msTKp+wn8IrnKv7C/wijag3M3qW/sfbxqttyMM5+kpnPrvvUTdz2s/S+sc53UXSYbr67VjhVT91P4RQCKPuJ/CKNqDczRdQ057lG5bzTQ+eZW+mJsfnUF/s7eLfQ3Iu9JHdyBiBfR9M7+NVocv7K/IVzb9lfkKNqxhgptPKNz0rW9Lsogs2qWQI8pgamIuN+H0GG1a1/jrzrzDyHyrhx5D5VRl02l+v8Av5GjHq18VhY+3+T0a3HnDgH/APVrb+Ki/wC3vDn/AO72/wA6857eQ+Vd28h8qb/C6fn9/wDA7+M6j5fb/J6ate0zheCMrJq8XwBNKf8A1Q4T/wD3dP4DXmHI8h8qGR5D5U3+E0fP7/4HfxvU/L7f5D3kapNgDZt8US0hSe7hhbIWSRUJHUAmhQrRMs0Li5v9kmTQdGAtLZ4Q8sif8WYn9p+uPQYql5oUKexgVqLQoUAFJrhoUKACmiGhQoAKa4aFCgQ5QoUKAOeFChQoA5QoUKAAa7QoUAFoUKFAArtChQADQNChQAPCimhQoFO+FdoUKBDtcoUKAOZrlChQCOiuihQoFOnpXAaFCgDtdoUKAONRKFCgAV2hQoAArooUKABXKFCgQ4aAoUKBQ+aFChQAKHhQoUADNChQoEB40KFCgU6KFChQAKFChQIChQoUAAGuihQoAFChQoFAKHjQoUAf/9k=" alt="Os Gêmeos da Calistenia em versão Roblox">
+    </div>
+    <div class="hero-txt">
+      <div class="coroa" aria-hidden="true">👑</div>
+      <h1 class="titulo">Assista a live e ganhe <span class="robux">Robux!</span></h1>
+      <p class="hero-sub">Você ganha ponto de dois jeitos: <b>responder o check-in</b> que aparece toda hora na live (10 pontos) e fazer <b>6.000 curtidas numa hora</b> (20 pontos). <b>Todo dia tem ganhador</b> — quem termina o dia em primeiro leva os Robux.</p>
+      <div class="selo-roblox" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="faixa">
+  <div class="wrap"><p>Quanto mais você participa, maior sua chance de ganhar Robux!</p></div>
+</div>
+
+<main class="wrap">
+
+  <!-- ================= STATUS ================= -->
+  <div class="painel" id="painel" data-ao-vivo="nao">
+    <div class="painel-rotulo">A live está rolando agora?</div>
+    <div class="pilula">
+      <span class="bolinha"></span>
+      <span id="pilulaTexto">OFFLINE</span>
+    </div>
+    <p class="painel-nota" id="painelNota">A live não está acontecendo agora. Entre no grupo para ser avisado quando começar.</p>
+  </div>
+
+  <!-- ================= BOTÃO ================= -->
+  <a class="botao" id="botaoGrupo" href="#">
+    <svg class="tt-grande" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FFFFFF" d="M16.6 5.8a4.7 4.7 0 0 1-1.1-3h-2.9v11.6a2.7 2.7 0 1 1-2-2.6V8.7a5.7 5.7 0 1 0 4.9 5.6V9.1a7.5 7.5 0 0 0 4.3 1.4V7.6a4.6 4.6 0 0 1-3.2-1.8Z"/></svg>
+    <span class="botao-txt">
+      <span class="botao-chip" id="botaoChip">Entrar no grupo do</span>
+      <span class="botao-grande" id="botaoGrande">TikTok</span>
+      <span class="botao-linha" id="botaoLinha">CONCORRA A ROBUX • RECEBA AVISOS • FAÇA PARTE DA COMUNIDADE</span>
+    </span>
+    <span class="seta" aria-hidden="true">→</span>
+  </a>
+
+
+  <!-- ============ QUEM MAIS CURTIU HOJE ============ -->
+  <section class="ranking-atual rk-curtidas" id="curtidas-hoje">
+    <div class="card-titulo">
+      <span aria-hidden="true">🏆</span>
+      <h2>Ranking de hoje</h2>
+    </div>
+    <!-- A legenda fica ANTES do placar de proposito: a crianca precisa
+         saber o que as duas cores querem dizer antes de ler as barras. -->
+    <div class="rk-legenda">
+      <span class="rk-leg rk-leg-chk"><b>✅</b> check-in <i>10 pontos cada</i></span>
+      <span class="rk-leg rk-leg-lk"><b>❤️</b> curtidas <i>6.000 numa hora = 20 pontos</i></span>
+    </div>
+    <div id="lkPodio" class="rk-podio"></div>
+    <div id="lkLista" class="rk-lista"></div>
+    <p class="atualizado" id="atualizadoCurtidas"></p>
+  </section>
+
+  <!-- ============ QUEM GANHOU ONTEM ============
+       Nasce escondida: se o banco nao responder, ou se nunca tiver
+       havido uma live antes de hoje, a pagina simplesmente nao mostra
+       a secao -- em vez de mostrar uma caixa vazia. -->
+  <section class="ranking-atual campeao" id="campeao-ontem" hidden>
+    <div class="card-titulo">
+      <span aria-hidden="true">🏅</span>
+      <h2 id="cpTitulo">Quem ganhou ontem</h2>
+    </div>
+    <div class="cp-box">
+      <div class="cp-quando" id="cpQuando"></div>
+      <div class="cp-times" id="cpTimes"></div>
+      <p class="cp-resto" id="cpResto"></p>
+      <p class="cp-nota">O prêmio em <b>Robux</b> é de <b>todo dia</b>: quem termina o dia em primeiro lugar ganha. <a href="#como">Como ganhar?</a></p>
+    </div>
+  </section>
+
+
+
+  <!-- ================= COMO GANHAR ================= -->
+  <section class="card" id="como">
+    <div class="card-titulo">
+      <span aria-hidden="true">👑</span>
+      <h2>Como ganhar Robux?</h2>
+    </div>
+    <div class="passos">
+      <div class="passo">
+        <div class="num">1</div>
+        <div class="icone" aria-hidden="true">▶️</div>
+        <h3>Entre na live</h3>
+        <p>Seu tempo de participação começa a contar assim que você entra na live dos Gêmeos no TikTok.</p>
+      </div>
+      <div class="passo">
+        <div class="num">2</div>
+        <div class="icone" aria-hidden="true">💬</div>
+        <h3>Responda o check-in</h3>
+        <p>Toda hora cheia — 9h00, 10h00, 11h00 — aparece uma palavra na tela da live. Digite ela no chat e você ganha <b>10 pontos</b>. Vale uma vez por hora.</p>
+      </div>
+      <div class="passo">
+        <div class="num">3</div>
+        <div class="icone" aria-hidden="true">❤️</div>
+        <h3>Segure o coraçãozinho</h3>
+        <p>Segure o coração e faça <b>6.000 curtidas dentro da mesma hora</b>: isso vale <b>20 pontos</b>. A conta <b>zera toda hora cheia</b>, então dá para ganhar de novo às 9h, às 10h, às 11h — quanto mais horas da live você ficar, mais vezes dá para pegar os 20.</p>
+      </div>
+    </div>
+
+    <div class="pontua">
+      <h3>Como se ganha ponto</h3>
+      <ul>
+        <li><b>10 pontos</b> — check-in respondido, uma vez por hora</li>
+        <li><b>20 pontos</b> — 6.000 curtidas dentro da mesma hora</li>
+        <li>Comentar e mandar presente <b>não</b> viram ponto</li>
+        <li><b>Ganha quem terminar o DIA em primeiro lugar.</b> Todo dia recomeça do zero</li>
+      </ul>
+      <p class="pontua-nota">O check-in abre <b>toda hora cheia</b> e fica alguns minutos aberto — é quando a palavra aparece na tela. Repetir a palavra não adianta: vale um por hora. As curtidas também contam <b>por hora</b>: ao bater <b>6.000</b> dentro da mesma hora você ganha <b>20 pontos</b>, e na hora cheia seguinte a conta zera e dá para pegar de novo. <b>O dia fecha à meia-noite</b> — quem estiver em primeiro lugar no ranking do dia é o ganhador, e no dia seguinte todo mundo começa do zero. <b>Tudo aqui é de graça</b> — você nunca precisa gastar dinheiro nem mandar presente para participar.</p>
+    </div>
+  </section>
+
+  <!-- ================= BUSCA ================= -->
+  <section class="busca" id="minha-pontuacao">
+    <h2>Veja sua pontuação</h2>
+    <p class="ajuda">Digite o mesmo @ que você usa no TikTok para ver quantos pontos você já juntou <b>hoje</b>.</p>
+
+    <div class="busca-form">
+      <input type="text" id="campoArroba" placeholder="Digite seu @ do TikTok"
+             autocomplete="off" autocapitalize="none" spellcheck="false"
+             aria-label="Seu @ do TikTok">
+      <button type="button" id="btnBuscar">Ver</button>
+    </div>
+
+    <div class="resultado" id="resultado" aria-live="polite"></div>
+
+    <div class="barra-box escondido" id="barraBox">
+      <div class="barra-topo">
+        <span class="barra-titulo">❤️ SUAS CURTIDAS DESTA HORA <small style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#8E8E8E;letter-spacing:0">(6.000 = 20 pontos)</small></span>
+        <span class="barra-conta"><b id="barraAgora">0</b> / 6.000</span>
+      </div>
+      <div class="barra-trilho"><div class="barra-cheia" id="barraCheia"></div></div>
+      <div class="barra-marcos" id="barraMarcos"></div>
+      <p class="barra-nota" id="barraNota"></p>
+    </div>
+  </section>
+
+  <!-- ================= (aqui morava "Ganhadores da semana passada") =========
+       Tirada em 18/09/2026, a pedido dele: "em vez de mostrar os ganhadores
+       da semana passada, coloque ganhadores do dia anterior".
+
+       Ela era preenchida na mao (pelo `ganhadores` do dados.json) e nunca
+       teve ninguem dentro -- ficou meses mostrando "os primeiros ganhadores
+       serao anunciados no proximo domingo". Um bloco vazio no meio da
+       pagina ensina a crianca que ali nao tem nada para ver.
+
+       Quem faz esse papel agora e a secao "Quem ganhou ontem", la em cima,
+       que enche SOZINHA todo dia com o resultado real da vespera.
+  ============================================================== -->
+
+  <!-- ================= REGRAS ================= -->
+  <section class="regras" id="regras">
+    <div class="card-titulo">
+      <span aria-hidden="true">👑</span>
+      <h2>Regras do sorteio</h2>
+    </div>
+    <ul>
+      <li>Participar é gratuito. Você não precisa comprar nada nem enviar presentes na live.</li>
+      <li>Enviar presente não conta como participação e não aumenta suas chances.</li>
+      <li>Os pontos são contados por dia e zeram todo dia à meia-noite.</li>
+      <li>Para receber os Robux você precisa passar seu nome de usuário do Roblox.</li>
+      <li>Se você tem menos de 18 anos, peça a um responsável antes de participar.</li>
+      <li>Este sorteio não tem ligação com a Roblox Corporation nem com o TikTok.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="lema"><span aria-hidden="true">👑</span> Juntos somos mais fortes! <span aria-hidden="true">👑</span></div>
+    Gêmeos da Calistenia<br>
+    Dúvidas? Chame a gente na live.
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CONFIGURAÇÃO — mexa só aqui
+   ============================================================ */
+const CONFIG = {
+  // Link do canal de transmissão / grupo do TikTok
+  linkGrupo: "https://vt.tiktok.com/ZS9SQwcgCrUNU-yW3rn/",
+
+  // Endereço fixo da live — sempre aponta para a transmissão atual
+  linkLive: "https://www.tiktok.com/@gemeosdacalistenia/live",
+
+  // O botão grande leva para o perfil; o link de baixo leva para o grupo.
+  // (O link do grupo funciona — o que falhava era um iPhone com "continuar no
+  // navegador" preso para o domínio tiktok.com, não o link.)
+  linkPerfil: "https://www.tiktok.com/@gemeosdacalistenia",
+
+  // Supabase — preencha para o painel (admin.html) controlar o status.
+  // Deixe em branco para usar só o dados.json.
+  supabaseUrl: "https://xcgpkqmmovwhbluhtwot.supabase.co",
+  supabaseKey: "sb_publishable_PzbYOzITH4QfKQ_XSNyAZg_JizH1wgV",
+
+  // Status da live: "auto" lê do Supabase/dados.json. Ou force com true / false.
+  aoVivo: "auto",
+
+  // Pontuação da semana atual — alimenta a busca por @
+  ranking: [],
+
+  atualizadoEm: ""
+};
+
+/* dados.json (opcional), na mesma pasta:
+   { "aoVivo": true,
+     "atualizadoEm": "12/09 às 20h",
+     "ranking":    [ { "nome": "@fulano", "pontos": 340 } ] }
+   ranking = pontuação da semana atual, usada pela busca quando o banco
+   não responde.
+
+   O campo "ganhadores" saiu em 18/09: a seção que ele alimentava (o
+   pódio da semana passada, preenchido na mão) foi tirada da página.
+   Quem mostra ganhador agora é "Quem ganhou ontem", que lê o banco. */
+
+const el = {
+  painel: document.getElementById("painel"),
+  pilulaTexto: document.getElementById("pilulaTexto"),
+  painelNota: document.getElementById("painelNota"),
+  botao: document.getElementById("botaoGrupo"),
+  chip: document.getElementById("botaoChip"),
+  grande: document.getElementById("botaoGrande"),
+  linha: document.getElementById("botaoLinha"),
+  campo: document.getElementById("campoArroba"),
+  btnBuscar: document.getElementById("btnBuscar"),
+  resultado: document.getElementById("resultado")
+};
+
+
+function pintarStatus(aoVivo){
+  if(aoVivo){
+    el.painel.dataset.aoVivo = "sim";
+    el.pilulaTexto.textContent = "ONLINE";
+    el.painelNota.textContent = "A live está acontecendo agora. Entre e comece a somar tempo de participação!";
+
+    // Com live no ar, o botão leva direto para a transmissão
+    el.botao.href = CONFIG.linkLive;
+    el.chip.textContent = "Ao vivo agora";
+    el.grande.textContent = "Entrar na live";
+    el.linha.textContent = "SOME TEMPO DE PARTICIPAÇÃO • RESPONDA O CHECK-IN • CONCORRA A ROBUX";
+  }else{
+    el.painel.dataset.aoVivo = "nao";
+    el.pilulaTexto.textContent = "OFFLINE";
+    el.painelNota.textContent = "A live não está acontecendo agora. Entre no grupo para ser avisado quando começar.";
+
+    // Sem live, o botão leva direto para o grupo Team gêmeos.
+    el.botao.href = CONFIG.linkGrupo;
+    el.chip.textContent = "Entrar no grupo do";
+    el.grande.textContent = "TikTok";
+    el.linha.textContent = "CONCORRA A ROBUX • RECEBA AVISOS • FAÇA PARTE DA COMUNIDADE";
+  }
+}
+
+
+
+/* Lê o status no Supabase (controlado pelo painel em admin.html).
+   Retorna null se não estiver configurado ou se der qualquer erro —
+   nesse caso o site cai para o dados.json e, na falta dele, OFFLINE.
+   Nunca mostra ONLINE por engano. */
+async function lerSupabase(){
+  if(!CONFIG.supabaseUrl || !CONFIG.supabaseKey) return null;
+  try{
+    const r = await fetch(
+      CONFIG.supabaseUrl + "/rest/v1/config?id=eq.1&select=ao_vivo,checkin_intervalo_min",
+      { headers: { apikey: CONFIG.supabaseKey, Authorization: "Bearer " + CONFIG.supabaseKey },
+        cache: "no-store" }
+    );
+    if(!r.ok) return null;
+    const linhas = await r.json();
+    return linhas.length && typeof linhas[0].ao_vivo === "boolean" ? linhas[0] : null;
+  }catch(e){ return null; }
+}
+
+async function lerArquivo(){
+  try{
+    const r = await fetch("dados.json", { cache: "no-store" });
+    if(r.ok) return await r.json();
+  }catch(e){ /* sem dados.json, usa o CONFIG */ }
+  return null;
+}
+
+/* O horario do check-in nao vem mais do painel: ele e SEMPRE na hora
+   cheia, e isso esta escrito direto no texto da pagina. Mantido vazio
+   para nao quebrar quem chama. */
+function pintarIntervalo(){ }
+
+async function atualizarStatus(){
+  const doPainel = await lerSupabase();
+  if(doPainel !== null){
+    pintarStatus(doPainel.ao_vivo);
+    pintarIntervalo(doPainel.checkin_intervalo_min);
+    return;
+  }
+
+  const dados = await lerArquivo();
+  const aoVivo = dados && typeof dados.aoVivo === "boolean"
+    ? dados.aoVivo
+    : (CONFIG.aoVivo === "auto" ? false : CONFIG.aoVivo);
+  pintarStatus(aoVivo);
+}
+
+/* ---------------- os dois placares ao vivo ----------------
+   Um e a pontuacao da semana (check-in), o outro e quem mais curtiu
+   HOJE. O desenho e o mesmo -- podio de 3 + lista embaixo -- entao as
+   funcoes recebem onde pintar e qual e a unidade, em vez de existirem
+   duas copias quase iguais. */
+
+const elLk = {
+  podio: document.getElementById("lkPodio"),
+  lista: document.getElementById("lkLista"),
+  atualizado: document.getElementById("atualizadoCurtidas")
+};
+
+/* A foto do perfil, se o banco mandou uma.
+
+   O endereco vem do TikTok e vai direto para o `src` -- entao ele PRECISA
+   ser escapado, senao um endereco com aspas fecharia o atributo e deixaria
+   qualquer um injetar HTML pelo nome da propria foto. Por isso tambem so
+   aceito endereco que comece com https://.
+
+   `onerror` e a rede: endereco vencido, foto apagada no TikTok, internet
+   ruim -- a imagem se remove e a letra que esta por baixo aparece. */
+function escapar(texto){
+  return String(texto)
+    .replace(/&/g, "&amp;").replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function fotoDoPerfil(item){
+  const url = String(item.foto || "");
+  if(!/^https:\/\//.test(url)) return "";
+  return '<img class="rk-foto" src="' + escapar(url) + '" alt="" loading="lazy" ' +
+         'referrerpolicy="no-referrer" onerror="this.remove()">';
+}
+
+function inicialDoNome(nome){
+  const limpo = limpar(nome);
+  return limpo ? limpo.charAt(0).toUpperCase() : "?";
+}
+
+function numero(n){
+  return Number(n || 0).toLocaleString("pt-BR");
+}
+
+/* Chama uma funcao publica do banco e devolve a lista, ou null se o
+   banco nao responder. */
+async function lerDoBanco(funcao, corpo){
+  if(!CONFIG.supabaseUrl || !CONFIG.supabaseKey) return null;
+  try{
+    const r = await fetch(CONFIG.supabaseUrl + "/rest/v1/rpc/" + funcao, {
+      method: "POST",
+      headers: {
+        apikey: CONFIG.supabaseKey,
+        Authorization: "Bearer " + CONFIG.supabaseKey,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(corpo),
+      cache: "no-store"
+    });
+    if(!r.ok) return null;
+    const linhas = await r.json();
+    return Array.isArray(linhas) ? linhas : null;
+  }catch(e){ return null; }
+}
+
+/* ---------------- a conta do dia, num lugar so ----------------
+   O banco devolve CONTAGEM CRUA (quantos check-ins, quantas curtidas).
+   Quem transforma em ponto e esta funcao, e mais ninguem: se um dia o
+   check-in deixar de valer 10, muda aqui e a tela inteira acompanha. */
+const PONTOS_POR_CHECKIN = 10;
+
+/* ★ 20/09: A CURTIDA VOLTOU A PAGAR, com regra nova.
+   Nao e mais "1 ponto a cada 1.000" (que saiu em 14/09): agora e um
+   DEGRAU por hora cheia -- 6.000 curtidas dentro da mesma hora valem 20
+   pontos. 5.999 nao pagam nada; 12.000 na mesma hora tambem pagam 20,
+   porque o degrau e por hora. O jeito de ganhar mais e voltar em MAIS
+   horas da live.
+
+   Estes dois numeros estao tambem no `supabase-premio-por-dia.sql`, no
+   `order by`. Se um mudar sozinho, o placar sai numa ordem e a conta na
+   tela sai noutra, sem erro nenhum aparecer. */
+const CURTIDAS_PARA_PONTO = 6000;   // por HORA CHEIA
+const PONTOS_DAS_CURTIDAS = 20;
+
+function contaDoDia(item){
+  const checkins = Math.max(0, Number(item.checkins) || 0);
+  const curtidas = Math.max(0, Number(item.likes) || 0);
+  // quantas horas de hoje ja bateram as 6.000 (quem conta e o banco,
+  // porque so ele tem a curtida hora a hora)
+  const horas6k = Math.max(0, Number(item.horas6k) || 0);
+  const ptsChk = checkins * PONTOS_POR_CHECKIN;
+  const ptsLk = horas6k * PONTOS_DAS_CURTIDAS;
+  return { checkins, curtidas, horas6k, ptsChk, ptsLk, total: ptsChk + ptsLk };
+}
+
+/* As duas barrinhas de vidro que ficam do lado do nome.
+
+   * A VERDE mostra PONTO. A ROSA mostra CURTIDA, e nao ponto -- desde
+   14/09 curtida nao vira ponto (o TikTok so manda a curtida de parte
+   das pessoas; ver README). Mostrar "0 pts" do lado de 8.000 curtidas
+   seria dar na cara de quem segurou o coracao a live inteira.
+
+   * O TETO DO CHECK-IN NAO E UM NUMERO FIXO: e quantos check-ins o
+   primeiro colocado conseguiu hoje -- ou seja, quantos a live abriu ate
+   agora. Com teto fixo (10, por exemplo), uma live de 2 horas deixava
+   TODO MUNDO com a barra quase vazia, inclusive quem nao perdeu nenhum.
+   Barra vazia para quem acertou tudo e mentira, e desanima. Assim quem
+   pegou todos os check-ins ve a barra cheia, que e a verdade. */
+function fontesDeUmPerfil(item, tetoCheckins, tetoPtsLk, quandoLk){
+  const c = contaDoDia(item);
+
+  // O teto das DUAS barras e o 1o colocado, nunca um numero fixo: com
+  // teto fixo, numa live curta todo mundo aparece com a barra vazia --
+  // inclusive quem nao perdeu nada. Barra vazia para quem acertou tudo
+  // e mentira e desanima.
+  const tetoLk = tetoPtsLk > 0 ? tetoPtsLk : PONTOS_DAS_CURTIDAS;
+  const quando = quandoLk || "nesta hora";
+
+  const cheioChk = tetoCheckins > 0 ? Math.min(100, (c.checkins / tetoCheckins) * 100) : 0;
+  const cheioLk  = Math.min(100, (c.ptsLk / tetoLk) * 100);
+
+  function barra(classe, icone, cheio, pts, rotulo){
+    const tem  = pts > 0 ? " tem" : "";
+    const full = cheio >= 99.5 ? " cheia" : "";
+    return '<span class="rk-fonte ' + classe + tem + full + '" title="' + rotulo + '">' +
+             '<span class="rk-fonte-ico" aria-hidden="true">' + icone + '</span>' +
+             '<span class="rk-glass"><span class="rk-glass-fill" style="width:' + cheio + '%"></span></span>' +
+             '<span class="rk-fonte-pts">' + pts + '</span>' +
+           '</span>';
+  }
+
+  // ★ As DUAS barras mostram PONTO agora. Antes a rosa mostrava a
+  // CONTAGEM de curtidas (ela nao pagava nada), e misturar contagem com
+  // ponto na mesma linha e o que confundiu a crianca em 14/09.
+  return '<span class="rk-fontes">' +
+      barra("rk-fonte-chk", "\u2705", cheioChk, c.ptsChk,
+            c.checkins + " de " + tetoCheckins + " check-ins \u2014 " + c.ptsChk + " pontos") +
+      barra("rk-fonte-lk", "\u2764\uFE0F", cheioLk, c.ptsLk,
+            c.horas6k + " hora(s) " + quando + " com 6.000+ curtidas \u2014 " + c.ptsLk + " pontos") +
+    '</span>';
+}
+
+/* O textinho cinza embaixo das barras. Diz em palavra o que as barras
+   dizem em desenho -- quem nao entende a cor entende a frase. */
+function resumoDoPerfil(item){
+  const c = contaDoDia(item);
+  const pedacos = [];
+  if(c.checkins > 0) pedacos.push('<b class="v">' + c.checkins + '</b> check-in' + (c.checkins > 1 ? "s" : ""));
+  if(c.horas6k > 0) pedacos.push('<b>' + c.horas6k + '</b> hora' + (c.horas6k > 1 ? "s" : "") + ' de 6 mil');
+  else if(c.curtidas > 0) pedacos.push('<b>' + numero(c.curtidas) + '</b> curtidas na hora');
+  if(pedacos.length === 0) return "ainda n\u00e3o pontuou hoje";
+  return pedacos.join(" \u00b7 ");
+}
+
+function pintarPodio(alvo, top3, tetoCheckins, tetoPtsLk){
+  alvo.podio.innerHTML = "";
+  if(top3.length === 0) return;
+  // ordem visual: 2o, 1o, 3o -- o primeiro fica mais alto, no meio
+  const ordem = [[top3[1], 2], [top3[0], 1], [top3[2], 3]];
+  ordem.forEach(function(par){
+    const item = par[0], lugar = par[1];
+    if(!item) return;
+    const card = document.createElement("div");
+    card.className = "rk-card rk-" + lugar;
+
+    card.innerHTML =
+      (lugar === 1 ? '<span class="rk-crown" aria-hidden="true">\ud83d\udc51</span>' : "") +
+      '<div class="rk-avatar-ring"><div class="rk-avatar">' + inicialDoNome(item.arroba) + '</div>' +
+      fotoDoPerfil(item) +
+      '<span class="rk-badge">' + lugar + '</span></div>' +
+      '<div class="rk-nome">@' + limpar(item.arroba) + '</div>' +
+      '<div class="rk-pts">' + numero(contaDoDia(item).total) + ' pts</div>' +
+      fontesDeUmPerfil(item, tetoCheckins, tetoPtsLk) +
+      '<div class="rk-quanto">' + resumoDoPerfil(item) + '</div>';
+    alvo.podio.appendChild(card);
+  });
+}
+
+/* `opcoes` e opcional:
+     tetoPtsLk   teto da barra rosa (os pontos de curtida do 1o colocado)
+     quandoLk    o que escrever no titulo da barra rosa
+     posicoes    a posicao REAL de cada linha. Com empate duas pessoas
+                 dividem o 1o lugar e a proxima e a 3a; sem isto a lista
+                 contaria 1, 2, 3 na marra e daria a alguem um lugar que
+                 ela nao tem. */
+function pintarLista(alvo, resto, primeiraPosicao, tetoCheckins, opcoes){
+  const op = opcoes || {};
+  const guardado = alvo.lista.scrollTop;
+  alvo.lista.innerHTML = "";
+  resto.forEach(function(item, i){
+    const linha = document.createElement("div");
+    linha.className = "rk-item";
+    const lugar = op.posicoes ? op.posicoes[i] : (primeiraPosicao + i);
+
+    linha.innerHTML =
+      '<span class="rk-posicao">' + lugar + '\u00ba</span>' +
+      '<span class="rk-avatar-sm">' + inicialDoNome(item.arroba) + fotoDoPerfil(item) + '</span>' +
+      '<span class="rk-meio">' +
+        '<span class="rk-nome">@' + escapar(limpar(item.arroba)) + '</span>' +
+        fontesDeUmPerfil(item, tetoCheckins, op.tetoPtsLk, op.quandoLk) +
+      '</span>' +
+      '<span class="rk-pts">' + numero(contaDoDia(item).total) + ' pts</span>';
+    alvo.lista.appendChild(linha);
+  });
+  if(guardado) alvo.lista.scrollTop = guardado;
+}
+
+/* ★ Ele pediu 100 no lugar de 20. O banco manda os 100 (as funcoes ja
+   recebiam o numero por parametro -- nao precisou de SQL nenhum), a
+   lista mostra 20 e o botao abre o resto. Mostrar as 100 de cara
+   empurraria o "Como ganhar Robux?" para 8.000px abaixo, em tres
+   secoes de uma vez. */
+const QUANTOS_NO_RANKING = 100;
+
+/* ★ A lista inteira e uma CAIXA QUE ROLA, nao uma lista que estica a
+   pagina. Com 100 linhas em tres placares, a pagina passava de 25.000 px
+   e o "Como ganhar Robux?" e o campo de buscar o @ ficavam la embaixo,
+   longe demais. Agora cada placar ocupa uma tela e pouco: no PC rola com
+   a rodinha, no celular com o dedo.
+
+   `overscroll-behavior` fica em `auto` DE PROPOSITO: com `contain`, o
+   dedo que chega no fim da lista para ali e a pagina nao anda — e a
+   crianca fica presa dentro do placar. Em `auto` a pagina continua. */
+function ajustarRolagem(lista, total){
+  lista.classList.toggle("rk-rola", total > 0);
+
+  let dica = lista.dicaDeRolagem;
+  if(!dica){
+    dica = document.createElement("p");
+    dica.className = "rk-dica";
+    lista.insertAdjacentElement("beforebegin", dica);
+    lista.dicaDeRolagem = dica;
+  }
+
+  // Precisa mesmo rolar? Quem responde e o navegador, depois de pintar --
+  // a altura da linha muda com a largura da tela, entao contar linhas na
+  // mao daria errado no celular.
+  //
+  // ★ A medida fica para o QUADRO SEGUINTE. Duas destas secoes nascem
+  // `hidden` e so aparecem no fim da propria funcao que pinta: medidas
+  // ali, elas tem altura ZERO, a conta da "0 - 0 > 8" e a dica nunca
+  // aparecia. Elemento escondido nao tem tamanho -- so da para medir
+  // depois que ele esta na tela.
+  requestAnimationFrame(function(){
+    const rola = lista.scrollHeight - lista.clientHeight > 8;
+    dica.hidden = !rola;
+    if(rola){
+      dica.innerHTML = '<span aria-hidden="true">👇</span> São <b>' + total +
+                       '</b> na lista — role aqui dentro para ver o resto.';
+    }
+  });
+}
+
+/* O placar se repinta sozinho de 20 em 20s. Sem guardar a rolagem, a
+   crianca que desceu ate o 57º lugar volta para o topo sozinha no meio
+   da leitura. Guardo antes de trocar as linhas e devolvo depois. */
+function comRolagemGuardada(lista, pintar){
+  const onde = lista.scrollTop;
+  pintar();
+  if(onde) lista.scrollTop = onde;
+}
+
+function pintarPlacar(alvo, linhas, vazio, rodape){
+  if(!linhas || linhas.length === 0){
+    alvo.podio.innerHTML = "";
+    alvo.lista.innerHTML = '<div class="vazio">' + vazio + '</div>';
+    alvo.atualizado.textContent = "";
+    ajustarRolagem(alvo.lista, 0);
+    return;
+  }
+  // quantos check-ins a live abriu hoje = o maior que alguem conseguiu
+  const tetoCheckins = Math.max(1, ...linhas.map(function(l){ return Number(l.checkins) || 0; }));
+
+  // ★ ORDENA AQUI, nao confia na ordem que veio do banco.
+  //
+  // Isto me pegou: quando a curtida deixou de pontuar (14/09), a conta
+  // mudou no site mas o `order by` do SQL continuou somando ponto de
+  // curtida -- e como esta funcao so fatiava a lista, o placar saia na
+  // ordem ERRADA sem nenhum erro na tela. Quem manda na ordem tem que
+  // ser quem manda na conta, e quem manda na conta e o contaDoDia.
+  const ordenadas = linhas.slice().sort(function(a, b){
+    const ta = contaDoDia(a).total, tb = contaDoDia(b).total;
+    if (tb !== ta) return tb - ta;
+    return (Number(b.likes) || 0) - (Number(a.likes) || 0);  // empate: quem curtiu mais nesta hora
+  });
+
+  // o teto da barra rosa: quanto o 1o colocado em curtida tirou de
+  // PONTO hoje (antes era a contagem de curtidas, que nao pagava nada)
+  const tetoPtsLk = Math.max(1, ...ordenadas.map(function(l){ return contaDoDia(l).ptsLk; }));
+
+  pintarPodio(alvo, ordenadas.slice(0, 3), tetoCheckins, tetoPtsLk);
+  pintarLista(alvo, ordenadas.slice(3), 4, tetoCheckins, { tetoPtsLk: tetoPtsLk });
+  ajustarRolagem(alvo.lista, Math.max(0, ordenadas.length - 3));
+  alvo.atualizado.textContent = rodape;
+}
+
+function dataBonita(iso){
+  return iso.split("-").reverse().join("/");
+}
+
+
+
+/* O dia dos check-ins: a mesma conta que o coletor usa para gravar. */
+function diaDeHoje(){
+  const d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0")
+    + "-" + String(d.getDate()).padStart(2, "0");
+}
+
+/* A HORA das curtidas: "2026-09-14-13".
+
+   ★ Tem que ser a MESMA conta do `horaAtual()` do coletor, caractere por
+   caractere. O banco guarda a hora como TEXTO justamente para os dois
+   lados calcularem do relógio deles sem ninguém acertar fuso. Se as duas
+   contas divergirem, o site pergunta por uma hora que não existe e o
+   placar de curtidas fica vazio — sem erro nenhum na tela. */
+function horaAtual(){
+  const d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0")
+    + "-" + String(d.getDate()).padStart(2, "0")
+    + "-" + String(d.getHours()).padStart(2, "0");
+}
+
+/* Quanto falta para a hora virar, em minutos. */
+function minutosAteVirar(){
+  const d = new Date();
+  return 60 - d.getMinutes();
+}
+
+/* ---------------- o RANKING DE HOJE ----------------
+   Antes esta secao mostrava o total de pontos da SEMANA com uma barra de
+   curtidas DE HOJE embaixo. Eram duas medidas diferentes na mesma linha:
+   o numero grande nao batia com a barra, e a crianca nao tinha como
+   saber de onde tinha vindo o ponto dela.
+
+   Agora e tudo do MESMO dia, e o banco devolve as duas contagens de uma
+   vez pela funcao `ranking_dia` (supabase-ranking-dia.sql).
+
+   Se essa funcao ainda nao tiver sido criada no Supabase, o site NAO
+   quebra: ele volta para o jeito antigo (pontos da semana + curtidas do
+   dia) e so perde a separacao das duas fontes. */
+let avisouFaltaRankingDia = false;
+
+/* As linhas de hoje ficam guardadas aqui: e delas que a busca por @
+   tira a POSICAO da crianca, em vez de uma segunda conta no banco. */
+let linhasDeHoje = [];
+
+async function atualizarCurtidasHoje(){
+  const linhas = await lerDoBanco("ranking_dia",
+    { p_dia: diaDeHoje(), p_hora: horaAtual(), p_quantos: QUANTOS_NO_RANKING });
+
+  if(linhas !== null){
+    linhasDeHoje = linhas;
+    pintarPlacar(elLk, linhas,
+      "Ningu\u00e9m pontuou ainda hoje. Responda o check-in ou fa\u00e7a 6.000 curtidas nesta hora para aparecer aqui!",
+      "\u2705 check-in 10 pontos \u00b7 \u2764\uFE0F 6.000 curtidas numa hora 20 pontos \u00b7 a hora vira em " + minutosAteVirar() + " min");
+    return;
+  }
+
+  if(!avisouFaltaRankingDia){
+    avisouFaltaRankingDia = true;
+    console.warn("A fun\u00e7\u00e3o ranking_dia (p_dia, p_hora, p_quantos) com a coluna " +
+                 "`horas6k` ainda n\u00e3o existe no banco. Rode o " +
+                 "supabase-premio-por-dia.sql no Supabase.");
+  }
+  placarForaDoAr();
+}
+
+/* ★ A rede antiga mostrava os pontos da SEMANA aqui dentro. Com o
+   premio virando diario (20/09) isso passou a ser mentira: a caixa diz
+   "Ranking de hoje" e mostraria outra conta, sem avisar ninguem. Uma
+   caixa honesta dizendo que o placar caiu e melhor do que um placar
+   certo de outra coisa. */
+function placarForaDoAr(){
+  elLk.podio.innerHTML = "";
+  elLk.lista.innerHTML = '<div class="vazio">O placar est\u00e1 fora do ar por um instante. ' +
+    'Atualize a p\u00e1gina daqui a pouco \u2014 os seus pontos continuam guardados.</div>';
+  elLk.atualizado.textContent = "";
+  ajustarRolagem(elLk.lista, 0);
+}
+
+/* ---------------- QUEM GANHOU ONTEM ----------------
+   O placar de hoje zera a meia-noite. Antes desta secao, quem tinha
+   pegado todos os check-ins na noite anterior abria o site de manha e
+   nao encontrava o proprio nome em lugar nenhum -- o esforco sumia.
+
+   O banco devolve os primeiros colocados do ULTIMO DIA QUE TEVE LIVE
+   antes de hoje, e diz QUE DIA foi. Nao e sempre ontem: eles fazem live
+   quase todo dia, nao todo dia. Por isso a pilula da data esta sempre
+   na tela -- se a ultima live foi anteontem, esta escrito "terca",
+   nunca "ontem". */
+const elCp = {
+  secao:  document.getElementById("campeao-ontem"),
+  titulo: document.getElementById("cpTitulo"),
+  quando: document.getElementById("cpQuando"),
+  times:  document.getElementById("cpTimes"),
+  resto:  document.getElementById("cpResto"),
+};
+
+const NOME_DO_DIA = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
+
+/* "2026-09-15" -> Date no relogio DAQUI.
+
+   ★ `new Date("2026-09-15")` NAO serve: o navegador le a string curta
+   como UTC e, no Brasil (UTC-3), ela volta como 14/09 as 21h. O nome do
+   dia da semana sairia errado por um dia. Por isso monto com os numeros
+   separados, que o Date sempre entende como hora local. */
+function dataLocal(iso){
+  const p = String(iso || "").split("-");
+  return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+}
+
+function diaCurto(iso){
+  const d = dataLocal(iso);
+  return String(d.getDate()).padStart(2, "0") + "/" + String(d.getMonth() + 1).padStart(2, "0");
+}
+
+/* Como chamar o dia que o banco devolveu. Compara com HOJE pelo mesmo
+   `diaDeHoje()` que o resto da pagina usa. */
+function comoChamarODia(iso){
+  const d = dataLocal(iso);
+  const quantos = Math.round((dataLocal(diaDeHoje()) - d) / 86400000);
+  const ontem = quantos === 1;
+  return {
+    ontem: ontem,
+    titulo: ontem ? "Quem ganhou ontem" : "Quem ganhou na última live",
+    pilula: (ontem ? "ontem" : NOME_DO_DIA[d.getDay()]) + " · " + diaCurto(iso)
+  };
+}
+
+/* O @ passa pelo `escapar` antes de virar HTML. O nome vem do TikTok,
+   que so aceita letra, numero, ponto e underline -- mas quem garante
+   isso e o TikTok, nao eu, e aqui o texto dele vira marcacao. Mesmo
+   cuidado que ja existe no endereco da foto. */
+function cartaoDeCampeao(item, solo){
+  const c = contaDoDia(item);
+  return '<div class="cp-um' + (solo ? " cp-solo" : "") + '">' +
+      '<div class="rk-avatar-ring cp-ring">' +
+        '<span class="cp-coroa" aria-hidden="true">👑</span>' +
+        '<div class="rk-avatar">' + inicialDoNome(item.arroba) + '</div>' +
+        fotoDoPerfil(item) +
+      '</div>' +
+      '<div class="cp-nome">@' + escapar(limpar(item.arroba)) + '</div>' +
+      '<div class="cp-pts">' + numero(c.total) + ' pontos</div>' +
+      // ★ As DUAS fontes aparecem, senao quem ganhou fazendo curtida
+      // parece ter ganhado do nada. Se uma delas e zero, ela nao entra:
+      // "0 horas de 6 mil" no cartao do campeao so faz barulho.
+      '<div class="cp-det">' + [
+        c.checkins > 0 ? '<b class="v">' + c.checkins + '</b> check-in' + (c.checkins === 1 ? "" : "s") : "",
+        c.horas6k > 0 ? '<b class="v">' + c.horas6k + '</b> hora' + (c.horas6k === 1 ? "" : "s") + ' de 6 mil curtidas' : ""
+      ].filter(Boolean).join(' · ') + '</div>' +
+    '</div>';
+}
+
+/* Uma vez por dia basta: o resultado de um dia que ja acabou nao muda
+   mais. O que muda e a virada da meia-noite -- e quem fica com o site
+   aberto a noite inteira precisa ver o placar novo sem atualizar a
+   pagina. Por isso a trava e a DATA, e nao um "ja rodei". */
+let campeaoPintadoEm = "";
+let tentativasCampeao = 0;
+
+async function atualizarCampeaoDeOntem(){
+  if(campeaoPintadoEm === diaDeHoje()) return;
+  if(tentativasCampeao >= 4) return;   // funcao nao existe no banco: para de insistir
+
+  const linhas = await lerDoBanco("campeoes_ontem", { p_hoje: diaDeHoje(), p_quantos: QUANTOS_NO_RANKING });
+
+  if(linhas === null){
+    tentativasCampeao++;
+    if(tentativasCampeao === 1){
+      console.warn("A função campeoes_ontem ainda não existe no banco. " +
+                   "Rode o supabase-campeao-ontem.sql no Supabase. " +
+                   "Enquanto isso a seção 'Quem ganhou ontem' fica escondida.");
+    }
+    return;   // a secao continua escondida; o resto da pagina nao muda
+  }
+
+  campeaoPintadoEm = diaDeHoje();
+
+  // vazio nao e erro: e "ainda nao teve nenhuma live antes de hoje"
+  if(linhas.length === 0){ elCp.secao.hidden = true; return; }
+
+  // ★ CAMPEAO E QUEM FEZ MAIS PONTO NO DIA -- check-in E curtida, a
+  // mesma conta do `contaDoDia` que pinta o placar de hoje. Ate 19/09
+  // era so o check-in, porque a curtida nao pagava; com o degrau dos
+  // 6.000 ela paga, e quem so curtiu tambem pode ganhar o dia.
+  //
+  // Se duas pessoas empataram, as DUAS sao campeas: eu nao escolho no
+  // par ou impar quem leva a coroa.
+  const teto     = Math.max.apply(null, linhas.map(function(l){ return contaDoDia(l).total; }));
+  const campeoes = linhas.filter(function(l){ return contaDoDia(l).total === teto; });
+
+  const como = comoChamarODia(linhas[0].dia);
+  elCp.titulo.textContent = como.titulo;
+  elCp.quando.innerHTML = '<span aria-hidden="true">📅</span>' + como.pilula;
+
+  // No caso normal e UM ganhador, grande, e mais nada -- a caixa inteira
+  // e o destaque dele. So quando da empate entram os outros: eu nao
+  // escolho no par ou impar qual dos empatados leva a coroa sozinho.
+  const noDestaque = campeoes.slice(0, 3);
+  elCp.times.innerHTML = noDestaque
+    .map(function(item){ return cartaoDeCampeao(item, noDestaque.length === 1); })
+    .join("");
+
+  // Empate se ESCREVE. Duas coroas do lado da outra, sem uma linha
+  // explicando, deixa a crianca sem saber quem levou os Robux.
+  elCp.resto.innerHTML = campeoes.length > 1
+    ? "Deu <b>empate</b>: " + campeoes.length + " pessoas fizeram os mesmos <b>" +
+      numero(teto) + " pontos</b>." + (campeoes.length > 3 ? " Cabem 3 na tela." : "")
+    : "";
+
+  // ★ 20/09: a LISTA do dia anterior saiu. Ele pediu "bem simples para
+  // uma crianca entender" -- a caixa agora mostra so quem ganhou. Quem
+  // quiser ver o resto olha o Ranking de hoje, que fica logo acima.
+
+  elCp.secao.hidden = false;
+}
+
+
+/* ---------------- busca de pontuação ---------------- */
+function limpar(texto){
+  return String(texto || "").trim().toLowerCase().replace(/^@+/, "");
+}
+
+function mostrarResultado(html, semResultado){
+  el.resultado.className = "resultado aparece" + (semResultado ? " nada" : "");
+  el.resultado.innerHTML = html;
+}
+
+/* Segunda-feira da semana corrente, no formato YYYY-MM-DD.
+   É a mesma chave que o coletor usa para gravar os pontos. */
+
+/* ★ A busca por @ passou a ser do DIA (20/09), junto com o premio.
+   Pergunta pela `meu_dia`, que devolve as contagens cruas (check-ins,
+   curtidas da hora, horas com 6.000+) -- quem vira isso em ponto e o
+   `contaDoDia`, o mesmo do placar. Assim a crianca nao ve um numero
+   aqui e outro no ranking.
+
+   A POSICAO nao vem do banco: sai da lista de hoje que o placar ja
+   carregou. Uma funcao `minha_posicao` seria uma segunda conta de
+   posicao para manter igual a primeira. */
+async function lerPontuacao(arroba){
+  if(!CONFIG.supabaseUrl || !CONFIG.supabaseKey) return null;
+  const linhas = await lerDoBanco("meu_dia",
+    { p_arroba: arroba, p_dia: diaDeHoje(), p_hora: horaAtual() });
+  if(linhas === null) return null;
+  return linhas.length ? linhas[0] : "vazio";
+}
+
+/* Onde a pessoa esta no ranking de hoje. Devolve null se ela nao
+   aparece na lista que o site carregou (fora do top 100). */
+function posicaoDeHoje(arroba){
+  const alvo = limpar(arroba);
+  const ordenadas = linhasDeHoje.slice().sort(function(a, b){
+    return contaDoDia(b).total - contaDoDia(a).total;
+  });
+  let lugar = 0, anterior = null;
+  for(let i = 0; i < ordenadas.length; i++){
+    const t = contaDoDia(ordenadas[i]).total;
+    if(t !== anterior){ lugar = i + 1; anterior = t; }   // empate divide o lugar
+    if(limpar(ordenadas[i].arroba) === alvo){
+      return { posicao: lugar, lider: ordenadas.length ? contaDoDia(ordenadas[0]).total : 0 };
+    }
+  }
+  return null;
+}
+
+function pintarPontuacao(linha){
+  const c = contaDoDia(linha);
+  const onde = posicaoDeHoje(linha.arroba);
+
+  const nome = document.createElement("div");
+  nome.className = "arroba";
+  nome.textContent = "@" + limpar(linha.arroba);
+
+  // ★ De onde vieram os pontos -- as duas fontes, separadas. Desde
+  // 20/09 sao duas de novo: check-in (10) e hora com 6.000 curtidas
+  // (20). Mostrar so o total faria a crianca achar que curtir nao
+  // contou.
+  const faltam = onde ? Math.max(0, onde.lider - c.total) : 0;
+  const rodape = !onde
+    ? "Voc\u00ea ainda n\u00e3o est\u00e1 entre os 100 primeiros de hoje \u2014 responda o check-in da pr\u00f3xima hora para subir."
+    : onde.posicao === 1
+      ? "Voc\u00ea est\u00e1 em <b>primeiro lugar hoje</b>! Quem terminar o dia no topo ganha os Robux."
+      : "Faltam <b>" + numero(faltam) + " pontos</b> para alcan\u00e7ar o primeiro lugar de hoje.";
+
+  mostrarResultado(
+    '<div class="posicao">' + (onde ? onde.posicao + '\u00ba lugar hoje' : 'Hoje') + '</div>' +
+    nome.outerHTML +
+    '<div class="pts">' + numero(c.total) + ' pontos hoje</div>' +
+    '<div class="de-onde">' +
+      '<span><b>' + c.checkins + '</b> check-in' + (c.checkins === 1 ? '' : 's') +
+        ' <i style="font-style:normal;color:#8E8E8E">(' + numero(c.ptsChk) + ' pts)</i></span>' +
+      '<span><b>' + c.horas6k + '</b> hora' + (c.horas6k === 1 ? '' : 's') + ' com 6.000 curtidas' +
+        ' <i style="font-style:normal;color:#8E8E8E">(' + numero(c.ptsLk) + ' pts)</i></span>' +
+    '</div>' +
+    '<p class="falta">' + rodape + '</p>',
+    false
+  );
+}
+
+function naoAchei(){
+  mostrarResultado('<div class="posicao">Ainda não achei você</div>' +
+    '<p class="falta">Confira se digitou o @ igualzinho ao do TikTok. Se você ainda não pontuou <b>hoje</b>, ' +
+    'entre na próxima live: responda o check-in ou faça 6.000 curtidas em uma hora.</p>', true);
+}
+
+
+/* ---------------- a barra de curtidas (estilo Duolingo) ----------------
+   A crianca busca o @ dela uma vez; a partir dai o site guarda esse @
+   NESTE APARELHO e fica perguntando ao banco de 8 em 8 segundos. Ela
+   segura o coracao na live e ve a barra encher aqui.
+
+   Os marcos de mil na regua embaixo da barra sao so marcas de progresso:
+   desde 14/09 a curtida NAO vira ponto (o TikTok so manda a curtida de
+   parte das pessoas -- ver README). A barra ficou porque a crianca gosta
+   de ver encher, e porque o placar de curtidas continua existindo. */
+
+const CURTIDAS_POR_MARCA = 1000;
+const GUARDA_ARROBA = "gemeos_meu_arroba";
+
+const elBarra = {
+  box: document.getElementById("barraBox"),
+  agora: document.getElementById("barraAgora"),
+  cheia: document.getElementById("barraCheia"),
+  marcos: document.getElementById("barraMarcos"),
+  nota: document.getElementById("barraNota")
+};
+
+let arrobaVigiado = null;
+let relogioBarra = null;
+let curtidasNaBarra = 0;
+
+function montarMarcos(){
+  elBarra.marcos.innerHTML = "";
+  // \u2605 A regua vai ate 6k, nao ate 10k: 6.000 e onde os 20 pontos
+  // caem. Uma regua que passa do premio faz a crianca achar que falta
+  // mais do que falta, e uma barra que nunca enche desanima.
+  const ate = CURTIDAS_PARA_PONTO / CURTIDAS_POR_MARCA;
+  for(let i = 1; i <= ate; i++){
+    const m = document.createElement("span");
+    m.className = "barra-marco";
+    m.dataset.ponto = i;
+    m.textContent = i + "k";
+    elBarra.marcos.appendChild(m);
+  }
+}
+montarMarcos();
+
+function pintarBarra(curtidas){
+  const feitas = Number(curtidas) || 0;
+  const total = Math.min(feitas, CURTIDAS_PARA_PONTO);
+  curtidasNaBarra = feitas;
+  const marcas = Math.floor(total / CURTIDAS_POR_MARCA);
+
+  elBarra.agora.textContent = Math.min(feitas, CURTIDAS_PARA_PONTO).toLocaleString("pt-BR");
+  elBarra.cheia.style.width = ((total / CURTIDAS_PARA_PONTO) * 100) + "%";
+
+  elBarra.marcos.querySelectorAll(".barra-marco").forEach(function(m){
+    m.classList.toggle("batido", Number(m.dataset.ponto) <= marcas);
+  });
+
+  if(feitas >= CURTIDAS_PARA_PONTO){
+    elBarra.nota.innerHTML = '<b class="barra-ganhou">Você ganhou ' + PONTOS_DAS_CURTIDAS +
+      ' pontos nesta hora!</b> Em <b>' + minutosAteVirar() + ' min</b> a conta zera e ' +
+      'dá para pegar os ' + PONTOS_DAS_CURTIDAS + ' de novo.';
+    return;
+  }
+
+  const faltam = CURTIDAS_PARA_PONTO - feitas;
+  elBarra.nota.innerHTML = 'Você já fez <b>' + feitas.toLocaleString("pt-BR") + '</b> curtidas nesta hora. ' +
+    'Faltam <b>' + faltam.toLocaleString("pt-BR") + '</b> para os <b>' + PONTOS_DAS_CURTIDAS +
+    ' pontos</b>, e a conta zera em <b>' + minutosAteVirar() + ' min</b> — aí começa de novo.';
+}
+
+async function lerMinhasCurtidas(arroba){
+  const linhas = await lerDoBanco("minhas_curtidas_hora", { p_arroba: arroba, p_hora: horaAtual() });
+  if(linhas === null) return null;
+  return linhas.length ? Number(linhas[0].likes) : 0;
+}
+
+async function atualizarBarra(){
+  if(!arrobaVigiado) return;
+  const curtidas = await lerMinhasCurtidas(arrobaVigiado);
+  if(curtidas === null) return;   // banco fora do ar: deixa a barra como esta
+  pintarBarra(curtidas);
+
+  // refaz o cartao de pontos junto, senao o "de onde vem" fica velho
+  const meu = await lerPontuacao(arrobaVigiado);
+  if(meu && meu !== "vazio") pintarPontuacao(meu);
+}
+
+function vigiarCurtidas(arroba){
+  arrobaVigiado = arroba;
+  try{ localStorage.setItem(GUARDA_ARROBA, arroba); }catch(e){}
+  elBarra.box.classList.remove("escondido");
+  pintarBarra(0);
+  atualizarBarra();
+  if(relogioBarra) clearInterval(relogioBarra);
+  relogioBarra = setInterval(atualizarBarra, 8000);
+}
+
+async function buscar(){
+  const procurado = limpar(el.campo.value);
+
+  if(!procurado){
+    mostrarResultado('<div class="posicao">Digite seu @</div>' +
+      '<p class="falta">É o mesmo nome de usuário que aparece no seu perfil do TikTok.</p>', true);
+    return;
+  }
+
+  el.btnBuscar.disabled = true;
+  mostrarResultado('<div class="posicao">Procurando…</div>', true);
+
+  // a barra passa a seguir este @ a partir de agora
+  vigiarCurtidas(procurado);
+
+  const doBanco = await lerPontuacao(procurado);
+
+  el.btnBuscar.disabled = false;
+
+  if(doBanco === "vazio"){ naoAchei(); return; }
+  if(doBanco){ pintarPontuacao(doBanco); return; }
+
+  mostrarResultado('<div class="posicao">O placar caiu</div>' +
+    '<p class="falta">N\u00e3o consegui falar com o placar agora. Tente de novo daqui a pouco \u2014 ' +
+    'os seus pontos continuam guardados.</p>', true);
+}
+
+el.btnBuscar.addEventListener("click", buscar);
+el.campo.addEventListener("keydown", function(e){ if(e.key === "Enter") buscar(); });
+
+async function iniciar(){
+  await atualizarStatus();
+
+  atualizarCurtidasHoje();
+  atualizarCampeaoDeOntem();
+
+  // Ja buscou o @ dela alguma vez neste aparelho? Entao a barra volta
+  // sozinha na proxima visita -- ela abre o site e ja ve o progresso.
+  try{
+    const salvo = localStorage.getItem(GUARDA_ARROBA);
+    if(salvo){
+      el.campo.value = "@" + salvo;
+      vigiarCurtidas(salvo);
+      buscar();
+    }
+  }catch(e){}
+  setInterval(atualizarCurtidasHoje, 20000);
+
+  // O campeao de ontem so e buscado de novo quando a DATA vira -- a
+  // propria funcao trava nisso. Quem deixa o site aberto a noite
+  // inteira ve o placar novo entrar sozinho a meia-noite.
+  setInterval(atualizarCampeaoDeOntem, 60000);
+
+
+  // Reconsulta sozinho para quem fica com a página aberta durante a live.
+  // 30s era lento demais: você aperta LIGAR LIVE e quem está na página
+  // continua vendo OFFLINE. Agora são 10s.
+  setInterval(atualizarStatus, 10000);
+
+  // E, o mais importante: reconsulta NA HORA quando a pessoa volta para a aba
+  // ou destrava o celular. É o caso real — ela sai para o TikTok e volta.
+  // Sem isso ela precisava atualizar a página na mão.
+  document.addEventListener("visibilitychange", function(){
+    if(!document.hidden){ atualizarStatus(); atualizarCurtidasHoje(); atualizarCampeaoDeOntem(); atualizarBarra(); }
+  });
+  window.addEventListener("focus", atualizarStatus);
+  window.addEventListener("pageshow", atualizarStatus);
+}
+
+iniciar();
+</script>
+
+</body>
+</html>

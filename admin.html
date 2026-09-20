@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark only">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel — Gêmeos da Calistenia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark only;
+  --preto:#0A0A0A;
+  --painel:#161616;
+  --borda:#2C2C2C;
+  --branco:#FFFFFF;
+  --vermelho:#E8112D;
+  --verde:#2BD673;
+  --apagado:#8E8E8E;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--preto);color:var(--branco);
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:24px 18px;-webkit-font-smoothing:antialiased;
+}
+.caixa{width:100%;max-width:420px}
+h1{font-family:'Anton',sans-serif;font-size:26px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.legenda{color:var(--apagado);font-size:13.5px;margin-bottom:22px}
+
+.campo{margin-bottom:14px}
+label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:#CFCFCF}
+input{
+  width:100%;padding:14px 14px;border-radius:12px;
+  border:2px solid var(--borda);background:var(--painel);
+  color:var(--branco);font-size:16px;font-family:inherit;
+}
+input:focus{outline:none;border-color:var(--verde)}
+.botao{
+  width:100%;padding:15px;border:none;border-radius:12px;
+  background:var(--vermelho);color:var(--branco);
+  font-family:'Anton',sans-serif;font-size:19px;letter-spacing:.6px;
+  text-transform:uppercase;cursor:pointer;
+}
+.botao:disabled{opacity:.5;cursor:not-allowed}
+.botao:focus-visible,input:focus-visible{outline:3px solid var(--verde);outline-offset:2px}
+
+.estado{
+  background:var(--painel);border:2px solid var(--borda);border-radius:20px;
+  padding:26px 20px;text-align:center;margin-bottom:16px;
+}
+.rotulo{font-size:12.5px;letter-spacing:.6px;color:var(--apagado);margin-bottom:14px;font-weight:600}
+.pilula{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:14px 32px;border-radius:999px;
+  border:3px solid var(--borda);background:#0F0F0F;
+  font-family:'Anton',sans-serif;font-size:28px;letter-spacing:1px;color:var(--apagado);
+}
+.bolinha{width:16px;height:16px;border-radius:50%;background:#5E5E5E}
+.estado[data-ao-vivo="sim"] .pilula{border-color:var(--verde);color:var(--verde)}
+.estado[data-ao-vivo="sim"] .bolinha{background:var(--verde)}
+.quando{margin-top:14px;font-size:12.5px;color:var(--apagado)}
+
+.ligar{background:var(--verde);color:#062E17}
+.desligar{background:#2E2E2E;color:var(--branco)}
+
+.recado{
+  margin-top:14px;padding:12px 14px;border-radius:10px;
+  font-size:13.5px;line-height:1.5;display:none;
+}
+.recado.erro{display:block;background:#3A0D14;color:#FFB3BF;border:1px solid #6B1522}
+.recado.ok{display:block;background:#0D2D1B;color:#A6F0C6;border:1px solid #1B5A36}
+
+.sair{
+  margin-top:18px;width:100%;background:none;border:none;
+  color:var(--apagado);font-size:13px;cursor:pointer;text-decoration:underline;
+  font-family:inherit;
+}
+.bloco{
+  background:var(--painel);border:2px solid var(--borda);border-radius:20px;
+  padding:22px 20px;margin-top:16px;
+}
+.bloco h2{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.bloco .dica{font-size:12.5px;color:var(--apagado);line-height:1.5;margin-bottom:16px}
+.dupla{display:flex;gap:10px}
+.dupla .campo{flex:1;margin-bottom:14px}
+.salvar{background:#2E2E2E;color:var(--branco)}
+.linha-campo{display:flex;gap:8px;align-items:stretch}
+.linha-campo input{flex:1;min-width:0;text-transform:uppercase;font-family:'Anton',sans-serif;font-size:22px;letter-spacing:1.5px}
+.mini{
+  flex:none;padding:0 14px;border:2px solid var(--borda);border-radius:12px;
+  background:#0F0F0F;color:var(--branco);cursor:pointer;
+  font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;
+}
+.mini:hover{border-color:var(--verde)}
+.escondido{display:none}
+</style>
+</head>
+<body>
+<div class="caixa">
+
+  <!-- ============ LOGIN ============ -->
+  <div id="telaLogin">
+    <h1>Painel da live</h1>
+    <p class="legenda">Entre para ligar ou desligar o aviso de live no site.</p>
+
+    <form id="formLogin" action="#" method="post">
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" autocomplete="username" inputmode="email"
+               autocapitalize="none" autocorrect="off" spellcheck="false" required>
+      </div>
+      <div class="campo">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="password" autocomplete="current-password" required>
+      </div>
+      <button class="botao" id="btnEntrar" type="submit">Entrar</button>
+    </form>
+    <p class="recado" id="recadoLogin"></p>
+  </div>
+
+  <!-- ============ PAINEL ============ -->
+  <div id="telaPainel" class="escondido">
+    <h1>Painel da live</h1>
+    <p class="legenda">O que estiver aqui é o que aparece no site.</p>
+
+    <div class="estado" id="estado" data-ao-vivo="nao">
+      <div class="rotulo">STATUS ATUAL NO SITE</div>
+      <div class="pilula">
+        <span class="bolinha"></span>
+        <span id="pilulaTexto">OFFLINE</span>
+      </div>
+      <p class="quando" id="quando"></p>
+    </div>
+
+    <button class="botao ligar" id="btnAlternar">Ligar live</button>
+    <p class="recado" id="recadoPainel"></p>
+
+    <div class="bloco">
+      <h2>Check-in</h2>
+      <p class="dica">O check-in é o que ativa o @ da criança na competição. A cada intervalo o coletor abre uma janela: quem digitar a palavra dentro dela pontua.</p>
+
+      <div class="campo">
+        <label for="palavra">Palavra do check-in</label>
+        <div class="linha-campo">
+          <input type="text" id="palavra" autocapitalize="characters" autocomplete="off" spellcheck="false">
+          <button type="button" class="mini" id="btnSortear">Sortear</button>
+          <button type="button" class="mini" id="btnCopiar">Copiar</button>
+        </div>
+      </div>
+
+      <div class="dupla">
+        <div class="campo">
+          <label for="intervalo">Abre a cada (min)</label>
+          <input type="number" id="intervalo" min="5" max="360" step="5" inputmode="numeric">
+        </div>
+        <div class="campo">
+          <label for="janela">Fica aberto (min)</label>
+          <input type="number" id="janela" min="1" max="60" step="1" inputmode="numeric">
+        </div>
+      </div>
+
+      <button class="botao salvar" id="btnSalvarCheckin">Salvar check-in</button>
+      <p class="recado" id="recadoCheckin"></p>
+    </div>
+
+    <button class="sair" id="btnSair">Sair</button>
+  </div>
+
+</div>
+
+<script>
+/* ============================================================
+   CONFIGURAÇÃO — cole os dados do seu projeto Supabase
+   (Project Settings → API)
+   ============================================================ */
+const SUPABASE_URL = "https://xcgpkqmmovwhbluhtwot.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_PzbYOzITH4QfKQ_XSNyAZg_JizH1wgV";
+
+/* ------------------------------------------------------------
+   A anon key é pública de propósito — quem protege a tabela é a
+   RLS do Supabase. Só usuário logado consegue gravar.
+   ------------------------------------------------------------ */
+
+let token = null;
+let aoVivoAtual = false;
+
+/* ------------------------------------------------------------
+   FICAR LOGADO
+   O celular é o lugar onde esse painel vai ser usado de verdade,
+   no meio da live. Digitar e-mail e senha toda vez não dá.
+   Guardamos a sessão do Supabase aqui no aparelho e, ao abrir,
+   trocamos o refresh_token por um token novo.
+   O access_token vence em ~1h; o refresh_token dura muito mais.
+   Isso fica SÓ neste aparelho — não vai para o site nem para o banco.
+   ------------------------------------------------------------ */
+const GUARDA = "gemeos_painel_sessao";
+
+function guardarSessao(dados) {
+  try {
+    localStorage.setItem(GUARDA, JSON.stringify({
+      access_token: dados.access_token,
+      refresh_token: dados.refresh_token
+    }));
+  } catch (e) { /* navegador anônimo, por exemplo: segue sem guardar */ }
+}
+
+function lerSessao() {
+  try {
+    const bruto = localStorage.getItem(GUARDA);
+    return bruto ? JSON.parse(bruto) : null;
+  } catch (e) { return null; }
+}
+
+function esquecerSessao() {
+  try { localStorage.removeItem(GUARDA); } catch (e) {}
+}
+
+/* Troca o refresh_token por um access_token novo. Devolve true se conseguiu. */
+async function renovarSessao() {
+  const guardada = lerSessao();
+  if (!guardada || !guardada.refresh_token) return false;
+  try {
+    const r = await fetch(SUPABASE_URL + "/auth/v1/token?grant_type=refresh_token", {
+      method: "POST",
+      headers: { "apikey": SUPABASE_ANON_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ refresh_token: guardada.refresh_token })
+    });
+    const dados = await r.json();
+    if (!r.ok || !dados.access_token) { esquecerSessao(); return false; }
+    token = dados.access_token;
+    guardarSessao(dados);
+    return true;
+  } catch (e) { return false; }
+}
+
+function abrirPainel() {
+  $("telaLogin").classList.add("escondido");
+  $("telaPainel").classList.remove("escondido");
+}
+
+const $ = function (id) { return document.getElementById(id); };
+
+function recado(el, texto, tipo) {
+  el.textContent = texto;
+  el.className = "recado " + (tipo || "");
+}
+
+function formatarData(iso) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  return d.toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+}
+
+function pintar(aoVivo, quando) {
+  aoVivoAtual = !!aoVivo;
+  $("estado").dataset.aoVivo = aoVivo ? "sim" : "nao";
+  $("pilulaTexto").textContent = aoVivo ? "ONLINE" : "OFFLINE";
+  $("quando").textContent = quando ? "Alterado em " + formatarData(quando) : "";
+  const b = $("btnAlternar");
+  b.textContent = aoVivo ? "Desligar live" : "Ligar live";
+  b.className = "botao " + (aoVivo ? "desligar" : "ligar");
+}
+
+/* ---------------- login ---------------- */
+async function entrar() {
+  const email = $("email").value.trim();
+  const senha = $("senha").value;
+  if (!email || !senha) {
+    recado($("recadoLogin"), "Preencha e-mail e senha.", "erro");
+    return;
+  }
+  $("btnEntrar").disabled = true;
+  recado($("recadoLogin"), "Entrando...", "");
+
+  try {
+    const r = await fetch(SUPABASE_URL + "/auth/v1/token?grant_type=password", {
+      method: "POST",
+      headers: { "apikey": SUPABASE_ANON_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email, password: senha })
+    });
+    const dados = await r.json();
+    if (!r.ok) {
+      recado($("recadoLogin"), "E-mail ou senha incorretos.", "erro");
+      return;
+    }
+    token = dados.access_token;
+    guardarSessao(dados);
+    abrirPainel();
+    await carregar();
+  } catch (e) {
+    recado($("recadoLogin"), "Não deu para conectar. Confira a internet e a URL do Supabase.", "erro");
+  } finally {
+    $("btnEntrar").disabled = false;
+  }
+}
+
+/* ---------------- ler status ---------------- */
+async function carregar() {
+  try {
+    const r = await fetch(SUPABASE_URL + "/rest/v1/config?id=eq.1&select=ao_vivo,atualizado_em,checkin_palavra,checkin_intervalo_min,checkin_janela_min", {
+      headers: { "apikey": SUPABASE_ANON_KEY, "Authorization": "Bearer " + token }
+    });
+    const linhas = await r.json();
+    if (!r.ok || !linhas.length) {
+      recado($("recadoPainel"), "Não achei a linha da configuração. Rode o SQL de instalação no Supabase.", "erro");
+      return;
+    }
+    pintar(linhas[0].ao_vivo, linhas[0].atualizado_em);
+    $("palavra").value   = linhas[0].checkin_palavra || "";
+    $("intervalo").value = linhas[0].checkin_intervalo_min || 60;
+    $("janela").value    = linhas[0].checkin_janela_min || 5;
+    recado($("recadoPainel"), "", "");
+  } catch (e) {
+    recado($("recadoPainel"), "Não deu para ler o status.", "erro");
+  }
+}
+
+/* ---------------- alternar ---------------- */
+async function alternar() {
+  const novo = !aoVivoAtual;
+  $("btnAlternar").disabled = true;
+  recado($("recadoPainel"), "Salvando...", "");
+
+  try {
+    const r = await fetch(SUPABASE_URL + "/rest/v1/config?id=eq.1", {
+      method: "PATCH",
+      headers: {
+        "apikey": SUPABASE_ANON_KEY,
+        "Authorization": "Bearer " + token,
+        "Content-Type": "application/json",
+        "Prefer": "return=representation"
+      },
+      body: JSON.stringify({ ao_vivo: novo, atualizado_em: new Date().toISOString() })
+    });
+    const linhas = await r.json();
+    if (!r.ok || !linhas.length) {
+      recado($("recadoPainel"), "Não consegui salvar. Sua sessão pode ter expirado — saia e entre de novo.", "erro");
+      return;
+    }
+    pintar(linhas[0].ao_vivo, linhas[0].atualizado_em);
+    recado($("recadoPainel"), novo ? "Site mostrando ONLINE." : "Site mostrando OFFLINE.", "ok");
+  } catch (e) {
+    recado($("recadoPainel"), "Não deu para salvar.", "erro");
+  } finally {
+    $("btnAlternar").disabled = false;
+  }
+}
+
+/* ---------------- palavra do check-in ---------------- */
+const PALAVRAS = [
+  "CALI", "BARRA", "FLEXAO", "PLANCHE", "MUSCLEUP", "ROBUX", "NOOB", "BLOCO",
+  "GEMEOS", "FORCA", "SALTO", "TIJOLO", "PIPOCA", "FOGUETE", "TUBARAO",
+  "DRAGAO", "NINJA", "TURBO", "LASER", "PANTERA", "TROVAO", "COMETA"
+];
+
+function sortearPalavra() {
+  const atual = $("palavra").value.trim().toUpperCase();
+  let nova = atual;
+  while (nova === atual) {
+    nova = PALAVRAS[Math.floor(Math.random() * PALAVRAS.length)];
+  }
+  $("palavra").value = nova;
+  recado($("recadoCheckin"), "Palavra sorteada. Salve para valer no próximo check-in.", "");
+}
+
+async function copiarPalavra() {
+  const palavra = $("palavra").value.trim().toUpperCase();
+  if (!palavra) return;
+  try {
+    await navigator.clipboard.writeText(palavra);
+    recado($("recadoCheckin"), "Palavra copiada.", "ok");
+  } catch (e) {
+    $("palavra").select();
+    recado($("recadoCheckin"), "Selecionei a palavra — copie manualmente.", "");
+  }
+}
+
+/* ---------------- salvar check-in ---------------- */
+async function salvarCheckin() {
+  const palavra = $("palavra").value.trim().toUpperCase();
+  const intervalo = parseInt($("intervalo").value, 10);
+  const janela = parseInt($("janela").value, 10);
+
+  if (!palavra) {
+    recado($("recadoCheckin"), "Escreva a palavra do check-in.", "erro");
+    return;
+  }
+  if (!(intervalo >= 5 && intervalo <= 360)) {
+    recado($("recadoCheckin"), "O intervalo precisa ficar entre 5 e 360 minutos.", "erro");
+    return;
+  }
+  if (!(janela >= 1 && janela <= 60)) {
+    recado($("recadoCheckin"), "A janela precisa ficar entre 1 e 60 minutos.", "erro");
+    return;
+  }
+  if (janela >= intervalo) {
+    recado($("recadoCheckin"), "A janela tem que ser menor que o intervalo, senão um check-in começa antes do outro fechar.", "erro");
+    return;
+  }
+
+  $("btnSalvarCheckin").disabled = true;
+  recado($("recadoCheckin"), "Salvando...", "");
+
+  try {
+    const r = await fetch(SUPABASE_URL + "/rest/v1/config?id=eq.1", {
+      method: "PATCH",
+      headers: {
+        "apikey": SUPABASE_ANON_KEY,
+        "Authorization": "Bearer " + token,
+        "Content-Type": "application/json",
+        "Prefer": "return=representation"
+      },
+      body: JSON.stringify({
+        checkin_palavra: palavra,
+        checkin_intervalo_min: intervalo,
+        checkin_janela_min: janela,
+        atualizado_em: new Date().toISOString()
+      })
+    });
+    const linhas = await r.json();
+    if (!r.ok || !linhas.length) {
+      recado($("recadoCheckin"), "Não consegui salvar. Sua sessão pode ter expirado — saia e entre de novo.", "erro");
+      return;
+    }
+    $("palavra").value = linhas[0].checkin_palavra;
+    recado($("recadoCheckin"), "Salvo. O coletor pega a mudança no próximo check-in.", "ok");
+  } catch (e) {
+    recado($("recadoCheckin"), "Não deu para salvar.", "erro");
+  } finally {
+    $("btnSalvarCheckin").disabled = false;
+  }
+}
+
+function sair() {
+  token = null;
+  esquecerSessao();
+  $("senha").value = "";
+  $("telaPainel").classList.add("escondido");
+  $("telaLogin").classList.remove("escondido");
+  recado($("recadoLogin"), "", "");
+}
+
+/* O <form> é o que faz o celular oferecer "salvar senha".
+   Por isso o login sai do submit, e não de um clique solto no botão. */
+$("formLogin").addEventListener("submit", function (e) {
+  e.preventDefault();
+  entrar();
+});
+$("email").addEventListener("keydown", function (e) { if (e.key === "Enter") $("senha").focus(); });
+$("btnAlternar").addEventListener("click", alternar);
+$("btnSortear").addEventListener("click", sortearPalavra);
+$("btnCopiar").addEventListener("click", copiarPalavra);
+$("btnSalvarCheckin").addEventListener("click", salvarCheckin);
+$("btnSair").addEventListener("click", sair);
+
+/* Ao abrir: se já tem sessão guardada neste aparelho, entra direto.
+   Renova a cada 45 min para o token não vencer no meio da live. */
+(async function iniciar() {
+  if (await renovarSessao()) {
+    abrirPainel();
+    await carregar();
+    setInterval(renovarSessao, 45 * 60 * 1000);
+  }
+})();
+</script>
+</body>
+</html>
