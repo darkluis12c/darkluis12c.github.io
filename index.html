@@ -20,6 +20,18 @@
   --cinza:#EFEFEF;
   --cinza-texto:#6B6B6B;
   --verde:#2BD673;
+
+  /* ★ O "bloco 3D" (estilo Duolingo). A espessura NAO e sombra
+     desfocada: e uma sombra solida, sem blur, empurrada para baixo.
+     Desfoque faz o cartao parecer flutuando; solido faz ele parecer
+     TER LADO, como uma pecinha de brinquedo. */
+  --borda-clara:#DEDEDE;   /* o contorno da peca clara */
+  --baixo-claro:#C8C8C8;   /* a espessura da peca clara */
+  --baixo-branco:#DCDCDC;  /* espessura de peca branca */
+  --baixo-vermelho:#A60A20;
+  --baixo-ouro:#9A7407;
+  --baixo-preto:#000000;
+  --baixo-roxo:#4D1FA8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -249,6 +261,129 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--verde);outline-offs
 .rk-card.rk-1 .rk-pts{font-size:17px;background:#F0B90B;color:#1A1400}
 
 .rk-lista{display:flex;flex-direction:column;gap:8px}
+
+/* ---- a lista que ROLA ----
+   ★ Este bloco JA EXISTIU e eu o perdi em 20/09: ele tinha sido escrito
+   DENTRO do bloco da "Corrida da semana", e quando apaguei aquela secao
+   levei a rolagem junto. O JS continuou pondo a classe `rk-rola`, sem
+   CSS nenhum atras -- as 100 linhas voltaram a esticar a pagina e a
+   passar por cima da secao de baixo, calado. Por isso ele mora aqui
+   agora, junto da `.rk-lista`, e nao dentro de nenhuma secao:
+   **CSS de uma peca mora junto da peca, nunca dentro do bloco de uma
+   tela que pode ser removida.**
+
+   `overscroll-behavior` fica em `auto` de proposito: com `contain`, o
+   dedo que chega no fim da lista para ali e a pagina nao anda -- a
+   crianca fica presa dentro do placar. */
+.rk-lista.rk-rola{
+  max-height:min(62vh,520px);
+  overflow-y:auto;
+  padding-right:8px;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(0,0,0,.30) transparent;
+  overscroll-behavior:auto;
+  -webkit-overflow-scrolling:touch}
+.rk-lista.rk-rola::-webkit-scrollbar{width:11px}
+.rk-lista.rk-rola::-webkit-scrollbar-track{background:transparent}
+.rk-lista.rk-rola::-webkit-scrollbar-thumb{
+  background:rgba(0,0,0,.26);border-radius:999px;
+  border:3px solid transparent;background-clip:content-box}
+.rk-lista.rk-rola::-webkit-scrollbar-thumb:hover{
+  background:rgba(0,0,0,.42);background-clip:content-box}
+/* o recado que avisa que a lista rola -- no celular nao existe barra a
+   vista, entao sem esta linha a lista cortada parece uma lista que acabou.
+   display:block, NAO flex: com `gap` o numero sai flutuando entre buracos. */
+.rk-dica{display:block;font-size:12.5px;color:var(--cinza-texto);
+  margin:0 2px 9px;font-weight:700}
+.rk-dica b{color:inherit;font-weight:800}
+
+/* ---- os dois placares lado a lado (so no computador) ----
+   No celular `.placares` nao faz nada: os dois seguem empilhados, o de
+   hoje em cima. A partir de 900px o ganhador de ontem sai de baixo e
+   vai ocupar a faixa branca que sobra a direita do podio -- PEQUENO,
+   do tamanho de um cartao de recado, nao do tamanho do placar. */
+/* ---- no CELULAR: o ganhador de ontem vira uma PLAQUINHA, encostada
+   a direita na mesma linha do titulo "Ranking de hoje" ----
+   Ele pediu menor e do lado direito. Numa tela de 390px nao cabe coluna
+   de verdade, entao a plaquinha e posicionada por cima, no canto, e o
+   titulo do ranking guarda a altura dela (`min-height`) pra legenda nao
+   passar por baixo.
+
+   No HTML ela continua depois do ranking de proposito: e a ordem certa
+   pra quem le com leitor de tela (o placar de hoje e o assunto). Quem
+   muda o lugar e so o CSS. */
+@media (max-width:899px){
+  .placares{position:relative}
+  .placares>#campeao-ontem{
+    position:absolute;top:0;right:0;z-index:2;
+    width:auto;max-width:58%;margin:0}
+
+  /* ★ O titulo do ranking RESERVA o espaco da plaquinha, na largura e
+     na altura. Sem isso ela passava por cima do texto do titulo (28px
+     de sobreposicao, medido) e da legenda (26px). Reservar e' mais
+     seguro do que torcer pro texto ser curto: o titulo quebra em duas
+     linhas e ninguem se encosta. */
+  .placares>#curtidas-hoje>.card-titulo{
+    min-height:72px;align-items:flex-start;padding-right:170px}
+  .placares>#curtidas-hoje>.card-titulo h2{font-size:19px;line-height:1.15}
+
+  /* o titulo grande "Quem ganhou ontem" nao cabe: quem diz o que e sao
+     a coroa e a pilula da data, que ficam */
+  .placares #campeao-ontem>.card-titulo{display:none}
+  .placares #campeao-ontem .cp-nota{display:none}
+  .placares>#campeao-ontem{max-width:162px}
+  .placares .cp-box{padding:6px 9px 7px}
+  .placares #campeao-ontem .cp-resto{display:none}
+  .placares #campeao-ontem .cp-times{margin:0}
+  .placares .cp-quando{font-size:9px;padding:2px 7px;margin-bottom:4px;gap:4px}
+  .placares .cp-times{justify-content:flex-start}
+  .placares .cp-um.cp-solo{
+    display:grid;grid-template-columns:34px 1fr;
+    column-gap:8px;row-gap:1px;align-items:center;
+    max-width:100%;text-align:left}
+  .placares .cp-um.cp-solo .cp-ring{width:34px;height:34px;flex:none;grid-column:1;grid-row:1 / span 2}
+  .placares .cp-um.cp-solo .rk-avatar{font-size:14px}
+  .placares .cp-um.cp-solo .cp-coroa{font-size:12px;top:-9px}
+  .placares .cp-um.cp-solo .cp-nome{grid-column:2;font-size:11.5px;margin-top:0;align-self:end}
+  .placares .cp-um.cp-solo .cp-pts{
+    grid-column:2;justify-self:start;font-size:11.5px;padding:2px 9px;margin-top:0;
+    white-space:nowrap;align-self:start}
+  /* os check-ins nao cabem na plaquinha; eles seguem na lista de hoje */
+  .placares .cp-um.cp-solo .cp-det{display:none}
+}
+
+@media (min-width:900px){
+  .placares{display:flex;align-items:flex-start;gap:22px}
+  .placares>#curtidas-hoje{flex:1;min-width:0}
+  /* nao zerar o margin-top: os dois trazem o mesmo respiro de cima
+     (.ranking-atual), e sem ele a coluna da direita sobe e o titulo
+     encavala no botao do TikTok. */
+  .placares>#campeao-ontem{flex:0 0 250px}
+
+  /* o cartao encolhe junto: anel, nome, pontos e a coroa */
+  .placares #campeao-ontem .card-titulo{margin-bottom:12px}
+  .placares #campeao-ontem .card-titulo h2{font-size:17px}
+  .placares .cp-box{padding:14px 12px 12px}
+  .placares .cp-um.cp-solo{max-width:100%}
+  .placares .cp-um.cp-solo .cp-ring{width:76px;height:76px}
+  .placares .cp-um.cp-solo .rk-avatar{font-size:28px}
+  .placares .cp-um.cp-solo .cp-coroa{font-size:22px;top:-18px}
+  .placares .cp-um.cp-solo .cp-nome{font-size:15px}
+  .placares .cp-um.cp-solo .cp-pts{font-size:16px;padding:4px 13px}
+  .placares .cp-um.cp-solo .cp-det{font-size:11.5px}
+  .placares .cp-quando{font-size:11px;padding:3px 10px}
+  .placares .cp-nota{font-size:11px;line-height:1.45;margin-top:10px}
+  /* no empate cabem 2 lado a lado; o 3o desce sozinho */
+  .placares .cp-times{gap:8px;flex-wrap:wrap}
+}
+
+/* a PALAVRA do check-in, sempre com a mesma cara em qualquer lugar do
+   site: e a unica coisa que a crianca precisa decorar. */
+.palavra{
+  display:inline-block;background:var(--vermelho);color:var(--branco);
+  font-family:'Anton',sans-serif;letter-spacing:.6px;
+  padding:1px 9px;border-radius:8px;box-shadow:0 2px 0 var(--baixo-vermelho)}
+.hero-sub .palavra,.passo .palavra{font-size:1.05em}
 .rk-item{display:flex;align-items:center;gap:12px;background:var(--cinza);border-radius:14px;padding:10px 14px}
 .rk-item .rk-posicao{font-family:'Anton',sans-serif;font-size:15px;color:var(--cinza-texto);width:22px;text-align:center;flex:none}
 .rk-item .rk-avatar-sm{
@@ -654,6 +789,101 @@ footer{background:var(--preto);color:#7E7E7E;margin-top:32px;padding:20px 0 30px
   .busca button{padding:15px}
   .regras ul{columns:1}
 }
+
+/* =====================================================================
+   BLOCO 3D — o acabamento estilo Duolingo (20/09/2026)
+   =====================================================================
+   Regra unica: toda peca tem um CONTORNO e uma ESPESSURA embaixo
+   (`box-shadow: 0 Npx 0 cor`, sem blur). O que se clica afunda a
+   propria espessura no `:active` — o dedo ve o bloco ser apertado.
+
+   Nao inventei cor nenhuma: a espessura e sempre a MESMA cor da peca,
+   so mais escura. Por isso os tokens `--baixo-*`.
+   ===================================================================== */
+
+/* ---------- pecas claras (cartoes de secao, caixa de pontos) ---------- */
+.card{
+  border:2px solid var(--borda-clara);
+  box-shadow:0 6px 0 var(--baixo-claro);
+}
+.pontua{
+  border:2px solid var(--borda-clara);
+  box-shadow:0 4px 0 var(--baixo-branco);
+}
+
+/* ---------- as linhas do ranking ---------- */
+.rk-lista{gap:12px}          /* +4px: a espessura precisa de lugar */
+.rk-item{
+  border:2px solid var(--borda-clara);
+  box-shadow:0 4px 0 var(--baixo-claro);
+}
+
+/* ---------- o podio ---------- */
+.rk-card{box-shadow:0 6px 0 var(--baixo-preto)}
+.rk-card.rk-1{box-shadow:0 7px 0 var(--baixo-ouro)}
+.rk-card.rk-2{box-shadow:0 6px 0 #6E7681}
+.rk-card.rk-3{box-shadow:0 6px 0 #7A4A18}
+
+/* ---------- as pastilhas de ponto ---------- */
+.rk-pts{box-shadow:0 3px 0 var(--baixo-roxo)}
+.rk-card.rk-1 .rk-pts{box-shadow:0 3px 0 var(--baixo-ouro)}
+.cp-pts{box-shadow:0 4px 0 var(--baixo-ouro)}
+.sm-pilula,.cp-quando{box-shadow:0 3px 0 rgba(154,116,7,.45)}
+
+/* ---------- a caixa dourada do campeao ---------- */
+.cp-box{
+  box-shadow:0 8px 0 var(--baixo-ouro), 0 0 26px rgba(240,185,11,.22);
+}
+
+/* ---------- as duas chapinhas da legenda ---------- */
+.rk-leg{box-shadow:0 3px 0 var(--baixo-claro);border:2px solid var(--borda-clara)}
+
+/* ---------- o que se aperta AFUNDA ----------
+   O segredo do Duolingo nao e a sombra: e o `:active`. A peca desce
+   exatamente a altura da espessura, e a espessura some — dai a sensacao
+   de tecla de teclado. Sem isso o cartao 3D parece so um cartao torto. */
+.botao,
+.busca button{
+  transition:transform .06s ease, box-shadow .06s ease;
+}
+.botao{box-shadow:0 8px 0 var(--baixo-vermelho)}
+.botao:active{transform:translateY(8px);box-shadow:0 0 0 var(--baixo-vermelho)}
+.busca button{box-shadow:0 5px 0 var(--baixo-vermelho)}
+.busca button:active{transform:translateY(5px);box-shadow:0 0 0 var(--baixo-vermelho)}
+
+/* O campo de digitar tambem e uma peca: afundado, nao levantado —
+   caixa de texto que parece botao convida a apertar, e nao a escrever. */
+.busca input{box-shadow:inset 0 3px 0 rgba(0,0,0,.06)}
+
+/* ---------- a barra de curtidas ---------- */
+.barra-trilho{box-shadow:inset 0 3px 0 rgba(0,0,0,.10)}
+.barra-cheia{box-shadow:inset 0 -3px 0 rgba(0,0,0,.14)}
+.rk-glass{box-shadow:inset 0 2px 0 rgba(0,0,0,.10)}
+
+/* ---------- a pilula do ao vivo e o painel ---------- */
+.painel{border:2px solid #1E1E1E;box-shadow:0 6px 0 #000}
+.pilula{box-shadow:0 4px 0 rgba(0,0,0,.45)}
+.resultado{border:2px solid #262626;box-shadow:0 6px 0 #000}
+
+/* ---------- quem nao pode ganhar espessura ----------
+   Peca DENTRO de lista que rola nao leva sombra para fora (ela seria
+   cortada na borda da caixa), e o avatar redondo tambem nao: espessura
+   em circulo vira meia-lua torta. */
+.rk-avatar-ring,.rk-avatar-sm,.rk-foto{box-shadow:none}
+
+@media (prefers-reduced-motion: reduce){
+  .botao,.busca button{transition:none}
+}
+
+/* No celular a espessura encolhe: com a tela estreita, 8px de sombra
+   embaixo de tudo come altura demais e a pagina cresce sem motivo. */
+@media (max-width:560px){
+  .card{box-shadow:0 5px 0 var(--baixo-claro)}
+  .cp-box{box-shadow:0 6px 0 var(--baixo-ouro), 0 0 26px rgba(240,185,11,.22)}
+  .botao{box-shadow:0 6px 0 var(--baixo-vermelho)}
+  .botao:active{transform:translateY(6px)}
+  .rk-lista{gap:10px}
+}
 </style>
 </head>
 <body>
@@ -686,14 +916,14 @@ footer{background:var(--preto);color:#7E7E7E;margin-top:32px;padding:20px 0 30px
     <div class="hero-txt">
       <div class="coroa" aria-hidden="true">👑</div>
       <h1 class="titulo">Assista a live e ganhe <span class="robux">Robux!</span></h1>
-      <p class="hero-sub">Você ganha ponto de dois jeitos: <b>responder o check-in</b> que aparece toda hora na live (10 pontos) e fazer <b>6.000 curtidas numa hora</b> (20 pontos). <b>Todo dia tem ganhador</b> — quem termina o dia em primeiro leva os Robux.</p>
+      <p class="hero-sub"><b>Comente <span class="palavra js-palavra">ROBUX</span> na live</b> para fazer o check-in e ganhar <b>10 pontos</b> — <b>uma vez por dia</b>. Depois disso quem sobe o seu placar é a curtida: <b>3.000 numa hora</b> valem <b>20 pontos</b>, e dá para pegar em <b>cada hora</b> da live. <b>Todo dia tem ganhador</b>: quem termina o dia em primeiro leva os Robux.</p>
       <div class="selo-roblox" aria-hidden="true"><span></span></div>
     </div>
   </div>
 </div>
 
 <div class="faixa">
-  <div class="wrap"><p>Quanto mais você participa, maior sua chance de ganhar Robux!</p></div>
+  <div class="wrap"><p>Não é sorteio: ganha quem fizer mais pontos no dia!</p></div>
 </div>
 
 <main class="wrap">
@@ -720,6 +950,12 @@ footer{background:var(--preto);color:#7E7E7E;margin-top:32px;padding:20px 0 30px
   </a>
 
 
+  <!-- ============ OS DOIS PLACARES, LADO A LADO ============
+       No computador sobra uma faixa branca enorme a direita do podio.
+       O ganhador de ontem vai morar ali, pequeno. No celular nao ha
+       lado nenhum: eles voltam a ficar um embaixo do outro. -->
+  <div class="placares">
+
   <!-- ============ QUEM MAIS CURTIU HOJE ============ -->
   <section class="ranking-atual rk-curtidas" id="curtidas-hoje">
     <div class="card-titulo">
@@ -729,8 +965,8 @@ footer{background:var(--preto);color:#7E7E7E;margin-top:32px;padding:20px 0 30px
     <!-- A legenda fica ANTES do placar de proposito: a crianca precisa
          saber o que as duas cores querem dizer antes de ler as barras. -->
     <div class="rk-legenda">
-      <span class="rk-leg rk-leg-chk"><b>✅</b> check-in <i>10 pontos cada</i></span>
-      <span class="rk-leg rk-leg-lk"><b>❤️</b> curtidas <i>6.000 numa hora = 20 pontos</i></span>
+      <span class="rk-leg rk-leg-chk"><b>✅</b> comentar <span class="palavra js-palavra">ROBUX</span> <i>10 pontos</i></span>
+      <span class="rk-leg rk-leg-lk"><b>❤️</b> curtidas <i>3.000 numa hora = 20 pontos</i></span>
     </div>
     <div id="lkPodio" class="rk-podio"></div>
     <div id="lkLista" class="rk-lista"></div>
@@ -754,6 +990,8 @@ footer{background:var(--preto);color:#7E7E7E;margin-top:32px;padding:20px 0 30px
     </div>
   </section>
 
+  </div><!-- /.placares -->
+
 
 
   <!-- ================= COMO GANHAR ================= -->
@@ -772,26 +1010,26 @@ footer{background:var(--preto);color:#7E7E7E;margin-top:32px;padding:20px 0 30px
       <div class="passo">
         <div class="num">2</div>
         <div class="icone" aria-hidden="true">💬</div>
-        <h3>Responda o check-in</h3>
-        <p>Toda hora cheia — 9h00, 10h00, 11h00 — aparece uma palavra na tela da live. Digite ela no chat e você ganha <b>10 pontos</b>. Vale uma vez por hora.</p>
+        <h3>Comente <span class="palavra js-palavra">ROBUX</span> na live</h3>
+        <p>Escreva <span class="palavra js-palavra">ROBUX</span> no chat assim que entrar na live. Isso é o <b>check-in</b>, e vale <b>10 pontos</b>. Repetir não adianta: conta <b>uma vez por dia</b>.</p>
       </div>
       <div class="passo">
         <div class="num">3</div>
         <div class="icone" aria-hidden="true">❤️</div>
         <h3>Segure o coraçãozinho</h3>
-        <p>Segure o coração e faça <b>6.000 curtidas dentro da mesma hora</b>: isso vale <b>20 pontos</b>. A conta <b>zera toda hora cheia</b>, então dá para ganhar de novo às 9h, às 10h, às 11h — quanto mais horas da live você ficar, mais vezes dá para pegar os 20.</p>
+        <p>Segure o coração e faça <b>3.000 curtidas dentro da mesma hora</b>: isso vale <b>20 pontos</b>. A conta <b>zera toda hora cheia</b>, então dá para ganhar de novo às 9h, às 10h, às 11h — quanto mais horas da live você ficar, mais vezes dá para pegar os 20.</p>
       </div>
     </div>
 
     <div class="pontua">
       <h3>Como se ganha ponto</h3>
       <ul>
-        <li><b>10 pontos</b> — check-in respondido, uma vez por hora</li>
-        <li><b>20 pontos</b> — 6.000 curtidas dentro da mesma hora</li>
+        <li><b>10 pontos</b> — comentar <span class="palavra js-palavra">ROBUX</span> na live, <b>uma vez por dia</b></li>
+        <li><b>20 pontos</b> — 3.000 curtidas dentro da mesma hora</li>
         <li>Comentar e mandar presente <b>não</b> viram ponto</li>
         <li><b>Ganha quem terminar o DIA em primeiro lugar.</b> Todo dia recomeça do zero</li>
       </ul>
-      <p class="pontua-nota">O check-in abre <b>toda hora cheia</b> e fica alguns minutos aberto — é quando a palavra aparece na tela. Repetir a palavra não adianta: vale um por hora. As curtidas também contam <b>por hora</b>: ao bater <b>6.000</b> dentro da mesma hora você ganha <b>20 pontos</b>, e na hora cheia seguinte a conta zera e dá para pegar de novo. <b>O dia fecha à meia-noite</b> — quem estiver em primeiro lugar no ranking do dia é o ganhador, e no dia seguinte todo mundo começa do zero. <b>Tudo aqui é de graça</b> — você nunca precisa gastar dinheiro nem mandar presente para participar.</p>
+      <p class="pontua-nota">O check-in vale <b>uma vez por dia</b>: comentou a palavra uma vez, os 10 pontos são seus e repetir não adianta mais. Já as curtidas contam <b>de hora em hora</b>: ao bater <b>3.000</b> dentro da mesma hora você ganha <b>20 pontos</b>, e na hora cheia seguinte a conta zera e dá para pegar de novo. <b>O dia fecha à meia-noite</b> — quem estiver em primeiro lugar no ranking do dia é o ganhador, e no dia seguinte todo mundo começa do zero. <b>Tudo aqui é de graça</b> — você nunca precisa gastar dinheiro nem mandar presente para participar.</p>
     </div>
   </section>
 
@@ -811,8 +1049,8 @@ footer{background:var(--preto);color:#7E7E7E;margin-top:32px;padding:20px 0 30px
 
     <div class="barra-box escondido" id="barraBox">
       <div class="barra-topo">
-        <span class="barra-titulo">❤️ SUAS CURTIDAS DESTA HORA <small style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#8E8E8E;letter-spacing:0">(6.000 = 20 pontos)</small></span>
-        <span class="barra-conta"><b id="barraAgora">0</b> / 6.000</span>
+        <span class="barra-titulo">❤️ SUAS CURTIDAS DESTA HORA <small style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#8E8E8E;letter-spacing:0">(3.000 = 20 pontos)</small></span>
+        <span class="barra-conta"><b id="barraAgora">0</b> / 3.000</span>
       </div>
       <div class="barra-trilho"><div class="barra-cheia" id="barraCheia"></div></div>
       <div class="barra-marcos" id="barraMarcos"></div>
@@ -837,15 +1075,16 @@ footer{background:var(--preto);color:#7E7E7E;margin-top:32px;padding:20px 0 30px
   <section class="regras" id="regras">
     <div class="card-titulo">
       <span aria-hidden="true">👑</span>
-      <h2>Regras do sorteio</h2>
+      <h2>Regras da competição</h2>
     </div>
     <ul>
       <li>Participar é gratuito. Você não precisa comprar nada nem enviar presentes na live.</li>
-      <li>Enviar presente não conta como participação e não aumenta suas chances.</li>
+      <li><b>Não é sorteio:</b> ninguém é escolhido no acaso. Ganha quem fizer <b>mais pontos no dia</b>.</li>
+      <li>Enviar presente <b>não vale ponto</b> e não ajuda em nada no placar.</li>
       <li>Os pontos são contados por dia e zeram todo dia à meia-noite.</li>
       <li>Para receber os Robux você precisa passar seu nome de usuário do Roblox.</li>
       <li>Se você tem menos de 18 anos, peça a um responsável antes de participar.</li>
-      <li>Este sorteio não tem ligação com a Roblox Corporation nem com o TikTok.</li>
+      <li>Esta competição não tem ligação com a Roblox Corporation nem com o TikTok.</li>
     </ul>
   </section>
 
@@ -948,7 +1187,7 @@ async function lerSupabase(){
   if(!CONFIG.supabaseUrl || !CONFIG.supabaseKey) return null;
   try{
     const r = await fetch(
-      CONFIG.supabaseUrl + "/rest/v1/config?id=eq.1&select=ao_vivo,checkin_intervalo_min",
+      CONFIG.supabaseUrl + "/rest/v1/config?id=eq.1&select=ao_vivo,checkin_palavra,checkin_intervalo_min",
       { headers: { apikey: CONFIG.supabaseKey, Authorization: "Bearer " + CONFIG.supabaseKey },
         cache: "no-store" }
     );
@@ -971,10 +1210,30 @@ async function lerArquivo(){
    para nao quebrar quem chama. */
 function pintarIntervalo(){ }
 
+/* \u2605 A PALAVRA DO CHECK-IN.
+   Ela esta escrita na pagina em varios lugares ("comente ROBUX na
+   live"), mas quem manda nela e o BANCO (`config.checkin_palavra`) --
+   e o mesmo campo que o coletor le para decidir quem pontuou. Se eu
+   chumbasse "ROBUX" no HTML e ele trocasse a palavra no painel, o site
+   mandaria a crianca comentar a palavra errada e ela ficaria sem ponto,
+   sem ninguem entender o porque.
+   ROBUX fica so como reserva, para a pagina nunca aparecer vazia. */
+let PALAVRA = "ROBUX";
+
+function palavraDoCheckin(){ return PALAVRA; }
+
+function pintarPalavra(nova){
+  const limpa = String(nova || "").trim().toUpperCase();
+  if(!limpa || limpa === PALAVRA) return;
+  PALAVRA = limpa;
+  document.querySelectorAll(".js-palavra").forEach(function(e){ e.textContent = PALAVRA; });
+}
+
 async function atualizarStatus(){
   const doPainel = await lerSupabase();
   if(doPainel !== null){
     pintarStatus(doPainel.ao_vivo);
+    pintarPalavra(doPainel.checkin_palavra);
     pintarIntervalo(doPainel.checkin_intervalo_min);
     return;
   }
@@ -1058,7 +1317,7 @@ const PONTOS_POR_CHECKIN = 10;
 
 /* ★ 20/09: A CURTIDA VOLTOU A PAGAR, com regra nova.
    Nao e mais "1 ponto a cada 1.000" (que saiu em 14/09): agora e um
-   DEGRAU por hora cheia -- 6.000 curtidas dentro da mesma hora valem 20
+   DEGRAU por hora cheia -- 3.000 curtidas dentro da mesma hora valem 20
    pontos. 5.999 nao pagam nada; 12.000 na mesma hora tambem pagam 20,
    porque o degrau e por hora. O jeito de ganhar mais e voltar em MAIS
    horas da live.
@@ -1066,18 +1325,18 @@ const PONTOS_POR_CHECKIN = 10;
    Estes dois numeros estao tambem no `supabase-premio-por-dia.sql`, no
    `order by`. Se um mudar sozinho, o placar sai numa ordem e a conta na
    tela sai noutra, sem erro nenhum aparecer. */
-const CURTIDAS_PARA_PONTO = 6000;   // por HORA CHEIA
+const CURTIDAS_PARA_PONTO = 3000;   // por HORA CHEIA
 const PONTOS_DAS_CURTIDAS = 20;
 
 function contaDoDia(item){
   const checkins = Math.max(0, Number(item.checkins) || 0);
   const curtidas = Math.max(0, Number(item.likes) || 0);
-  // quantas horas de hoje ja bateram as 6.000 (quem conta e o banco,
+  // quantas horas de hoje ja bateram a meta (quem conta e o banco,
   // porque so ele tem a curtida hora a hora)
-  const horas6k = Math.max(0, Number(item.horas6k) || 0);
+  const horas_meta = Math.max(0, Number(item.horas_meta) || 0);
   const ptsChk = checkins * PONTOS_POR_CHECKIN;
-  const ptsLk = horas6k * PONTOS_DAS_CURTIDAS;
-  return { checkins, curtidas, horas6k, ptsChk, ptsLk, total: ptsChk + ptsLk };
+  const ptsLk = horas_meta * PONTOS_DAS_CURTIDAS;
+  return { checkins, curtidas, horas_meta, ptsChk, ptsLk, total: ptsChk + ptsLk };
 }
 
 /* As duas barrinhas de vidro que ficam do lado do nome.
@@ -1123,7 +1382,7 @@ function fontesDeUmPerfil(item, tetoCheckins, tetoPtsLk, quandoLk){
       barra("rk-fonte-chk", "\u2705", cheioChk, c.ptsChk,
             c.checkins + " de " + tetoCheckins + " check-ins \u2014 " + c.ptsChk + " pontos") +
       barra("rk-fonte-lk", "\u2764\uFE0F", cheioLk, c.ptsLk,
-            c.horas6k + " hora(s) " + quando + " com 6.000+ curtidas \u2014 " + c.ptsLk + " pontos") +
+            c.horas_meta + " hora(s) " + quando + " com 3.000+ curtidas \u2014 " + c.ptsLk + " pontos") +
     '</span>';
 }
 
@@ -1133,7 +1392,7 @@ function resumoDoPerfil(item){
   const c = contaDoDia(item);
   const pedacos = [];
   if(c.checkins > 0) pedacos.push('<b class="v">' + c.checkins + '</b> check-in' + (c.checkins > 1 ? "s" : ""));
-  if(c.horas6k > 0) pedacos.push('<b>' + c.horas6k + '</b> hora' + (c.horas6k > 1 ? "s" : "") + ' de 6 mil');
+  if(c.horas_meta > 0) pedacos.push('<b>' + c.horas_meta + '</b> hora' + (c.horas_meta > 1 ? "s" : "") + ' de 3 mil');
   else if(c.curtidas > 0) pedacos.push('<b>' + numero(c.curtidas) + '</b> curtidas na hora');
   if(pedacos.length === 0) return "ainda n\u00e3o pontuou hoje";
   return pedacos.join(" \u00b7 ");
@@ -1339,15 +1598,15 @@ async function atualizarCurtidasHoje(){
   if(linhas !== null){
     linhasDeHoje = linhas;
     pintarPlacar(elLk, linhas,
-      "Ningu\u00e9m pontuou ainda hoje. Responda o check-in ou fa\u00e7a 6.000 curtidas nesta hora para aparecer aqui!",
-      "\u2705 check-in 10 pontos \u00b7 \u2764\uFE0F 6.000 curtidas numa hora 20 pontos \u00b7 a hora vira em " + minutosAteVirar() + " min");
+      "Ningu\u00e9m pontuou ainda hoje. Comente " + palavraDoCheckin() + " na live ou fa\u00e7a 3.000 curtidas nesta hora para aparecer aqui!",
+      "\u2705 comente " + palavraDoCheckin() + " na live: 10 pontos \u00b7 \u2764\uFE0F 3.000 curtidas numa hora: 20 pontos \u00b7 a hora vira em " + minutosAteVirar() + " min");
     return;
   }
 
   if(!avisouFaltaRankingDia){
     avisouFaltaRankingDia = true;
     console.warn("A fun\u00e7\u00e3o ranking_dia (p_dia, p_hora, p_quantos) com a coluna " +
-                 "`horas6k` ainda n\u00e3o existe no banco. Rode o " +
+                 "`horas_meta` ainda n\u00e3o existe no banco. Rode o " +
                  "supabase-premio-por-dia.sql no Supabase.");
   }
   placarForaDoAr();
@@ -1431,10 +1690,10 @@ function cartaoDeCampeao(item, solo){
       '<div class="cp-pts">' + numero(c.total) + ' pontos</div>' +
       // ★ As DUAS fontes aparecem, senao quem ganhou fazendo curtida
       // parece ter ganhado do nada. Se uma delas e zero, ela nao entra:
-      // "0 horas de 6 mil" no cartao do campeao so faz barulho.
+      // "0 horas de 3 mil" no cartao do campeao so faz barulho.
       '<div class="cp-det">' + [
         c.checkins > 0 ? '<b class="v">' + c.checkins + '</b> check-in' + (c.checkins === 1 ? "" : "s") : "",
-        c.horas6k > 0 ? '<b class="v">' + c.horas6k + '</b> hora' + (c.horas6k === 1 ? "" : "s") + ' de 6 mil curtidas' : ""
+        c.horas_meta > 0 ? '<b class="v">' + c.horas_meta + '</b> hora' + (c.horas_meta === 1 ? "" : "s") + ' de 3 mil curtidas' : ""
       ].filter(Boolean).join(' · ') + '</div>' +
     '</div>';
 }
@@ -1470,7 +1729,7 @@ async function atualizarCampeaoDeOntem(){
   // ★ CAMPEAO E QUEM FEZ MAIS PONTO NO DIA -- check-in E curtida, a
   // mesma conta do `contaDoDia` que pinta o placar de hoje. Ate 19/09
   // era so o check-in, porque a curtida nao pagava; com o degrau dos
-  // 6.000 ela paga, e quem so curtiu tambem pode ganhar o dia.
+  // 3.000 ela paga, e quem so curtiu tambem pode ganhar o dia.
   //
   // Se duas pessoas empataram, as DUAS sao campeas: eu nao escolho no
   // par ou impar quem leva a coroa.
@@ -1519,7 +1778,7 @@ function mostrarResultado(html, semResultado){
 
 /* ★ A busca por @ passou a ser do DIA (20/09), junto com o premio.
    Pergunta pela `meu_dia`, que devolve as contagens cruas (check-ins,
-   curtidas da hora, horas com 6.000+) -- quem vira isso em ponto e o
+   curtidas da hora, horas com 3.000+) -- quem vira isso em ponto e o
    `contaDoDia`, o mesmo do placar. Assim a crianca nao ve um numero
    aqui e outro no ranking.
 
@@ -1561,12 +1820,12 @@ function pintarPontuacao(linha){
   nome.textContent = "@" + limpar(linha.arroba);
 
   // ★ De onde vieram os pontos -- as duas fontes, separadas. Desde
-  // 20/09 sao duas de novo: check-in (10) e hora com 6.000 curtidas
+  // 20/09 sao duas de novo: check-in (10) e hora com 3.000 curtidas
   // (20). Mostrar so o total faria a crianca achar que curtir nao
   // contou.
   const faltam = onde ? Math.max(0, onde.lider - c.total) : 0;
   const rodape = !onde
-    ? "Voc\u00ea ainda n\u00e3o est\u00e1 entre os 100 primeiros de hoje \u2014 responda o check-in da pr\u00f3xima hora para subir."
+    ? "Voc\u00ea ainda n\u00e3o est\u00e1 entre os 100 primeiros de hoje \u2014 comente " + palavraDoCheckin() + " na live e segure o cora\u00e7\u00e3ozinho para subir."
     : onde.posicao === 1
       ? "Voc\u00ea est\u00e1 em <b>primeiro lugar hoje</b>! Quem terminar o dia no topo ganha os Robux."
       : "Faltam <b>" + numero(faltam) + " pontos</b> para alcan\u00e7ar o primeiro lugar de hoje.";
@@ -1578,7 +1837,7 @@ function pintarPontuacao(linha){
     '<div class="de-onde">' +
       '<span><b>' + c.checkins + '</b> check-in' + (c.checkins === 1 ? '' : 's') +
         ' <i style="font-style:normal;color:#8E8E8E">(' + numero(c.ptsChk) + ' pts)</i></span>' +
-      '<span><b>' + c.horas6k + '</b> hora' + (c.horas6k === 1 ? '' : 's') + ' com 6.000 curtidas' +
+      '<span><b>' + c.horas_meta + '</b> hora' + (c.horas_meta === 1 ? '' : 's') + ' com 3.000 curtidas' +
         ' <i style="font-style:normal;color:#8E8E8E">(' + numero(c.ptsLk) + ' pts)</i></span>' +
     '</div>' +
     '<p class="falta">' + rodape + '</p>',
@@ -1589,7 +1848,7 @@ function pintarPontuacao(linha){
 function naoAchei(){
   mostrarResultado('<div class="posicao">Ainda não achei você</div>' +
     '<p class="falta">Confira se digitou o @ igualzinho ao do TikTok. Se você ainda não pontuou <b>hoje</b>, ' +
-    'entre na próxima live: responda o check-in ou faça 6.000 curtidas em uma hora.</p>', true);
+    'entre na próxima live e comente <b>' + palavraDoCheckin() + '</b> no chat.</p>', true);
 }
 
 
@@ -1620,7 +1879,7 @@ let curtidasNaBarra = 0;
 
 function montarMarcos(){
   elBarra.marcos.innerHTML = "";
-  // \u2605 A regua vai ate 6k, nao ate 10k: 6.000 e onde os 20 pontos
+  // \u2605 A regua vai ate a meta (3k), nao ate 10k: e ali que os 20 pontos
   // caem. Uma regua que passa do premio faz a crianca achar que falta
   // mais do que falta, e uma barra que nunca enche desanima.
   const ate = CURTIDAS_PARA_PONTO / CURTIDAS_POR_MARCA;
